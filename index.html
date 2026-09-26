@@ -765,12 +765,18 @@ section .num,section .num *,section .cs-v,section .safe-data .v,section .safe-da
 }
 section .num,section .cs-v,section .safe-data .v,section .safe-no,.rent-big,.rent-edit{font-weight:500!important}
 h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","Songti SC","STSong",serif!important}
+
+/* Source brand mark in top-left navigation; one logo per viewport. */
+#nav .in .brand-logo{display:inline-flex;align-items:center;gap:10px;flex-shrink:0;color:var(--navy);font-size:21px;font-weight:650;text-decoration:none;line-height:1.2;padding:0;letter-spacing:1px}
+#nav .brand-logo img{display:block;width:42px;height:32px;object-fit:contain;border:0!important;border-radius:0}
+#nav .brand-logo:hover{color:var(--navy);text-decoration:none}
+@media(max-width:640px){#nav .in .brand-logo{font-size:19px}#nav .brand-logo img{width:34px;height:27px}}
 </style>
 </head>
 <body>
 
 <nav id="nav"><div class="in">
-<span class="brand">贝壳惠居上海</span>
+<a class="brand brand-logo" href="#cover" aria-label="惠居上海，返回首页"><img src="assets/7895034dc667c91f30f11309.svg" alt=""><span>惠居上海</span></a>
 <a href="#cover">封面</a><a href="#brand">为什么选我们</a><a href="#market">市场现状</a><a href="#calc">收益测算</a><a href="#safe">保障体系</a><a href="#cases">真实案例</a><a href="#cta">开始合作</a>
 </div></nav>
 
@@ -1254,15 +1260,14 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
   </div>
 
   <div class="acct-block">
-    <div class="acct-head"><span class="acct-which">第二笔</span><div><div class="acct-title">这笔钱去哪了——36 天流向拆解</div><div class="acct-q">每一天都在替您干活</div></div></div>
+    <div class="acct-head"><span class="acct-which">第二笔</span><div><div class="acct-title">这笔管理费，换来哪些服务</div><div class="acct-q">每一天都在替您干活</div></div></div>
     <div class="flow-head"><span class="flow-chip">年管理费 = 36 天租金</span></div>
-    <div class="grid g4">
-      <div class="card flow-card"><h3>给经纪人的中介费</h3><div class="num">120%</div><p>每次出租即付，比普租高 20 个点——买的是<b>全员推您的房</b></p></div>
+    <div class="grid g3" id="management-value-grid">
+      <div class="card flow-card"><h3>经纪人业绩激励</h3><div class="num">120% <small>业绩</small></div><p>经纪人按 <b>120% 计业绩</b>，鼓励积极推荐您的房源。</p></div>
       <div class="card flow-card"><h3>租前 · 租中 · 租后管理</h3><div class="num">全包</div><p>门锁、保洁、网络、美化、维修、催缴、纠纷，<b>全年有人</b></p></div>
       <div class="card flow-card"><h3>流量高曝光</h3><div class="num">置顶</div><p>您的房在平台流量位——这项投入业主平时看不见</p></div>
-      <div class="card flow-card"><h3>招租定金</h3><div class="num">50%</div><p>半月租作为定金先行支付，租不掉是<b>真金赔付</b></p></div>
     </div>
-    <div class="vac-bar"><b>第二笔答案</b>：36 天里每一天都在替您干活——租不掉，先亏的是我们。</div>
+    <div class="vac-bar"><b>第二笔答案</b>：招租推广与全周期管理，让出租有人推进、租后有人负责。</div>
   </div>
 
   <div class="acct-block">
