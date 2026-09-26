@@ -1190,24 +1190,10 @@ section#haggle{display:none!important}
 <tr><td>业主管理服务费</td><td>—</td><td>3 天 / 月<small>按实际出租收入计费</small></td></tr>
 <tr class="calc-total"><td>3年净总收益</td><td><b id="pT">—</b> 元</td><td><b id="sT">—</b> 元</td></tr>
 </tbody></table>
-<div class="calc-difference"><strong id="calcDifference">—</strong><div><b id="calcDifferenceLabel">三年到手差额</b><p><span id="calcDifferenceReason">同一参考月租，按成交周期与费用估算。</span></p></div></div>
+<div class="calc-difference"><strong id="calcDifference">—</strong><div><b id="calcDifferenceLabel">三年到手差额</b></div></div>
 <p class="calc-estimate-note">按上述成交周期估算，不作为收益承诺；实际以实勘与合同为准。</p>
-<details class="calc-cost-details"><summary>查看扣费明细、逐年收益与自管事项</summary>
-<table class="cmp calc-deduction-table"><thead><tr><th>三年扣费明细</th><th>普租自己管</th><th>省心租托管</th></tr></thead><tbody>
-<tr><td>空置损失</td><td data-calc="vacancy">—</td><td data-calc="recruitment">—</td></tr>
-<tr><td>中介费</td><td data-calc="broker">—</td><td>0 元</td></tr>
-<tr><td>维修保洁</td><td>3,600 元</td><td>0 元</td></tr>
-<tr><td>管理费</td><td>0 元</td><td data-calc="management">—</td></tr>
-</tbody></table>
-<table class="cmp"><thead><tr><th>到手收益</th><th>普租自己管</th><th>省心租托管</th></tr></thead><tbody>
-<tr><td>第一年</td><td id="p1">—</td><td id="s1">—</td></tr>
-<tr><td>第二年</td><td id="p2">—</td><td id="s2">—</td></tr>
-<tr><td>第三年</td><td id="p3">—</td><td id="s3">—</td></tr>
-</tbody></table>
-<div class="calc-extras"><div><b>房子空一天，少收多少租金？</b><span>按当前月租，空一天少收约 <strong id="ownerDailyLoss">—</strong> 元；等租客的这段时间，同样影响全年到手。</span></div><div><b>每次换租，都要重新忙一遍</b><span>找中介、安排带看、交房检查，再做保洁和维修；花出去的钱、跑前跑后的时间，都得有人承担。</span></div><div><b>租出去之后，还有事要跟</b><span>催租、报修、续约和纠纷处理，往往不是接一次电话就能结束。</span></div></div>
-<p class="note">空置损失、中介费、维修保洁已计入上表，不重复扣除；个人时间与精力未折算为金额。</p>
-</details>
-<div hidden="hidden" aria-hidden="true" class="calc-compatibility"><span id="vacLoss"></span><span id="acRent"></span><span id="acL"></span><span id="acR"></span><span id="acNote"></span><span id="acSelfRent"></span><span id="acBrokerCost"></span><span id="acSelfTotal"></span><span id="acSelfAnswer"></span></div>
+
+<div hidden="hidden" aria-hidden="true" class="calc-compatibility"><span id="p1"></span><span id="p2"></span><span id="p3"></span><span id="s1"></span><span id="s2"></span><span id="s3"></span><span id="vacLoss"></span><span id="acRent"></span><span id="acL"></span><span id="acR"></span><span id="acNote"></span><span id="acSelfRent"></span><span id="acBrokerCost"></span><span id="acSelfTotal"></span><span id="acSelfAnswer"></span></div>
 </section>
 
 
@@ -2256,11 +2242,8 @@ window.HJ_PLANBOOK = (function(){
     set('calcDifference',(difference>0?'+':difference<0?'−':'')+money(Math.abs(difference)));
     set('calcDifferenceLabel',difference>0?'省心租比普租，三年多收':difference<0?'省心租比普租，三年少收':'两种方式，三年到手相同');
     var daysDifference=Math.round((ordinaryDays-managedDays)*100)/100;
-    var cycleText=daysDifference>0?'按当前周期，省心租每年少空置约 '+fmt(daysDifference)+' 天':daysDifference<0?'按当前周期，省心租每年多空置约 '+fmt(-daysDifference)+' 天':'按当前周期，两种方式空置时间相同';
-    set('calcDifferenceReason',cycleText+'；中介费、维修保洁与管理费一并计入比较。');
     set('managementRent',fmt(r));set('managementAnnualFee',fmt(Math.round(management)));
     set('planMonthlyRent',fmt(r));set('planMonthlyFee',(r*.1).toLocaleString('zh-CN',{maximumFractionDigits:2}));set('planMonthlyNet',(r*.9).toLocaleString('zh-CN',{maximumFractionDigits:2}));
-    set('ownerDailyLoss',fmt(Math.round(r/30)));
     set('valueManagedDays',fmt(managedDays));set('valueOrdinaryDays',fmt(ordinaryDays));
     set('valueDaysOutcome',daysDifference>0?'少空置 '+fmt(daysDifference)+' 天':daysDifference<0?'多空置 '+fmt(-daysDifference)+' 天':'空置时间相同');
     var vacancyBenefit=Math.round(Math.abs(ordinaryVacancy-managedVacancy));
