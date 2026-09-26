@@ -1131,6 +1131,27 @@ section#risk[data-moved-to="faq"]{display:none!important}
 #meiz .meiz-compact-preview figcaption{font-size:17px;line-height:1.6;color:#52677d;margin-top:14px}
 #meiz .meiz-compact-preview figcaption strong{font-weight:500;color:inherit;display:inline-block;margin-right:14px}
 #meiz .meiz-compact-preview figcaption span{display:inline-block;white-space:nowrap}
+
+/* Closing page: an owner's next steps, followed by their own manager. */
+#cta .owner-next-steps{list-style:none;padding:0;margin:36px 0 38px}
+#cta .owner-next-steps li{display:grid;grid-template-columns:58px minmax(0,1fr);gap:25px;align-items:start;border-bottom:1px solid #cad7e3;padding:28px 0}
+#cta .next-step-number{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#315a8d;color:#fff;font-size:25px;font-weight:500;line-height:1}
+#cta .owner-next-steps h3{font-size:24px;line-height:1.5;margin:0 0 10px}
+#cta .owner-next-steps p{font-size:17px;line-height:1.9;margin:0;color:#52677d}
+#cta .owner-next-steps b{color:#315a8d;font-weight:600}
+#cta .owner-contact{display:grid;grid-template-columns:170px minmax(0,1fr);gap:34px;align-items:center;padding:32px;background:#eaf1f9;border-radius:12px}
+#cta .owner-contact-portrait{width:170px;height:212px;overflow:hidden;background:#e2eaf3}
+#cta .owner-contact-copy h3{font-size:26px;line-height:1.5;margin:0 0 13px}
+#cta .owner-contact-copy>p{font-size:17px;line-height:1.9;margin:0 0 16px;color:#52677d}
+#cta .owner-contact-name{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;color:#193656;margin-top:20px}
+#cta #aName2{font-size:24px;font-weight:600}
+#cta .owner-contact-name>span+span{font-size:16px}
+#cta .owner-contact-copy .owner-contact-region{font-size:14px;margin:6px 0 0}
+#cta #ownerContactPhone,#cta #ownerContactMail{font-size:16px;line-height:1.8;margin-top:10px}
+#cta [hidden]{display:none!important}
+#cta #ctaCall{display:inline-block;margin-top:18px}
+#cta .disc{font-size:12px;color:#6b7b8f;line-height:1.9}
+@media(max-width:640px){#cta .owner-next-steps{margin:18px 0 28px}#cta .owner-next-steps li{grid-template-columns:38px minmax(0,1fr);gap:15px;padding:24px 0}#cta .next-step-number{width:36px;height:36px;font-size:19px}#cta .owner-next-steps h3{font-size:19px}#cta .owner-next-steps p{font-size:15px}#cta .owner-contact{grid-template-columns:88px minmax(0,1fr);gap:16px;padding:20px;align-items:start}#cta .owner-contact-portrait{width:88px;height:114px}#cta .owner-contact-copy h3{font-size:19px;margin-bottom:10px}#cta .owner-contact-copy>p{font-size:14px;line-height:1.8}#cta .owner-contact-name{gap:5px;margin-top:14px}#cta #aName2{font-size:21px}#cta .owner-contact-name>span+span{font-size:13px}#cta .owner-contact-copy .owner-contact-region{font-size:12px}#cta #ctaCall{font-size:13px;padding:10px 12px}}
 @media(max-width:800px){#cmp .team-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}#cmp .team-roles{grid-template-columns:1fr;gap:0}}
 @media(max-width:640px){#cmp .team-metrics{margin:26px 0 28px;gap:24px 18px}#cmp .team-metrics h3{font-size:16px;margin-top:12px}#cmp .team-metrics p{font-size:12px}#cmp .team-roles h3{font-size:19px}#cmp .team-roles p,#cmp .team-support p{font-size:15px}#cmp .team-support{padding:20px}#meiz .meiz-section-header{gap:12px;margin-bottom:24px}#meiz .meiz-toggle{flex-basis:38px;height:38px;font-size:27px;margin-top:0}#meiz .meiz-compact-preview{gap:14px}#meiz .meiz-preview-image{aspect-ratio:1.1}#meiz .meiz-compact-preview figcaption{font-size:13px;margin-top:10px}}
 </style>
@@ -1833,25 +1854,38 @@ section#risk[data-moved-to="faq"]{display:none!important}
 <!-- 16 行动呼吁 -->
 <section id="cta">
 <div class="chapter-label">17 / 开始合作</div>
-  <h2 class="title">现在，<em>三步开始</em></h2>
-  <p class="sub" style="margin:0 auto 30px">预约免费实勘 → 确认托管方案 → 交房按月收租</p>
-  <div class="agent" style="margin-bottom:26px">
-    <div class="avatar" id="aAvatar2"></div>
-    <div style="flex:1;min-width:0;text-align:left">
-      <div class="n">您的专属资管经理：<span id="aName2">＿＿＿</span></div>
-      <div class="t" id="aMeta2" style="margin-top:4px">惠居上海 · ＿＿大区</div>
-      <div class="rows">
-        <div class="p">电话 / 微信：<span id="aPhone2">＿＿＿＿＿＿＿＿＿＿＿</span></div>
-        <div class="p">工作邮箱：<span id="aMail2">＿＿＿＿＿＿＿＿＿＿＿</span></div>
-      </div>
+  <h2 class="title">如果您愿意，<br><em>下一步可以这样开始</em></h2>
+  <ol class="owner-next-steps">
+    <li><span class="next-step-number" aria-hidden="true">1</span><div>
+      <h3>今天：把价格和方案聊清楚</h3>
+      <p>您告诉我期望租金，我们对照同小区真实成交，结合这套房的情况商量定价。<b>到手租金、管理费用、招租期限</b>，都先讲明白。</p>
+    </div></li>
+    <li><span class="next-step-number" aria-hidden="true">2</span><div>
+      <h3>确认后：我们开始找租客</h3>
+      <p>签署托管合同、完成房屋交接后，由团队安排整备、推广和带看，核查租客身份与租住需求。<b>招租进度和带看反馈，我来同步。</b></p>
+    </div></li>
+    <li><span class="next-step-number" aria-hidden="true">3</span><div>
+      <h3>租出后：交房、按约收租</h3>
+      <p>租客签约、物品盘点和交房，由团队跟进；后续租金按合同约定到账。<b>到账情况、房屋状况和需要您确认的事</b>，及时向您说明。</p>
+    </div></li>
+  </ol>
+  <div class="owner-contact">
+    <div id="aAvatar2" class="owner-contact-portrait"></div>
+    <div class="owner-contact-copy">
+      <h3>这套房的事，随时找我聊</h3>
+      <p>租金方案、管理费用、预计到手收入和服务范围，一起核对清楚，也方便您和家人商量。</p>
+      <div class="owner-contact-name"><span id="aName2"></span><span>您的专属资产管理经理</span></div>
+      <p id="aMeta2" class="owner-contact-region"></p>
+      <div id="ownerContactPhone" hidden>联系电话：<span id="aPhone2"></span></div>
+      <div id="ownerContactMail" hidden>工作邮箱：<span id="aMail2"></span></div>
+      <a class="btn" id="ctaCall" hidden>联系经理，沟通本房方案</a>
     </div>
   </div>
-  <div><a class="btn" id="ctaCall" href="tel:">立即预约免费实勘</a></div>
   <div class="disc">
     <b>免责声明：</b>本计划书为服务介绍材料，所载测算为示例口径，不构成任何收益承诺；全部产品特点（收房年限、招租期、管理费、招租定金、区间定价、解约规则等）以双方签署的托管合同及附件为准。赔付责任范围、限额与免责情形以合同及公司公示的服务保障规则为准。数据来源：贝壳集团公开披露口径、惠居上海课件口径（2026 年版）。
   </div>
+</section>
 
-  <p class="note" style="text-align:center;margin-top:18px">免责声明：本计划书用于房屋托管方案沟通，不构成合同承诺。具体服务内容、保障范围、补偿标准、付款安排及合作条件，以双方最终签署合同及贝壳省心租服务保障规则为准。</p></section>
 
 <footer>贝壳惠居上海 · 资产管理计划书</footer>
 
@@ -2806,6 +2840,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   window.addEventListener('hashchange', revealHash);
   revealHash();
+  // Contact details appear only when this plan's manager has verified values.
+  var agent = window.HJ_DATA && window.HJ_DATA.agent || {};
+  if (agent.phone) {
+    document.getElementById('ownerContactPhone').hidden = false;
+    document.getElementById('ctaCall').hidden = false;
+  }
+  if (agent.email) document.getElementById('ownerContactMail').hidden = false;
 })();
 
 </script>
