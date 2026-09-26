@@ -932,6 +932,12 @@ section#haggle{display:none!important}
 #calc .calc-estimate-note{font-size:13px;color:#52677d;line-height:1.8;margin:12px 0 0}
 #calc .calc-difference p span{color:inherit!important}
 @media(max-width:640px){#calc .calc-cycle-row input{width:58px;font-size:14px}#calc .calc-estimate-note{font-size:12px}}
+
+/* Owner benefits: one clear cost, three concrete outcomes. */
+#account .management-fee{flex-direction:column;text-align:center;gap:18px;padding:18px 0 40px;margin:36px 0 10px}
+#account .management-rate strong{font-size:94px}
+#account .management-outcome{font-weight:600;max-width:250px}
+@media(max-width:640px){#account .management-fee{align-items:center;padding:8px 0 26px;gap:15px}#account .management-rate strong{font-size:68px}#account .management-fee p{text-align:left}#account .management-outcome{max-width:none}}
 </style>
 </head>
 <body>
@@ -1165,7 +1171,7 @@ section#haggle{display:none!important}
 </tbody></table>
 <div class="calc-difference"><strong id="calcDifference">—</strong><div><b id="calcDifferenceLabel">三年到手差额</b><p><span id="calcDifferenceReason">同一参考月租，按成交周期与费用估算。</span></p></div></div>
 <p class="calc-estimate-note">按上述成交周期估算，不作为收益承诺；实际以实勘与合同为准。</p>
-<details class="calc-cost-details"><summary>查看扣费明细、逐年收益与其他支出</summary>
+<details class="calc-cost-details"><summary>查看扣费明细、逐年收益与自管事项</summary>
 <table class="cmp calc-deduction-table"><thead><tr><th>三年扣费明细</th><th>普租自己管</th><th>省心租托管</th></tr></thead><tbody>
 <tr><td>空置损失</td><td data-calc="vacancy">—</td><td data-calc="recruitment">—</td></tr>
 <tr><td>中介费</td><td data-calc="broker">—</td><td>0 元</td></tr>
@@ -1177,8 +1183,8 @@ section#haggle{display:none!important}
 <tr><td>第二年</td><td id="p2">—</td><td id="s2">—</td></tr>
 <tr><td>第三年</td><td id="p3">—</td><td id="s3">—</td></tr>
 </tbody></table>
-<div class="calc-extras"><div><b>智能门锁</b><span>799 元 / 次，按实际安装计</span></div><div><b>空置期物业费</b><span>约 150～400 元，按实际空置计</span></div><div><b>时间与风险</b><span>带看、催租、维修协调及纠纷处理</span></div></div>
-<p class="note">以上其他支出未计入上表；中介费、维修保洁已扣除，不重复计算。</p>
+<div class="calc-extras"><div><b>房子空一天，少收多少租金？</b><span>按当前月租，空一天少收约 <strong id="ownerDailyLoss">—</strong> 元；等租客的这段时间，同样影响全年到手。</span></div><div><b>每次换租，都要重新忙一遍</b><span>找中介、安排带看、交房检查，再做保洁和维修；花出去的钱、跑前跑后的时间，都得有人承担。</span></div><div><b>租出去之后，还有事要跟</b><span>催租、报修、续约和纠纷处理，往往不是接一次电话就能结束。</span></div></div>
+<p class="note">空置损失、中介费、维修保洁已计入上表，不重复扣除；个人时间与精力未折算为金额。</p>
 </details>
 <div hidden="hidden" aria-hidden="true" class="calc-compatibility"><span id="vacLoss"></span><span id="acRent"></span><span id="acL"></span><span id="acR"></span><span id="acNote"></span><span id="acSelfRent"></span><span id="acBrokerCost"></span><span id="acSelfTotal"></span><span id="acSelfAnswer"></span></div>
 </section>
@@ -1437,14 +1443,14 @@ section#haggle{display:none!important}
 <section id="account">
 <div class="chapter-label">06 / 管理费与价值</div>
   
-<h2 class="title">每月 3 天管理费，<em>为您省下哪些事？</em></h2>
-<div class="management-fee"><div class="management-rate"><strong>3</strong><span>天 / 月</span></div><div><b>按实际出租收入计费</b><p>按参考月租 <span id="managementRent">—</span> 元及当前成交周期估算，年管理费约 <b id="managementAnnualFee">—</b> 元。</p></div></div>
+<h2 class="title">每月 3 天管理费，<em>到底换来什么？</em></h2>
+<div class="management-fee"><div class="management-rate"><strong>3</strong><span>天 / 月</span></div><div><b>少空置、少支出，租后有人管</b><p>按参考月租 <span id="managementRent">—</span> 元及当前成交周期估算，年管理费约 <b id="managementAnnualFee">—</b> 元，按实际出租收入计费。</p></div></div>
 <div id="management-value-grid" class="management-services">
-<article><span class="management-index">01</span><div><h3>招租有人推进，您少跑带看</h3><p>房源展示、平台曝光、经纪人推荐与带看匹配，由团队持续推进。</p><p class="management-detail">平台流量推广 + 经纪人按 120% 计业绩，鼓励积极推荐您的房源。</p></div><b class="management-outcome">从挂牌到成交</b></article>
-<article><span class="management-index">02</span><div><h3>保洁维修有人安排，您少操心</h3><p>租前整备保洁、房屋检修，租中日常维修按服务标准衔接，由专人安排、跟进处理。</p></div><b class="management-outcome">专业团队衔接</b></article>
-<article><span class="management-index">03</span><div><h3>租后琐事有人跟，您少费时间</h3><p>收租催缴、续约换租、纠纷协调，有专属对接人跟进，处理进度及时向您反馈。</p></div><b class="management-outcome">租期内持续跟进</b></article>
+<article><span class="management-index">01</span><div><h3>房子早点租出去，少损失一段租金</h3><p>按上方测算：省心租 <span id="valueManagedDays">25</span> 天、普租 <span id="valueOrdinaryDays">60</span> 天；<span id="valueVacancyExplain">—</span></p><p class="management-detail">平台推广、经纪人推荐和带看由团队推进，您不用自己反复发房源、约时间。</p></div><b class="management-outcome" id="valueDaysOutcome">—</b></article>
+<article><span class="management-index">02</span><div><h3>中介费、维修保洁，少一笔笔往外掏</h3><p>按上方测算，每年中介费约 <span id="valueBroker">—</span> 元，维修保洁约 1,200 元；交给省心租，中介费无需另付，服务范围内的维修保洁由我们负责。</p></div><b class="management-outcome">少支出 <span id="valueSavings">—</span> 元 / 年</b></article>
+<article><span class="management-index">03</span><div><h3>租客报修、房租催缴，不用您追着处理</h3><p>报修安排、收租催缴、续约换租和纠纷协调，由专属管家跟进；您有一个对接人，也知道事情处理到哪一步。</p></div><b class="management-outcome">7×24 小时应答</b></article>
 </div>
-<div class="management-support"><div><b>遇到问题，有人对接、有章可循</b><p>招租保障、维修服务和赔付规则，在五大保障中逐项说明。</p></div><a href="#safe">查看保障详情 ↓</a></div>
+<div class="management-support"><div><b>还有一条保障：约定招租期没租出去，按约赔付</b><p>符合招租赔付条件，按半个月基准租金赔付；以当前参考月租估算约 <strong id="valueGuarantee">—</strong> 元，具体期限和条件见保障约定。</p></div><a href="#safe">查看保障详情 ↓</a></div>
 </section>
 
 
@@ -2232,6 +2238,14 @@ window.HJ_PLANBOOK = (function(){
     var cycleText=daysDifference>0?'按当前周期，省心租每年少空置约 '+fmt(daysDifference)+' 天':daysDifference<0?'按当前周期，省心租每年多空置约 '+fmt(-daysDifference)+' 天':'按当前周期，两种方式空置时间相同';
     set('calcDifferenceReason',cycleText+'；中介费、维修保洁与管理费一并计入比较。');
     set('managementRent',fmt(r));set('managementAnnualFee',fmt(Math.round(management)));
+    set('ownerDailyLoss',fmt(Math.round(r/30)));
+    set('valueManagedDays',fmt(managedDays));set('valueOrdinaryDays',fmt(ordinaryDays));
+    set('valueDaysOutcome',daysDifference>0?'少空置 '+fmt(daysDifference)+' 天':daysDifference<0?'多空置 '+fmt(-daysDifference)+' 天':'空置时间相同');
+    var vacancyBenefit=Math.round(Math.abs(ordinaryVacancy-managedVacancy));
+    set('valueVacancyExplain',daysDifference>0?'少空置的这段时间，对应约 '+fmt(vacancyBenefit)+' 元租金。':daysDifference<0?'按当前输入，省心租空置更久，对应多损失约 '+fmt(vacancyBenefit)+' 元租金。':'按当前输入，两种方式的空置损失相同。');
+    set('valueBroker',fmt(Math.round(broker)));set('valueSavings',fmt(Math.round(broker+maintenance)));
+    set('valueGuarantee',fmt(Math.round(r*.5)));
+
     s.dispatchEvent(new Event('rentchange'));
   }
   function updateRent(value){cur=Math.min(+s.max,Math.max(+s.min,value));s.value=cur;calc()}
