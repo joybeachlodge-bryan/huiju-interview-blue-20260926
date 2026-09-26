@@ -859,6 +859,25 @@ section#haggle{display:none!important}
 @media(max-width:900px){#managerIntro .manager-layout{grid-template-columns:1fr;gap:32px}#managerIntro .manager-profile{padding:28px}#managerIntro .manager-details{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}#managerIntro .manager-signoff{display:none}}
 @media(max-width:640px){#managerIntro .manager-layout{margin-top:28px}#managerIntro .manager-profile{padding:24px}#managerIntro .manager-person{gap:20px;margin-bottom:24px}#managerIntro .manager-details{display:block}#managerIntro .manager-details>div{font-size:16px;padding:10px 0}#managerIntro .manager-lead{font-size:17px}#managerIntro .manager-lead br{display:none}#managerIntro li{grid-template-columns:28px minmax(0,1fr);gap:14px;padding:22px 0}#managerIntro li h3{font-size:19px}#managerIntro li p{font-size:15px}#managerIntro .manager-index{font-size:21px}}
 @media print{#managerIntro{break-before:page}#managerIntro .manager-layout{grid-template-columns:30% 1fr;gap:30px}#managerIntro .manager-profile{padding:20px}#managerIntro .manager-person{display:block}#managerIntro .manager-portrait{margin-bottom:14px}#managerIntro li{break-inside:avoid}}
+
+/* Owner questions first; commercial terms follow after the concerns are answered. */
+#plan .plan-editorial{display:block!important}
+#plan .owner-control{margin:0 0 66px}
+#plan .owner-stage>span{display:block;font-size:13px;letter-spacing:.12em;color:#405b76;margin:0 0 12px}
+#plan .owner-stage h3{font-size:clamp(24px,2.2vw,34px);line-height:1.45;margin:0 0 30px!important;color:#193656}
+#plan .owner-control-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 42px}
+#plan .owner-control-grid article{padding:28px 30px;background:rgba(255,255,255,.72);border-top:2px solid #a6bdd8}
+#plan .owner-question{display:flex;align-items:baseline;gap:16px;margin-bottom:20px}
+#plan .owner-question>span{font:400 21px Arial,sans-serif;color:#466991;flex-shrink:0}
+#plan .owner-question h4{font-size:20px;line-height:1.5;margin:0;font-weight:500;color:#405b76}
+#plan .owner-control-grid .owner-answer{font-size:25px;font-weight:600;line-height:1.5;color:#244f82;margin:0 0 12px}
+#plan .owner-control-grid p:not(.owner-answer){font-size:17px;line-height:1.85;margin:0;color:#405b76}
+#plan .plan-terms>h3{font-size:clamp(24px,2.2vw,34px)!important;line-height:1.45;margin:0 0 30px!important;color:#193656}
+#plan .plan-terms .plan-term-label{font-size:20px;font-weight:500;line-height:1.5;margin:0 0 22px!important;color:#193656}
+#plan .plan-terms .card:nth-child(2) .num{font-size:clamp(25px,2.5vw,40px)!important}
+#plan .plan-terms .card:last-child .num{font-size:clamp(30px,3vw,46px)!important;white-space:normal}
+@media(max-width:640px){#plan .owner-control{margin-bottom:46px}#plan .owner-control-grid{grid-template-columns:1fr;gap:18px}#plan .owner-control-grid article{padding:23px 20px}#plan .owner-question{gap:12px;margin-bottom:14px}#plan .owner-question h4{font-size:17px}#plan .owner-question>span{font-size:18px}#plan .owner-control-grid .owner-answer{font-size:22px}#plan .owner-control-grid p:not(.owner-answer){font-size:15px}#plan .plan-terms .plan-term-label{font-size:18px;margin-bottom:16px!important}#plan .owner-stage h3,#plan .plan-terms>h3{font-size:24px!important;margin-bottom:24px!important}#plan .plan-terms .card:nth-child(2) .num{font-size:27px!important}}
+@media print{#plan .owner-control-grid article{break-inside:avoid}#plan .owner-control{break-after:page}}
 </style>
 </head>
 <body>
@@ -1039,15 +1058,22 @@ section#haggle{display:none!important}
   <h2 class="title">省心租 · <em>托管方案一览</em></h2>
   <figure class="plan-video"><video id="planIntroVideo" controls playsinline preload="metadata" poster="assets/7e1ff1db41a3e6b7b742f6da.jpg" aria-label="贝壳省心租产品介绍视频"><source src="assets/58d51d985d4367bc049e6a35.mp4" type="video/mp4">您的浏览器暂不支持内嵌视频播放。</source></video><figcaption>贝壳省心租 · 产品介绍</figcaption></figure><!-- 五条方案严格按 0729 物料「合作方式与五大保障」页（Bryan 2026-09-26：不只有 3 个，严格按图绘画） -->
   <!-- 4.2 省心租 vs 普租，差在哪（Bryan 2026-09-26 删除：94%/75%/25天/50% 与五大保障关键数据带重复） -->
-<div class="plan-editorial"><div class="plan-terms"><h3 style="margin:34px 0 14px;color:#0B2A5B">六项产品特点</h3>
+<div class="plan-editorial"><div class="owner-control" aria-labelledby="ownerControlTitle">
+<div class="owner-stage"><span>先把顾虑讲清</span><h3 id="ownerControlTitle">房子交给我们，这四件事先说明白</h3></div>
+<div class="owner-control-grid">
+<article><div class="owner-question"><span aria-hidden="true">01</span><h4>你们会赚中间差价吗？</h4></div><p class="owner-answer">不吃差价，费用单独列明</p><p>成交租金公开透明，服务费按约定收取；租金是多少、扣哪些费用，分别看得清。</p></article>
+<article><div class="owner-question"><span aria-hidden="true">02</span><h4>房子会被隔断、分租吗？</h4></div><p class="owner-answer">整套出租，不分租、不隔断</p><p>保持房屋结构，租客实名核查、租前报备，住进来的是谁，您事先知道。</p></article>
+<article><div class="owner-question"><span aria-hidden="true">03</span><h4>租给谁、租多久，我能决定吗？</h4></div><p class="owner-answer">租客与租期，先由您确认</p><p>租客人选、租期长短、是否续约，都需要您确认；我们负责筛选、建议和对接。</p></article>
+<article><div class="owner-question"><span aria-hidden="true">04</span><h4>以后想收回房子，怎么办？</h4></div><p class="owner-answer">退出条件，签约前说清</p><p>提前说清通知期限、办理方式和相关费用，届时按合同约定办理。</p></article>
+</div></div><div class="plan-terms"><h3>再看费用与期限，逐项讲清楚</h3>
   <div class="grid g3">
-    <div class="card"><div class="plan-term-label">合作年限</div><div class="num" style="font-size:22px">3 年起</div><p><b>3 年</b>收房年限，合同期内稳定收益</p></div>
-    <div class="card"><div class="plan-term-label">首次招租期</div><div class="num" style="font-size:22px">≥35 天</div><p>首次招租期（另有 4 天整备期）；二次出房按市场周期增减招租期与价格</p></div>
-    <div class="card"><div class="plan-term-label">管理费用</div><div class="num" style="font-size:22px">3 天/月</div><p>管理费（普通作业盘；楼霸盘 4 天/月），按月收取、按天计费</p></div>
-    <div class="card"><div class="plan-term-label">招租保障</div><div class="num" style="font-size:22px">50% 月租</div><p>招租定金：每次招租支付 <b>50% 基准月租金</b>，招租期内未出房则<b>定金赔付给业主</b></p></div>
-    <div class="card"><div class="plan-term-label">定价区间</div><div class="num" style="font-size:22px">0 ~ +5%</div><p>区间定价：基准价至<b>上浮 5%</b> 之间与您协商确定</p></div>
-    <div class="card"><div class="plan-term-label">透明成交</div><div class="num" style="font-size:22px">收房价＝出房价</div><p>实际出房价在<b>基准价至上浮定价之间</b>均可，透明不吃差价</p></div>
-  </div>
+    <div class="card"><h4 class="plan-term-label">我的房子，租金怎么定？</h4><div class="num" style="font-size:22px">0 ~ +5%</div><p>区间定价：基准价至<b>上浮 5%</b> 之间与您协商确定</p></div>
+    <div class="card"><h4 class="plan-term-label">收房价和出房价一样吗？</h4><div class="num" style="font-size:22px">收房价＝出房价</div><p>实际出房价在<b>基准价至上浮定价之间</b>均可，透明不吃差价</p></div>
+  <div class="card"><h4 class="plan-term-label">每个月，管理费怎么算？</h4><div class="num" style="font-size:22px">3 天/月</div><p>管理费（普通作业盘；楼霸盘 4 天/月），按月收取、按天计费</p></div>
+    <div class="card"><h4 class="plan-term-label">首次招租，需要预留多久？</h4><div class="num" style="font-size:22px">≥35 天</div><p>首次招租期（另有 4 天整备期）；二次出房按市场周期增减招租期与价格</p></div>
+    <div class="card"><h4 class="plan-term-label">招租期满还没租出，怎么办？</h4><div class="num" style="font-size:22px">50% 月租</div><p>招租定金：每次招租支付 <b>50% 基准月租金</b>，招租期内未出房则<b>定金赔付给业主</b></p></div>
+    <div class="card"><h4 class="plan-term-label">这次合作，要签多久？</h4><div class="num" style="font-size:22px">3 年起</div><p><b>3 年</b>收房年限，合同期内稳定收益</p></div>
+    </div>
   </div></div><div class="assurance-teaser"><b>五大保障</b><span>租金安全 · 费用透明 · 招租保底 · 租务无忧 · 财产保障</span><a href="#safe">查看保障详情 ↓</a></div></section>
 
 
