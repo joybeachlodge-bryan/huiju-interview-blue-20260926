@@ -778,6 +778,10 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 
 /* Temporarily hidden at Bryan request; retained for later revision, including print. */
 section#haggle{display:none!important}
+
+/* Inline introduction immediately above the management plan heading. */
+#plan .plan-video{width:100%;max-width:1120px;margin:0 auto 48px!important}#plan .plan-video video{display:block;width:100%;aspect-ratio:16/9;background:#142f50;object-fit:contain}#plan .plan-video figcaption{margin-top:12px;color:#52677d;font-size:13px;text-align:right}
+@media(max-width:640px){#plan .plan-video{margin-bottom:30px!important}}
 </style>
 </head>
 <body>
@@ -934,7 +938,7 @@ section#haggle{display:none!important}
 <!-- 4 托管方案 -->
 <section id="plan">
 <div class="chapter-label">03 / 省心租产品</div>
-  <h2 class="title">省心租 · <em>托管方案一览</em></h2>
+  <figure class="plan-video"><video id="planIntroVideo" controls playsinline preload="metadata" poster="assets/7e1ff1db41a3e6b7b742f6da.jpg" aria-label="贝壳省心租产品介绍视频"><source src="assets/58d51d985d4367bc049e6a35.mp4" type="video/mp4">您的浏览器暂不支持内嵌视频播放。</source></video><figcaption>贝壳省心租 · 产品介绍</figcaption></figure><h2 class="title">省心租 · <em>托管方案一览</em></h2>
   <p class="sub" style="max-width:none">一句话讲清模式：没有空置期差距、风险共担、利益共享的升级版租赁产品。您只管按月收租，剩下的事我们办。</p>
   <!-- 五条方案严格按 0729 物料「合作方式与五大保障」页（Bryan 2026-09-26：不只有 3 个，严格按图绘画） -->
   <!-- 4.2 省心租 vs 普租，差在哪（Bryan 2026-09-26 删除：94%/75%/25天/50% 与五大保障关键数据带重复） -->
@@ -981,7 +985,7 @@ section#haggle{display:none!important}
     <p class="note calc-note">
       <b>测算模型</b>（示例口径，非收益承诺）：<br>
       · <b>普租是怎么算的？</b>每年空置 30 天 + 中介费半月租金 + 年维修保洁 800 元；<br>
-      · <b>省心租是怎么算的？</b>按合同口径——管理费 3 天/月（年 36 天），首年另扣首次招租期 35 天（招租期内无租金，超期未出租按半月租金赔付定金），第 2、3 年按续约测算（若换租产生二次招租期则另扣），4 天整备期未计入；<br>
+      · <b>省心租是怎么算的？</b>按合同口径——管理费 3 天/月，首年另扣首次招租期 35 天，第 2、3 年按续约测算，4 天整备期未计入；<br>
       · 实际报价以实勘与合同为准。
     </p>
     <table class="cmp" style="margin-top:18px">
