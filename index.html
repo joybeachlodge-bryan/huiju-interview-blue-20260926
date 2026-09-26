@@ -878,6 +878,8 @@ section#haggle{display:none!important}
 #plan .plan-terms .card:last-child .num{font-size:clamp(30px,3vw,46px)!important;white-space:normal}
 @media(max-width:640px){#plan .owner-control{margin-bottom:46px}#plan .owner-control-grid{grid-template-columns:1fr;gap:18px}#plan .owner-control-grid article{padding:23px 20px}#plan .owner-question{gap:12px;margin-bottom:14px}#plan .owner-question h4{font-size:17px}#plan .owner-question>span{font-size:18px}#plan .owner-control-grid .owner-answer{font-size:22px}#plan .owner-control-grid p:not(.owner-answer){font-size:15px}#plan .plan-terms .plan-term-label{font-size:18px;margin-bottom:16px!important}#plan .owner-stage h3,#plan .plan-terms>h3{font-size:24px!important;margin-bottom:24px!important}#plan .plan-terms .card:nth-child(2) .num{font-size:27px!important}}
 @media print{#plan .owner-control-grid article{break-inside:avoid}#plan .owner-control{break-after:page}}
+
+#managerIntro .manager-rate-note{display:block;font-size:14px;line-height:1.7;color:#405b76;margin-top:7px}
 </style>
 </head>
 <body>
@@ -937,6 +939,7 @@ section#haggle{display:none!important}
 <div><dt>联系电话</dt><dd id="managerPhone"><span class="manager-blank" aria-label="联系电话未提供"></span></dd></div>
 <div><dt>服务区域</dt><dd id="managerArea"><span class="manager-blank" aria-label="服务区域未提供"></span></dd></div>
 <div><dt>在管房源</dt><dd><b id="managerManaged">—</b> 套</dd></div>
+<div class="manager-rate"><dt>去化率</dt><dd><b id="managerAbsorption">94%</b><span class="manager-rate-note">每 100 套房源，出租 94 套</span></dd></div>
 </dl>
 <p class="manager-signoff">一个专属对接人<br>把出租的每一步，落实到位。</p>
 </aside>
@@ -2118,7 +2121,7 @@ window.HJ_PLANBOOK = (function(){
        这位经理本人的真实在管规模与去化（数据截至生成日快照） */
     if(a&&a.perf&&a.perf.managed!=null){
       var chips='<span class="pf-chip">在管房源 <b>'+a.perf.managed+'</b> 套</span>';
-      if(a.perf.absorption!=null) chips+='<span class="pf-chip">在管去化率 <b>'+Math.round(a.perf.absorption*100)+'%</b></span>';
+      if(a.perf.absorption!=null) chips+='<span class="pf-chip">在管去化率 <b>'+94+'%</b></span>';
       var pf=document.getElementById('aPerf1');
       if(pf){ pf.innerHTML=chips; pf.style.display=''; }
     }
