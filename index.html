@@ -708,7 +708,7 @@ section figure{border:0!important;border-radius:0!important;background:transpare
 #cover{padding:26px 4.5vw 0!important;display:block!important;background:radial-gradient(ellipse at 96% 75%,#e0ecf9 0,transparent 52%),linear-gradient(115deg,#fff 30%,#f5f9fd)!important;overflow:hidden}
 #cover::before,#cover::after,#cover>.logo,#typer{display:none!important}
 #cover .hero-visual{margin:0;position:relative;height:clamp(320px,34vw,570px);width:100%;background:#ecf1f6;overflow:hidden}
-#cover .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:50% 52%;display:block}
+#cover .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
 #cover .hero-visual figcaption{position:absolute;right:0;bottom:0;background:#fff;color:#405b76;padding:7px 15px;font-size:12px;letter-spacing:.04em}
 #cover .cover-editorial{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;padding:34px 0 28px;align-items:start}
 .cover-brief .eyebrow{font-size:12px;color:#42658c;letter-spacing:.14em;margin-bottom:16px}
@@ -718,6 +718,8 @@ section figure{border:0!important;border-radius:0!important;background:transpare
 #cover .house-line{font-size:14px!important;font-weight:500!important;line-height:1.8;margin-top:18px!important;color:#52677d!important;letter-spacing:0}
 #cover .agent{max-width:none!important;margin:36px 0 0!important;padding:24px 0!important;gap:20px!important;background:transparent!important;border:0!important;border-top:1px solid #a8bfd5!important;border-radius:0!important;box-shadow:none!important;align-items:flex-start}
 .agent .avatar{width:78px;height:98px;border-radius:0!important;box-shadow:none!important}.agent .n{font-size:16px}.agent .t{font-size:12px;line-height:1.8}.agent .rows{flex-wrap:wrap;gap:6px;margin-top:10px}.agent .rows .p{flex:1 1 100%;font-size:12px;white-space:normal;overflow-wrap:anywhere}.agent .perf{gap:6px}.agent .pf-chip{font-size:12px;padding:2px 8px;border-radius:0;border:0;background:#e9f1fa;color:#405b76}
+#cover .agent .avatar{background:transparent!important;mix-blend-mode:multiply}
+@media(min-width:641px){#cover .agent .avatar{width:104px;height:130px}}
 #cover .cover-stats{max-width:none!important;border:0!important;border-top:1px solid #b8cbdd!important;background:transparent!important;border-radius:0!important;box-shadow:none!important;margin:0!important;gap:28px}
 #cover .cover-stats .cs{background:transparent;padding:23px 0 27px}.cover-stats .cs-v{font:400 clamp(27px,3.2vw,44px)/1.2 Georgia,"Songti SC",serif;color:var(--blue)}.cover-stats .cs-k{font-size:13px;color:#52677d;letter-spacing:0;margin-top:9px}
 /* 品牌与市场：素材铺开，图文分层，表述不塞进小方框。 */
@@ -1889,9 +1891,12 @@ window.HJ_PLANBOOK = (function(){
     for(i=0;i<n;i++){
       var ym2=t.months[i];
       var isCur=ym2===wNow, isPeakY=!isCur&&ym2.slice(0,4)===lastFY&&peakM.indexOf(+ym2.slice(5,7))>-1;
-      if(!(isCur||isPeakY)) continue;
-      vlab.push([PL+step*i+step/2, yv(vol[i]||0)-7]);
-      s+='<text x="'+(PL+step*i+step/2).toFixed(1)+'" y="'+(yv(vol[i]||0)-7).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="'+(isCur?'700':'400')+'" fill="'+(isCur?cHl:'#3D5878')+'">'+trendNum(vol[i]||0)+'</text>';
+      var isOrange=wMon.indexOf(+ym2.slice(5,7))>=0||(t.partialLast&&i===n-1);
+      if(!(isCur||isPeakY||isOrange)) continue;
+      if(vol[i]==null) continue;
+      var voff=isOrange?(wMon.indexOf(+ym2.slice(5,7))===1?42:10):7;
+      vlab.push([PL+step*i+step/2, yv(vol[i])-voff]);
+      s+='<text data-trend-value="volume" data-highlight="'+isOrange+'" data-month="'+ym2+'" x="'+(PL+step*i+step/2).toFixed(1)+'" y="'+(yv(vol[i])-voff).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="'+(isOrange?'700':'400')+'" fill="'+(isOrange?cHl:'#3D5878')+'" style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">'+trendNum(vol[i])+'</text>';
     }
     var hiI=-1, loI=-1;
     for(j=0;j<n;j++){ if(pr[j]==null||pr[j]===undefined) continue;
@@ -1918,6 +1923,14 @@ window.HJ_PLANBOOK = (function(){
       var idx=lab[i][0], mx=PL+step*idx+step/2, my=yp(pr[idx]);
       s+='<circle cx="'+mx.toFixed(1)+'" cy="'+my.toFixed(1)+'" r="3" fill="#fff" stroke="'+cLine+'" stroke-width="2"/>';
       s+='<text x="'+mx.toFixed(1)+'" y="'+(my+lab[i][1]).toFixed(1)+'" text-anchor="middle" font-size="10" fill="'+cMut+'">'+trendNum(pr[idx])+'</text>';
+    }
+    /* Highlighted historical price labels sit below the line, staggered for adjacent months. */
+    for(j=0;j<n-1;j++){
+      var wi=wMon.indexOf(+t.months[j].slice(5,7));
+      if(wi<0||pr[j]==null) continue;
+      var cx=PL+step*j+step/2, cy=yp(pr[j]), ly=cy+(wi===1?38:21);
+      s+='<line x1="'+cx.toFixed(1)+'" y1="'+(cy+5).toFixed(1)+'" x2="'+cx.toFixed(1)+'" y2="'+(ly-10).toFixed(1)+'" stroke="'+cHl+'" stroke-width="0.8"/>';
+      s+='<text data-trend-value="price" data-highlight="true" data-month="'+t.months[j]+'" x="'+cx.toFixed(1)+'" y="'+ly.toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="700" fill="'+cHl+'" style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">'+trendNum(pr[j])+'</text>';
     }
     /* 最新值做成深色药丸放在右轴刻度列：底色与刻度数字分开，一眼看到「现在多少」 */
     if(hasLast){
