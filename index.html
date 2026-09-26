@@ -968,13 +968,16 @@ section#risk[data-moved-to="faq"]{display:none!important}
 #meiz .compact-details>summary{font-size:16px}
 #meiz2>.compact-details{padding:23px 0!important}
 #meiz2>.compact-details .grid{margin-top:12px}
-#faq .faq-risk-group{margin-top:24px!important;background:#f4f8fc!important;padding:20px 24px!important;scroll-margin-top:110px}
+#faq .owner-faq{margin:0!important;background:transparent!important;padding:23px 0!important;border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;scroll-margin-top:110px}
+#faq .owner-faq>summary{font-size:17px;font-weight:600;line-height:1.7;color:#193656;cursor:pointer;margin:0}
+#faq .owner-faq[open]>summary{margin-bottom:16px}
+#faq .owner-faq>.faq-risk-list{padding-left:20px}
 #faq .faq-risk-question{padding:17px 0;border:0;border-top:1px solid #d8e2ee;background:transparent;border-radius:0;margin:0}
 #faq .faq-risk-question>summary{font-size:17px;line-height:1.7;font-weight:500;color:#193656;cursor:pointer}
 #faq .faq-risk-question>summary::before{content:"+ "}
 #faq .faq-risk-question[open]>summary::before{content:"− "}
 #faq .faq-risk-question p{font-size:16px;line-height:1.85;margin:12px 0 0}
-@media(max-width:640px){.risk-detail-links{display:grid;gap:12px}.risk-detail-links a{padding:15px 17px;font-size:15px}.compact-details>summary{font-size:17px}#faq .faq-risk-group{padding:18px 16px!important;scroll-margin-top:135px}#faq .faq-risk-question>summary{font-size:16px}#faq .faq-risk-question p{font-size:15px}}
+@media(max-width:640px){.risk-detail-links{display:grid;gap:12px}.risk-detail-links a{padding:15px 17px;font-size:15px}.compact-details>summary{font-size:17px}#faq .owner-faq{scroll-margin-top:135px}#faq .owner-faq>summary,#faq .faq-risk-question>summary{font-size:16px}#faq .owner-faq>.faq-risk-list{padding-left:12px}#faq .faq-risk-question p{font-size:15px}}
 
 /* Real service photographs: eight compact covers, one expanded album at a time. */
 #serviceGallery{margin:20px 0 28px}
@@ -1096,6 +1099,40 @@ section#risk[data-moved-to="faq"]{display:none!important}
 #pay .safe-item .case-key-result{color:#315a8d!important;font-weight:700;background:none}
 #pay .safe-item .case-owner-relief{color:inherit!important;font-weight:700;background:none}
 #meiz2 .service-materials-title{font-size:20px;font-weight:600;color:#315a8d;margin:28px 0 12px}
+
+/* Regional team: clear roles and sourced scale, without another comparison table. */
+#cmp .team-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin:36px 0 42px}
+#cmp .team-metrics>div{border-top:1px solid #bccddd;padding-top:22px}
+#cmp .team-metrics strong{display:block;font-size:clamp(36px,3.5vw,54px);font-weight:500;line-height:1.15;color:#315a8d;font-variant-numeric:tabular-nums}
+#cmp .team-metrics h3{font-size:18px;margin:16px 0 8px}
+#cmp .team-metrics p{font-size:14px;line-height:1.7;margin:0;color:#63768a}
+#cmp .team-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
+#cmp .team-roles>div{padding:24px 0;border-top:1px solid #bccddd}
+#cmp .team-roles span{font-size:15px;color:#315a8d}
+#cmp .team-roles h3{font-size:21px;line-height:1.6;margin:12px 0}
+#cmp .team-roles p{font-size:16px;line-height:1.9;margin:0}
+#cmp .team-support{background:#edf3fa;padding:22px 26px;margin-top:20px}
+#cmp .team-support b{color:#315a8d;font-size:18px}
+#cmp .team-support p{font-size:16px;line-height:1.9;margin:8px 0 0}
+#cmp .team-source{font-size:12px;line-height:1.9;margin:20px 0 0;color:#6b7b8f}
+
+/* A compact two-image introduction; all related Meizu sections open together. */
+[data-meiz-part][hidden],#meizCompactPreview[hidden]{display:none!important}
+#meiz .meiz-section-header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:32px}
+#meiz .meiz-section-header h2{margin:0;flex:1;min-width:0}
+#meiz .meiz-toggle{flex:0 0 48px;height:48px;display:grid;place-items:center;padding:0;margin-top:7px;border:1px solid #bccddd;background:transparent;color:#52677d;font:300 32px/1 Arial,sans-serif;cursor:pointer;border-radius:50%}
+#meiz .meiz-toggle:hover{background:#eaf1f8;color:#315a8d}
+#meiz .meiz-toggle:focus-visible{outline:2px solid #315a8d;outline-offset:4px}
+#meiz .meiz-compact-preview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+#meiz .meiz-compact-preview figure{margin:0;min-width:0}
+#meiz .meiz-preview-image{position:relative;overflow:hidden;aspect-ratio:1.65;background:#edf2f6}
+#meiz .meiz-preview-image img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#meiz .meiz-preview-image img.trim-shannian-edge{top:calc(-100% * 11 / 727);height:calc(100% * 764 / 727)}
+#meiz .meiz-compact-preview figcaption{font-size:17px;line-height:1.6;color:#52677d;margin-top:14px}
+#meiz .meiz-compact-preview figcaption strong{font-weight:500;color:inherit;display:inline-block;margin-right:14px}
+#meiz .meiz-compact-preview figcaption span{display:inline-block;white-space:nowrap}
+@media(max-width:800px){#cmp .team-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}#cmp .team-roles{grid-template-columns:1fr;gap:0}}
+@media(max-width:640px){#cmp .team-metrics{margin:26px 0 28px;gap:24px 18px}#cmp .team-metrics h3{font-size:16px;margin-top:12px}#cmp .team-metrics p{font-size:12px}#cmp .team-roles h3{font-size:19px}#cmp .team-roles p,#cmp .team-support p{font-size:15px}#cmp .team-support{padding:20px}#meiz .meiz-section-header{gap:12px;margin-bottom:24px}#meiz .meiz-toggle{flex-basis:38px;height:38px;font-size:27px;margin-top:0}#meiz .meiz-compact-preview{gap:14px}#meiz .meiz-preview-image{aspect-ratio:1.1}#meiz .meiz-compact-preview figcaption{font-size:13px;margin-top:10px}}
 </style>
 </head>
 <body>
@@ -1395,50 +1432,8 @@ section#risk[data-moved-to="faq"]{display:none!important}
 
 <!-- 7 权益对比 -->
 <section id="cmp">
-<div class="chapter-label">10 / 两种出租方式</div>
-  <h2 class="title">省心租 <em>VS 普通出租</em></h2>
-  <p class="sub">一张表看明白差在哪——按入住时间线：租前 → 租中 → 租后。</p>
-
-  <div class="vs-wrap">
-    <div class="vs-head">
-      <div class="vs-head-zx">贝壳省心租<i>租前 · 租中 · 租后 全包</i></div>
-      <div class="vs-head-pt">普通出租</div>
-    </div>
-
-    <div class="vs-band">
-      <div class="vs-stage"><span>租前</span><i>6 项全包</i></div>
-      <div class="vs-rows">
-        <div class="vs-row"><div class="vs-zx"><b>合理定价</b><em><span class="vs-provider">省心租</span><span class="vs-description">依托贝壳平台大数据，多维度分析市场行情</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">凭经验 + 业主意愿</span></div></div>
-        <!-- 房源展示行（Bryan 2026-09-26 删除：两列文案串行，整行移除） -->
-        <div class="vs-row"><div class="vs-zx"><b>检修服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">房屋检修：保障租客入住后房屋安全、物品家电可正常使用；检修标准：涵盖马桶、洗衣机、空调等数十种物品家电的数百项故障类型的查验与维修</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>安全管理</b><em><span class="vs-provider">省心租</span><span class="vs-description">入住前租务管家对房屋进行安排排查，每年 1–2 次安全巡检</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>招租承诺</b><em><span class="vs-provider">省心租</span><span class="vs-description">承诺在约定期限内成功出租；若未达成，则赔付招租定金，并将已提供的服务免费赠送</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>保洁服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">租前专业保洁服务；24 小时不满意重新做</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>带看服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">专业客户经理 + 经纪人</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">经纪人</span></div></div>
-      </div>
-    </div>
-
-    <div class="vs-band">
-      <div class="vs-stage"><span>租中</span><i>6 项全包</i></div>
-      <div class="vs-rows">
-        <div class="vs-row"><div class="vs-zx"><b>交房服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">面对面的交房服务，为租客当面交付门禁、钥匙、水电燃气卡，并讲解物品使用、入住权益和安全须知等，有问题当面解决</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>租务对接</b><em><span class="vs-provider">省心租</span><span class="vs-description">专属管家 7×24 小时在线服务，随时响应租务和咨询需求</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">业主</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>灵活支付</b><em><span class="vs-provider">省心租</span><span class="vs-description">支持 0 押、月付等灵活支付方案，可使用公积金直付租金</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">方式单一</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>维修服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">近千项免费维修，不限次数</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">自费</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>智能门锁</b><em><span class="vs-provider">省心租</span><span class="vs-description">开门锁门更便捷，独享密码更安全</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>专属保障</b><em><span class="vs-provider">省心租</span><span class="vs-description">提供房屋财产安全保障和租客人身安全保障</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
-      </div>
-    </div>
-
-    <div class="vs-band">
-      <div class="vs-stage"><span>租后</span><i>2 项全包</i></div>
-      <div class="vs-rows">
-        <div class="vs-row"><div class="vs-zx"><b>租后维修</b><em><span class="vs-provider">省心租</span><span class="vs-description">八大类维修服务，涵盖厨卫、水电、家具、管道等</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
-        <div class="vs-row"><div class="vs-zx"><b>物业交割</b><em><span class="vs-provider">省心租</span><span class="vs-description">为租客及时记录结算水电燃等生活费用，记录物品家电数量状态等信息</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="chapter-label">10 / 服务团队</div>
+  <h2 class="title">您的房子，<em>交给谁在管？</em></h2><p class="sub">薛汉青是您的专属对接人，背后还有招租、交房和租后服务团队，各自负责、共同跟进。</p><div class="team-metrics"><div><strong>11,517</strong><h3>沪中大部在管房源</h3><p>套</p></div><div><strong>93</strong><h3>资产管理团队</h3><p>人 · 沪中大部</p></div><div><strong>27</strong><h3>客户经理</h3><p>人 · 沪中客户一、二、三区</p></div><div><strong>24</strong><h3>租务管家</h3><p>人 · 租务中一区、二区</p></div></div><div class="team-roles"><div><span>资产管理经理</span><h3>房子怎么租、账怎么算，找我</h3><p>评估房源、沟通定价、办理签约，跟进出租进度与租金收益。您有问题，由我协调相关人员。</p></div><div><span>客户经理</span><h3>替您找租客，安排带看</h3><p>联系有租房需求的客户，介绍房屋情况、安排看房，跟进租客意向和成交。</p></div><div><span>租务管家</span><h3>交房有人验，房子有人查</h3><p>盘点物品、面对面交房，落实房屋巡检和安全管理，跟进租住期间的问题。</p></div></div><div class="team-support"><b>租后服务也有人接手</b><p>服务管家与云管家提供 7×24 小时线上响应；保洁、维修、甲醛治理等，由对应服务人员上门处理。</p></div><p class="team-source note">统计查询日期：2026-09-26。在管房源按沪中大部资管日报汇总；资产管理团队含 7 位资管总监、8 位资管战队长、78 位资管经理。客户经理与租务管家按上方所列区域统计，为区域团队规模。</p></section>
 
 
 
@@ -1600,12 +1595,12 @@ section#risk[data-moved-to="faq"]{display:none!important}
 <!-- 12 美租 · 收益版（2026-09-26 重构：产品 → 实拍对比 → 权益承诺安全 → 选择与付款） -->
 <section id="meiz">
 <div class="chapter-label">11 / 美租焕新产品</div>
-  <h2 class="title">房子太旧租不上价？<em>美租升级方案</em></h2>
-  <p class="sub">美租是惠居面向老房、旧房、品质差房源的一站式可出租解决方案：做一次小额改造投资，靠专业运营把租金赚回来。上海房龄 15 年以上房源占 68%，这是老房子最现实的增值路径。</p>
+  <div class="meiz-section-header"><h2 class="title">房子太旧租不上价？<em>美租升级方案</em></h2>
+  <button id="meizToggle" class="meiz-toggle" type="button" aria-expanded="false" aria-label="展开全部美租方案" aria-controls="meizFullContent meizFullPart1 meizFullPart2 meizFullPart3 meizFullPart4 meizFullPart5 meizFullPart6 meizFullPart7 meizFullPart8 meiz2 meiz3"><span aria-hidden="true">+</span></button></div><div id="meizCompactPreview" class="meiz-compact-preview"><figure><div class="meiz-preview-image"><img src="assets/28c69ae70b193db8af44bef8.jpg" alt="拾光客厅"></div><figcaption><strong>拾光 1.0</strong><span>复古奶油风</span></figcaption></figure><figure><div class="meiz-preview-image"><img src="assets/8cde7518e6519ff927da6a63.jpg" alt="山念客厅" class="trim-shannian-edge"></div><figcaption><strong>山念 2.0</strong><span>自然原木风</span></figcaption></figure></div><p class="sub" data-meiz-part="" hidden="hidden" id="meizFullContent">美租是惠居面向老房、旧房、品质差房源的一站式可出租解决方案：做一次小额改造投资，靠专业运营把租金赚回来。上海房龄 15 年以上房源占 68%，这是老房子最现实的增值路径。</p>
 
-  <h3>先看产品 · <em>整装、局改，按房况二选一</em></h3>
-  <div class="zone zone-zz"><span class="zi">整</span><b>整装 · 全屋焕新拎包住</b><small>拾光 1.0 / 山念 2.0 —— 想大幅提升租金与卖相的房子</small></div>
-  <div class="grid g2 product-editorial">
+  <h3 data-meiz-part="" hidden="hidden" id="meizFullPart1">先看产品 · <em>整装、局改，按房况二选一</em></h3>
+  <div class="zone zone-zz" data-meiz-part="" hidden="hidden" id="meizFullPart2"><span class="zi">整</span><b>整装 · 全屋焕新拎包住</b><small>拾光 1.0 / 山念 2.0 —— 想大幅提升租金与卖相的房子</small></div>
+  <div class="grid g2 product-editorial" data-meiz-part="" hidden="hidden" id="meizFullPart3">
     <div class="card prod-card">
       <div class="gal card-gal" data-gal>
         <figure><img src="assets/28c69ae70b193db8af44bef8.jpg" alt="拾光客厅"><figcaption>客厅 · 复古奶油风</figcaption></figure>
@@ -1626,15 +1621,15 @@ section#risk[data-moved-to="faq"]{display:none!important}
       <div class="bd"><h3>山念 2.0 <span class="tag">整装 · 自然原木风</span></h3><p>自然原木风整装，适合希望整体提升房屋品质的业主。</p><details class="compact-details"><summary>查看改造范围、工期与付款方式</summary><p>整屋焕新（墙顶面/地板/厨卫/门/灯/柜），约 35 个工作日，平台监理验收、甲醛合格交付；租金溢价 10–20%，可租金代扣。</p></details></div>
     </div>
   </div>
-  <div class="zone zone-jg"><span class="zi">局</span><b>局改 · 按需翻新，不动大格局</b><small>舒里 2.0 —— 基础尚可、只解决最影响出租部位的老房</small></div>
-  <div class="card">
+  <div class="zone zone-jg" data-meiz-part="" hidden="hidden" id="meizFullPart4"><span class="zi">局</span><b>局改 · 按需翻新，不动大格局</b><small>舒里 2.0 —— 基础尚可、只解决最影响出租部位的老房</small></div>
+  <div class="card" data-meiz-part="" hidden="hidden" id="meizFullPart5">
     <h3>舒里 2.0 <span class="tag">局改 · 三层套餐</span></h3>
     <p>哪里影响出租就改哪里，按房况选择整屋、空间或单项翻新。</p><details class="compact-details"><summary>查看套餐、价格与交付标准</summary><p><span class="tag">整屋一口价 18,880 元/套（≤40㎡）</span></p><p>一套闭口报价，整屋六大模块焕新：免量房、免设计、无增项，甲醛检测合格交付，整体质保 1 年、延期赔付。不想动整屋，也有按空间组合的空间包（刷墙 31–95 元/㎡ · 厨卫焕新 4,800–5,200 元/间 · 地板 120 元/㎡ 起）和水电门窗橱柜单点的加载包。超 40㎡ 部分 +199 元/㎡，每加一个卫生间 +4,800 元。</p>
     <p class="note">＊价格依据美租官方《局改产品手册》2026 年 9 月版；完整报价细则可面访时提供，本房适用套餐以实勘为准。</p>
   </details></div>
 
-  <h3>改造实拍 · <em>真南路 183 弄 18 号 501，装前装后</em></h3>
-  <div class="cmp-wrap">
+  <h3 data-meiz-part="" hidden="hidden" id="meizFullPart6">改造实拍 · <em>真南路 183 弄 18 号 501，装前装后</em></h3>
+  <div class="cmp-wrap" data-meiz-part="" hidden="hidden" id="meizFullPart7">
   <div class="gal cmp-gal" data-gal>
     <figure class="cmp-slide">
       <div class="cmp-grid">
@@ -1667,7 +1662,7 @@ section#risk[data-moved-to="faq"]{display:none!important}
   </div>
   <div class="gal-nav"><button class="gbtn" data-dir="-1" aria-label="上一组">‹</button><div class="gal-dots"></div><button class="gbtn" data-dir="1" aria-label="下一组">›</button></div>
   </div>
-  <p class="note">＊图为真南路样板间实勘实景（改造前照片含实勘水印），非本房照片；本房改造前后对比以实勘方案为准。</p>
+  <p class="note" data-meiz-part="" hidden="hidden" id="meizFullPart8">＊图为真南路样板间实勘实景（改造前照片含实勘水印），非本房照片；本房改造前后对比以实勘方案为准。</p>
 </section>
 
 
@@ -1675,7 +1670,7 @@ section#risk[data-moved-to="faq"]{display:none!important}
 <hr class="divider">
 
 <!-- 12b 美租 · 六大权益 + 六大承诺 + 安全环保 -->
-<section id="meiz2">
+<section id="meiz2" data-meiz-part="" hidden="hidden">
 <div class="chapter-label">12 / 美租权益与标准</div>
   <h2 class="title">美租服务细则，<em>想了解再展开</em></h2><details class="compact-details rights-overview"><summary><span class="rights-overview-title">美租六大权益</span><span class="rights-overview-items"><span>免费量房</span><span>免费设计方案</span><span>空气检测</span><span>专业工程验收</span><span>水电安全检测</span><span>加速出租</span></span></summary><div class="grid g3">
     <div class="card"><h3>免费量房</h3><p>美租提供免费上门量房</p></div>
@@ -1715,7 +1710,7 @@ section#risk[data-moved-to="faq"]{display:none!important}
 <hr class="divider">
 
 <!-- 12c 美租 · 两种选择 + 付款方式 -->
-<section id="meiz3">
+<section id="meiz3" data-meiz-part="" hidden="hidden">
 <div class="chapter-label">13 / 方案与付款</div>
   <h2 class="title">您的两种选择，<em>账算给您看</em></h2>
   <div class="grid g2 duo">
@@ -1824,22 +1819,16 @@ section#risk[data-moved-to="faq"]{display:none!important}
 <!-- 15 签约流程+FAQ -->
 <section id="faq">
 <div class="chapter-label">16 / 常见问题</div>
-  <h2 class="title">三步签约，<em>常见问题</em></h2>
-  <div class="grid g3" style="margin-bottom:30px">
-    <div class="card"><h3>STEP 1 · 免费实勘</h3><p>资管经理上门实勘，出具报价与方案，不收费、不勉强。</p></div>
-    <div class="card"><h3>STEP 2 · 确认方案</h3><p>把租金区间、招租期、管理费等六条逐条跟您说清楚，再签托管合同。</p></div>
-    <div class="card"><h3>STEP 3 · 交房起租</h3><p>物品盘点、物业交割、整备上架，之后您只管按月收租。</p></div>
-  </div>
-  <details><summary>签约时长是多久？</summary><p><b>三年起签</b>，合同期内收益稳定。</p></details>
-  <details><summary>管理费标准是多少？</summary><p>普通作业盘<b>每月 3 天租金</b>，楼霸盘 4 天，按月收取、按天计费。</p></details>
-  <details><summary>租金定价区间是多少？</summary><p>基准价 <b>0% 到 +5%</b>，与您协商确定；收房价＝实际出房价，透明不吃差价。</p></details>
-  <details><summary>招租天数是怎么规定的？</summary><p>首次招租期 <b>≥35 天</b>起（另有 4 天整备期）；二次出房按市场周期增减招租期与价格，租客到期前 35 天进入议价窗口期。</p></details>
-  <details><summary>租不出去怎么办？</summary><p>每次招租我们支付 <b>50% 基准月租金</b>作为招租定金，招租期内未出房，<b>定金赔付给您</b>；同时以智能门锁、0 押月付、专属出房团队加速成交。</p></details>
-  <details><summary>为什么月付？催缴有风险吗？</summary><p>月付去化更快（95 后租客一次性支付压力大）；无论租客是否按时支付，公司系统都会自动提前支付租金给您，您不承担催缴风险。</p></details>
-  <details><summary>解约怎么算？</summary><p>招租失败解约：招租定金自动转化为违约金；出租期间违约解约：违约方支付 1 个月租金违约金，另支付租客 1 个月租金赔偿金；议价窗口期内未达成一致，托管招租期开始 7 天内双方可无责解约。</p></details>
-  <details><summary>为什么不收取租客押金？</summary><p>押金无法完全兜底欠费与损坏风险。托管给我们，租金由系统自动提前支付；我们筛选租客并安排专人维护来降低风险。</p></details>
-  <details><summary>房子是整租还是分租？</summary><p>整房出租，不隔断、不分租，维持房屋原样，单单备案。</p></details>
-<details class="compact-details faq-risk-group" id="faqRiskTop10"><summary>TOP 10 · 典型风险与保障细则</summary><div class="faq-risk-list"><details class="faq-risk-question"><summary>1 租客意外事故</summary><p>人身安全保障，<b>最高 10 万</b></p></details><details class="faq-risk-question"><summary>2 意外损失无赔付（火灾、燃气爆炸）</summary><p>房屋财产安全保障，<b>最高 10 万</b></p></details><details class="faq-risk-question"><summary>3 漏水损失难赔付</summary><p>房屋财产安全保障，<b>单次不超 1 万</b></p></details><details class="faq-risk-question"><summary>4 任意改造加隔断</summary><p><b>整收整出</b>，合同禁止违规改造、分租、隔断</p></details><details class="faq-risk-question"><summary>5 租金拖欠难追回</summary><p><b>按合同周期付款</b>，租客催缴由省心租跟进</p></details><details class="faq-risk-question"><summary>6 房屋空置损失大（租客无故解约）</summary><p>招租期未出租<b>赔半个月</b>；提前招租减少空置</p></details><details class="faq-risk-question"><summary>7 物品丢损难索赔</summary><p>租前租后物业交割，<b>留存房屋及物品清单</b></p></details><details class="faq-risk-question"><summary>8 房屋维护问题多</summary><p><b>数百至上千项免费维修</b></p></details><details class="faq-risk-question"><summary>9 违规转租藏隐患（整租变群租）</summary><p>合同约束<b>禁止二房东</b> + <b>租中巡检</b></p></details><details class="faq-risk-question"><summary>10 租客行为难预料</summary><p><b>身份筛查</b>、合同约束、<b>租中跟进与风险处理机制</b></p></details></div></details><details class="compact-details faq-risk-group" id="faqOwnerRisks"><summary>业主最担心的十件事，怎么兜底？</summary><div class="faq-risk-list"><details class="faq-risk-question"><summary>1. 房子租不出去</summary><p><b>招租定金兜底</b>，<b>5000 名经纪人 + 300 名专属出房团队</b>定向加速出房</p></details><details class="faq-risk-question"><summary>2. 租客拖欠房租</summary><p><b>公司系统自动提前支付租金</b>，与租客缴费解耦</p></details><details class="faq-risk-question"><summary>3. 房屋被破坏</summary><p>租客统一筛选 + 重要物品盘点单留证 + <b>家财险保障</b></p></details><details class="faq-risk-question"><summary>4. 隔断分租毁房</summary><p>合同约定<b>整租</b>，不隔断不分租，<b>单单备案</b></p></details><details class="faq-risk-question"><summary>5. 出事故赔不起</summary><p>19 项安全排查前置；意外损失<b>最高 12 万元保障兜底</b></p></details><details class="faq-risk-question"><summary>6. 维修没人管</summary><p><b>1000+ 维修项目免费</b>出工出力，大维修我们跑腿</p></details><details class="faq-risk-question"><summary>7. 纠纷扯皮</summary><p><b>双管家 7×24 应答</b>，分级处理机制，<b>业主不出面</b></p></details><details class="faq-risk-question"><summary>8. 突然空置断收</summary><p>租客到期前 <b>35 天启动议价窗口</b>，二招前置管理</p></details><details class="faq-risk-question"><summary>9. 租客质量差</summary><p><b>实名备案 + 统一筛选</b> + 专人租中维护</p></details><details class="faq-risk-question"><summary>10. 人不在上海管不了</summary><p><b>全流程代办</b>，线上同步进展，钥匙托管有交接记录</p></details></div></details></section>
+  <h2 class="title">常见问题</h2><details class="owner-faq"><summary>签约时长是多久？</summary><p><b>三年起签</b>，合同期内收益稳定。</p></details>
+  <details class="owner-faq"><summary>管理费标准是多少？</summary><p>普通作业盘<b>每月 3 天租金</b>，楼霸盘 4 天，按月收取、按天计费。</p></details>
+  <details class="owner-faq"><summary>租金定价区间是多少？</summary><p>基准价 <b>0% 到 +5%</b>，与您协商确定；收房价＝实际出房价，透明不吃差价。</p></details>
+  <details class="owner-faq"><summary>招租天数是怎么规定的？</summary><p>首次招租期 <b>≥35 天</b>起（另有 4 天整备期）；二次出房按市场周期增减招租期与价格，租客到期前 35 天进入议价窗口期。</p></details>
+  <details class="owner-faq"><summary>租不出去怎么办？</summary><p>每次招租我们支付 <b>50% 基准月租金</b>作为招租定金，招租期内未出房，<b>定金赔付给您</b>；同时以智能门锁、0 押月付、专属出房团队加速成交。</p></details>
+  <details class="owner-faq"><summary>为什么月付？催缴有风险吗？</summary><p>月付去化更快（95 后租客一次性支付压力大）；无论租客是否按时支付，公司系统都会自动提前支付租金给您，您不承担催缴风险。</p></details>
+  <details class="owner-faq"><summary>解约怎么算？</summary><p>招租失败解约：招租定金自动转化为违约金；出租期间违约解约：违约方支付 1 个月租金违约金，另支付租客 1 个月租金赔偿金；议价窗口期内未达成一致，托管招租期开始 7 天内双方可无责解约。</p></details>
+  <details class="owner-faq"><summary>为什么不收取租客押金？</summary><p>押金无法完全兜底欠费与损坏风险。托管给我们，租金由系统自动提前支付；我们筛选租客并安排专人维护来降低风险。</p></details>
+  <details class="owner-faq"><summary>房子是整租还是分租？</summary><p>整房出租，不隔断、不分租，维持房屋原样，单单备案。</p></details>
+<details class="owner-faq" id="faqRiskTop10"><summary>TOP 10 · 典型风险与保障细则</summary><div class="faq-risk-list"><details class="faq-risk-question"><summary>1 租客意外事故</summary><p>人身安全保障，<b>最高 10 万</b></p></details><details class="faq-risk-question"><summary>2 意外损失无赔付（火灾、燃气爆炸）</summary><p>房屋财产安全保障，<b>最高 10 万</b></p></details><details class="faq-risk-question"><summary>3 漏水损失难赔付</summary><p>房屋财产安全保障，<b>单次不超 1 万</b></p></details><details class="faq-risk-question"><summary>4 任意改造加隔断</summary><p><b>整收整出</b>，合同禁止违规改造、分租、隔断</p></details><details class="faq-risk-question"><summary>5 租金拖欠难追回</summary><p><b>按合同周期付款</b>，租客催缴由省心租跟进</p></details><details class="faq-risk-question"><summary>6 房屋空置损失大（租客无故解约）</summary><p>招租期未出租<b>赔半个月</b>；提前招租减少空置</p></details><details class="faq-risk-question"><summary>7 物品丢损难索赔</summary><p>租前租后物业交割，<b>留存房屋及物品清单</b></p></details><details class="faq-risk-question"><summary>8 房屋维护问题多</summary><p><b>数百至上千项免费维修</b></p></details><details class="faq-risk-question"><summary>9 违规转租藏隐患（整租变群租）</summary><p>合同约束<b>禁止二房东</b> + <b>租中巡检</b></p></details><details class="faq-risk-question"><summary>10 租客行为难预料</summary><p><b>身份筛查</b>、合同约束、<b>租中跟进与风险处理机制</b></p></details></div></details><details class="owner-faq" id="faqOwnerRisks"><summary>业主最担心的十件事，怎么兜底？</summary><div class="faq-risk-list"><details class="faq-risk-question"><summary>1. 房子租不出去</summary><p><b>招租定金兜底</b>，<b>5000 名经纪人 + 300 名专属出房团队</b>定向加速出房</p></details><details class="faq-risk-question"><summary>2. 租客拖欠房租</summary><p><b>公司系统自动提前支付租金</b>，与租客缴费解耦</p></details><details class="faq-risk-question"><summary>3. 房屋被破坏</summary><p>租客统一筛选 + 重要物品盘点单留证 + <b>家财险保障</b></p></details><details class="faq-risk-question"><summary>4. 隔断分租毁房</summary><p>合同约定<b>整租</b>，不隔断不分租，<b>单单备案</b></p></details><details class="faq-risk-question"><summary>5. 出事故赔不起</summary><p>19 项安全排查前置；意外损失<b>最高 12 万元保障兜底</b></p></details><details class="faq-risk-question"><summary>6. 维修没人管</summary><p><b>1000+ 维修项目免费</b>出工出力，大维修我们跑腿</p></details><details class="faq-risk-question"><summary>7. 纠纷扯皮</summary><p><b>双管家 7×24 应答</b>，分级处理机制，<b>业主不出面</b></p></details><details class="faq-risk-question"><summary>8. 突然空置断收</summary><p>租客到期前 <b>35 天启动议价窗口</b>，二招前置管理</p></details><details class="faq-risk-question"><summary>9. 租客质量差</summary><p><b>实名备案 + 统一筛选</b> + 专人租中维护</p></details><details class="faq-risk-question"><summary>10. 人不在上海管不了</summary><p><b>全流程代办</b>，线上同步进展，钥匙托管有交接记录</p></details></div></details></section>
 
 <!-- 16 行动呼吁 -->
 <section id="cta">
@@ -2792,6 +2781,33 @@ document.addEventListener('DOMContentLoaded', function () {
     if (opener) opener.focus({preventScroll: true});
   });
 });
+
+/* One control owns the complete Meizu group, ending before owner testimonials. */
+(function () {
+  var button = document.getElementById('meizToggle');
+  var preview = document.getElementById('meizCompactPreview');
+  var parts = document.querySelectorAll('[data-meiz-part]');
+  function setExpanded(expanded) {
+    parts.forEach(function (part) { part.hidden = !expanded; });
+    preview.hidden = expanded;
+    button.setAttribute('aria-expanded', String(expanded));
+    button.setAttribute('aria-label', expanded ? '收起美租方案，仅保留两张产品图' : '展开全部美租方案');
+    button.firstElementChild.textContent = expanded ? '−' : '+';
+  }
+  button.addEventListener('click', function () {
+    setExpanded(button.getAttribute('aria-expanded') !== 'true');
+  });
+  function revealHash() {
+    var target = document.getElementById(location.hash.slice(1));
+    if (target && target.closest('[data-meiz-part]')) {
+      setExpanded(true);
+      requestAnimationFrame(function () { target.scrollIntoView({block: 'start'}); });
+    }
+  }
+  window.addEventListener('hashchange', revealHash);
+  revealHash();
+})();
+
 </script>
 <dialog id="safeguardDrawer" aria-labelledby="safeguardDrawerTitle">
       <div class="safeguard-drawer-head"><h2 id="safeguardDrawerTitle"></h2><button type="button" class="safeguard-drawer-close" aria-label="关闭保障细则" autofocus>关闭 ×</button></div>
