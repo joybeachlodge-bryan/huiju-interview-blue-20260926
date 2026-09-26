@@ -865,7 +865,7 @@ section#haggle{display:none!important}
 #plan .owner-control{margin:0 0 66px}
 #plan .owner-stage>span{display:block;font-size:13px;letter-spacing:.12em;color:#405b76;margin:0 0 12px}
 #plan .owner-stage h3{font-size:clamp(24px,2.2vw,34px);line-height:1.45;margin:0 0 30px!important;color:#193656}
-#plan .owner-control-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 42px}
+#plan .owner-control-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
 #plan .owner-control-grid article{padding:28px 30px;background:rgba(255,255,255,.72);border-top:2px solid #a6bdd8}
 #plan .owner-question{display:flex;align-items:baseline;gap:16px;margin-bottom:20px}
 #plan .owner-question>span{font:400 21px Arial,sans-serif;color:#466991;flex-shrink:0}
@@ -938,6 +938,17 @@ section#haggle{display:none!important}
 #account .management-rate strong{font-size:94px}
 #account .management-outcome{font-weight:600;max-width:250px}
 @media(max-width:640px){#account .management-fee{align-items:center;padding:8px 0 26px;gap:15px}#account .management-rate strong{font-size:68px}#account .management-fee p{text-align:left}#account .management-outcome{max-width:none}}
+
+/* Three cooperation rules, then one owner-rights strip. */
+#plan .owner-rights{margin-top:36px;padding:30px 32px;background:#edf3fa;border-radius:16px}
+#plan .owner-rights>h4{margin:0 0 24px;font-size:23px;line-height:1.5;color:#193656}
+#plan .owner-rights-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+#plan .owner-rights h5{margin:0 0 10px;font-size:19px;line-height:1.5;color:#315a8d}
+#plan .owner-rights p{margin:0;font-size:16px;line-height:1.85;color:#52677d}
+#cover .cover-editorial{grid-template-columns:1fr}
+#cover .agent[hidden]{display:none!important}
+@media(max-width:1000px){#plan .owner-control-grid{grid-template-columns:1fr}#plan .owner-rights-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){#plan .owner-rights{padding:24px 20px;margin-top:26px;border-radius:12px}#plan .owner-rights>h4{font-size:20px;margin-bottom:22px}#plan .owner-rights-grid{grid-template-columns:1fr;gap:22px}#plan .owner-rights h5{font-size:18px;margin-bottom:7px}#plan .owner-rights p{font-size:15px}}
 </style>
 </head>
 <body>
@@ -964,7 +975,8 @@ section#haggle{display:none!important}
   <figure class="hero-visual"><img src="assets/8cde7518e6519ff927da6a63.jpg" alt="山念2.0自然原木风客厅产品示意，非本房实拍" fetchpriority="high"><figcaption>美租 · 山念 2.0　/　产品空间示意</figcaption></figure><div class="cover-editorial"><div class="cover-brief"><div class="eyebrow">房屋资产管理 / 为您的房子做一份长期打算</div><h1>资产管理<span>计划书</span></h1>
   <div class="hsub" id="coverSub">为您提供更省心、更稳妥的一站式房屋托管方案</div>
   <div class="house-line" id="coverHouse"></div>
-  </div><div class="agent">
+  </div></div><!-- 封面房源副标题（Bryan 2026-09-26）：删四列信息卡，改为 地址 · 居室 · 面积 一行 -->
+  <div class="agent" hidden="hidden" aria-hidden="true">
     <div class="avatar" id="aAvatar1"></div>
     <div style="flex:1;min-width:0">
       <div class="n">您的专属资管经理：<span id="aName1">＿＿＿</span></div>
@@ -976,7 +988,6 @@ section#haggle{display:none!important}
       </div>
     </div>
   </div>
-  </div><!-- 封面房源副标题（Bryan 2026-09-26）：删四列信息卡，改为 地址 · 居室 · 面积 一行 -->
   <div class="cover-stats">
     <div class="cs"><div class="cs-v">80万+</div><div class="cs-k">全国在管房源</div></div>
     <div class="cs"><div class="cs-v">94%</div><div class="cs-k">平均出租率</div></div>
@@ -1120,13 +1131,21 @@ section#haggle{display:none!important}
   <figure class="plan-video"><video id="planIntroVideo" controls playsinline preload="metadata" poster="assets/7e1ff1db41a3e6b7b742f6da.jpg" aria-label="贝壳省心租产品介绍视频"><source src="assets/58d51d985d4367bc049e6a35.mp4" type="video/mp4">您的浏览器暂不支持内嵌视频播放。</source></video><figcaption>贝壳省心租 · 产品介绍</figcaption></figure><!-- 五条方案严格按 0729 物料「合作方式与五大保障」页（Bryan 2026-09-26：不只有 3 个，严格按图绘画） -->
   <!-- 4.2 省心租 vs 普租，差在哪（Bryan 2026-09-26 删除：94%/75%/25天/50% 与五大保障关键数据带重复） -->
 <div class="plan-editorial"><div class="owner-control" aria-labelledby="ownerControlTitle">
-<div class="owner-stage"><span>先把顾虑讲清</span><h3 id="ownerControlTitle">房子交给我们，这四件事先说明白</h3></div>
+<div class="owner-stage"><span>先把顾虑讲清</span><h3 id="ownerControlTitle">房子交给我们，这三件事先说明白</h3></div>
 <div class="owner-control-grid">
 <article><div class="owner-question"><span aria-hidden="true">01</span><h4>你们会赚中间差价吗？</h4></div><p class="owner-answer">不吃差价，费用单独列明</p><p>成交租金公开透明，服务费按约定收取；租金是多少、扣哪些费用，分别看得清。</p></article>
 <article><div class="owner-question"><span aria-hidden="true">02</span><h4>房子会被隔断、分租吗？</h4></div><p class="owner-answer">整套出租，不分租、不隔断</p><p>保持房屋结构，租客实名核查、租前报备，住进来的是谁，您事先知道。</p></article>
 <article><div class="owner-question"><span aria-hidden="true">03</span><h4>租给谁、租多久，我能决定吗？</h4></div><p class="owner-answer">租客与租期，先由您确认</p><p>租客人选、租期长短、是否续约，都需要您确认；我们负责筛选、建议和对接。</p></article>
-<article><div class="owner-question"><span aria-hidden="true">04</span><h4>以后想收回房子，怎么办？</h4></div><p class="owner-answer">退出条件，签约前说清</p><p>提前说清通知期限、办理方式和相关费用，届时按合同约定办理。</p></article>
-</div></div><div class="plan-terms"><h3>再看费用与期限，逐项讲清楚</h3>
+
+</div>
+<div class="owner-rights" aria-labelledby="ownerRightsTitle">
+<h4 id="ownerRightsTitle">把房子交给我们，这几样东西不会变</h4>
+<div class="owner-rights-grid">
+<article><h5>产权还是您的</h5><p>委托的是出租管理，房屋产权不转移，房本上仍然是您的名字。</p></article>
+<article><h5>定价还是您来定</h5><p>我们结合市场给建议，最终租金与您协商确认，不擅自降价。</p></article>
+<article><h5>房屋情况，随时能查</h5><p>房屋状况、租客情况、收租记录，随时联系您的资管经理了解。</p></article>
+<article><h5>不租了，可以按约退出</h5><p>想收回房屋，提前联系我们；通知多久、怎么交接、是否有费用，按合同约定办理。</p></article>
+</div></div></div><div class="plan-terms"><h3>再看费用与期限，逐项讲清楚</h3>
   <div class="grid g3">
     <div class="card"><h4 class="plan-term-label">我的房子，租金怎么定？</h4><div class="num" style="font-size:22px">0 ~ +5%</div><p>区间定价：基准价至<b>上浮 5%</b> 之间与您协商确定</p></div>
     <div class="card"><h4 class="plan-term-label">收房价和出房价一样吗？</h4><div class="num" style="font-size:22px">收房价＝出房价</div><p>实际出房价在<b>基准价至上浮定价之间</b>均可，透明不吃差价</p></div>
