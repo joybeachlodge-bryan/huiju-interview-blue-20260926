@@ -757,6 +757,14 @@ footer{background:#f7fafd;padding:26px 4.5vw 40px;text-align:left}#chatBtn{borde
 .slider-row>div{flex:1;min-width:0}.slider-row>div input[type=range]{width:100%;display:block}
 
 .vs-pt{color:#52677d}#haggle span[style*="color:#94A3B8"]{color:#52677d!important}
+/* Bryan 2026-09-26：全页数字用正常商务字体，不用衬线艺术字。 */
+@font-face{font-family:"Plain Numbers";src:local("Arial"),local("Helvetica Neue"),local("Roboto");unicode-range:U+0030-0039,U+002C,U+002E}
+:root{--number-font:Arial,"Helvetica Neue",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+section .num,section .num *,section .cs-v,section .safe-data .v,section .safe-data .v *,section .safe-no,section .case-stats b,.rent-big,.rent-edit,section .range-ends,section td,section .chapter-label,.acct-no,.step .idx{
+ font-family:var(--number-font)!important;font-style:normal!important;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;letter-spacing:normal!important
+}
+section .num,section .cs-v,section .safe-data .v,section .safe-no,.rent-big,.rent-edit{font-weight:500!important}
+h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","Songti SC","STSong",serif!important}
 </style>
 </head>
 <body>
@@ -1392,7 +1400,7 @@ footer{background:#f7fafd;padding:26px 4.5vw 40px;text-align:left}#chatBtn{borde
 <!-- 12b 美租 · 六大权益 + 六大承诺 + 安全环保 -->
 <section id="meiz2">
 <div class="chapter-label">13 / 美租权益与标准</div>
-  <h2 class="title">美租六大权益，<em>不花钱直接送</em></h2>
+  <h2 class="title">美租六大权益，<em>焕新全程更省心</em></h2>
   <div class="grid g3">
     <div class="card"><h3>免费量房</h3><p>美租提供免费上门量房</p></div>
     <div class="card"><h3>免费设计方案</h3><p>多样设计方案，现场出</p></div>
