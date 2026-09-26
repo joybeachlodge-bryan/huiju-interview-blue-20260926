@@ -782,6 +782,53 @@ section#haggle{display:none!important}
 /* Inline introduction immediately above the management plan heading. */
 #plan .plan-video{width:100%;max-width:1120px;margin:0 auto 48px!important}#plan .plan-video video{display:block;width:100%;aspect-ratio:16/9;background:#142f50;object-fit:contain}#plan .plan-video figcaption{margin-top:12px;color:#52677d;font-size:13px;text-align:right}
 @media(max-width:640px){#plan .plan-video{margin-bottom:30px!important}}
+
+/* Three accounts: light text numbering instead of solid rectangular badges. */
+#account .acct-map .which,#account .acct-which{display:inline-flex;align-items:baseline;gap:10px;background:transparent!important;color:#42658c!important;border:0;padding:0;margin:0;letter-spacing:0;font-style:normal;font-weight:400;white-space:nowrap;box-shadow:none}
+#account .acct-map .which{margin-bottom:13px}
+#account .acct-index{font-family:Arial,"Helvetica Neue",sans-serif;font-size:30px;line-height:1;font-weight:400;letter-spacing:0;font-variant-numeric:lining-nums tabular-nums;color:#42658c}
+#account .acct-divider{font:300 18px/1 Arial,sans-serif;color:#a6bacd}
+#account .acct-label{font-size:13px;line-height:1.5;font-weight:500;color:#52677d;letter-spacing:1px}
+#account .acct-head{align-items:flex-start;gap:28px}
+#account .acct-head>.acct-which{flex-shrink:0;padding-top:3px}
+#account .acct-head>div{min-width:0}
+@media(max-width:640px){#account .acct-index{font-size:27px}#account .acct-head{display:block}#account .acct-head>.acct-which{margin-bottom:14px;padding-top:0}}
+
+/* Mobile comparisons remain self-contained: each service names both providers. */
+#cmp .vs-provider{display:none}
+@media(max-width:760px){
+ #cmp .vs-head{display:none}
+ #cmp .vs-band{display:block;margin-bottom:32px}
+ #cmp .vs-stage{display:flex;flex-direction:row;align-items:baseline;justify-content:flex-start;gap:12px;background:transparent;border:0;padding:0 0 14px;border-radius:0}
+ #cmp .vs-stage span{writing-mode:horizontal-tb;letter-spacing:0;font-size:22px;font-weight:600}
+ #cmp .vs-stage i{margin:0;font-size:12px;color:#52677d}
+ #cmp .vs-rows{gap:14px}
+ #cmp .vs-row{display:block;padding:18px;border:1px solid #d5e1ed;border-radius:8px;background:#fff;overflow:hidden}
+ #cmp .vs-zx{padding:0!important;border:0!important;background:transparent}
+ #cmp .vs-zx b{display:block;font-size:18px;line-height:1.5}
+ #cmp .vs-zx b::before{display:none}
+ #cmp .vs-zx em,#cmp .vs-pt{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;text-align:left;align-items:start;font-size:14px;line-height:1.8;min-width:0}
+ #cmp .vs-zx em{margin-top:13px}
+ #cmp .vs-pt{margin:15px -18px -18px;padding:13px 18px;background:#f2f6fa;border:0;border-top:1px solid #e2eaf2;border-radius:0}
+ #cmp .vs-provider{display:block;font-size:12px;font-weight:600;line-height:2.1;color:#205791;white-space:nowrap}
+ #cmp .vs-pt .vs-provider{color:#64748b}
+ #cmp .vs-description{min-width:0;overflow-wrap:anywhere}
+}
+
+/* Plan overview: six product terms lead; safeguards are only introduced here. */
+#plan .plan-editorial{display:block}
+#plan .plan-terms>h3{font-size:23px;margin:0 0 24px!important;font-weight:550}
+#plan .plan-terms .g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px}
+#plan .plan-terms .card{display:block;min-width:0;padding:23px 0 24px!important;border-top:1px solid #b9cde0!important}
+#plan .plan-term-label{font-size:14px;font-weight:500;color:#52677d;margin-bottom:14px}
+#plan .plan-terms .card .num{font-size:34px!important;line-height:1.3;margin:0 0 15px!important;white-space:nowrap}
+#plan .plan-terms .card:last-child .num{font-size:29px!important}
+#plan .plan-terms .card p{font-size:15px!important;line-height:1.85!important}
+#plan .assurance-teaser{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px 24px;margin-top:32px;padding:24px 0 0;border-top:1px solid #b9cde0;font-size:14px;line-height:1.8;color:#52677d}
+#plan .assurance-teaser b{font-size:16px;white-space:nowrap}
+#plan .assurance-teaser a{margin-left:auto;color:#205791;font-size:14px;text-underline-offset:5px;white-space:nowrap}
+@media(min-width:641px) and (max-width:1100px){#plan .plan-terms .g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){#plan .plan-terms .g3{grid-template-columns:minmax(0,1fr);gap:0}#plan .plan-terms .card{padding:22px 0!important}#plan .plan-term-label{margin-bottom:10px}#plan .plan-terms .card .num{font-size:30px!important;margin-bottom:12px!important}#plan .plan-terms .card:last-child .num{font-size:27px!important}#plan .assurance-teaser{gap:8px;margin-top:12px}#plan .assurance-teaser b,#plan .assurance-teaser span{flex-basis:100%}#plan .assurance-teaser a{margin-left:0;margin-top:4px}}
 </style>
 </head>
 <body>
@@ -938,27 +985,20 @@ section#haggle{display:none!important}
 <!-- 4 托管方案 -->
 <section id="plan">
 <div class="chapter-label">03 / 省心租产品</div>
-  <figure class="plan-video"><video id="planIntroVideo" controls playsinline preload="metadata" poster="assets/7e1ff1db41a3e6b7b742f6da.jpg" aria-label="贝壳省心租产品介绍视频"><source src="assets/58d51d985d4367bc049e6a35.mp4" type="video/mp4">您的浏览器暂不支持内嵌视频播放。</source></video><figcaption>贝壳省心租 · 产品介绍</figcaption></figure><h2 class="title">省心租 · <em>托管方案一览</em></h2>
-  <p class="sub" style="max-width:none">一句话讲清模式：没有空置期差距、风险共担、利益共享的升级版租赁产品。您只管按月收租，剩下的事我们办。</p>
+  <h2 class="title">省心租 · <em>托管方案一览</em></h2>
+  <figure class="plan-video"><video id="planIntroVideo" controls playsinline preload="metadata" poster="assets/7e1ff1db41a3e6b7b742f6da.jpg" aria-label="贝壳省心租产品介绍视频"><source src="assets/58d51d985d4367bc049e6a35.mp4" type="video/mp4">您的浏览器暂不支持内嵌视频播放。</source></video><figcaption>贝壳省心租 · 产品介绍</figcaption></figure><p class="sub" style="max-width:none">您按月收租，招租与租后事务由专属团队打理；合作方式看这六项。</p>
   <!-- 五条方案严格按 0729 物料「合作方式与五大保障」页（Bryan 2026-09-26：不只有 3 个，严格按图绘画） -->
   <!-- 4.2 省心租 vs 普租，差在哪（Bryan 2026-09-26 删除：94%/75%/25天/50% 与五大保障关键数据带重复） -->
-<div class="plan-editorial"><div class="safe-list" style="max-width:860px">
-    <div class="safe-item"><div class="safe-no">1</div><div><h3>贝壳自营 · 租金安全</h3><p>上市公司自营托管品牌；租金按时支付，无逾期无坏账风险。</p></div></div>
-    <div class="safe-item"><div class="safe-no">2</div><div><h3>费用透明 · 不吃差价</h3><p>成交租金<b>真实透明</b>；<b>不分租，不隔断</b>，整屋出租，不吃差价。</p></div></div>
-    <div class="safe-item"><div class="safe-no">3</div><div><h3>出租更快 · 招租保底</h3><p>专属团队为您快速招租；即便招租失败也有 50% 的月租金收益。</p></div></div>
-    <div class="safe-item"><div class="safe-no">4</div><div><h3>专业维保 · 租务无忧</h3><p>租前<b>整备保洁</b>，租中<b>定期维保</b>；<b>专业团队</b>提供房屋日常维修，减少租务对您的打扰。</p></div></div>
-    <div class="safe-item"><div class="safe-no">5</div><div><h3>财产保障 · 省心出租</h3><p>托管期内因意外造成的损失，最高补偿 30 万元；让您财产安全有保障，出租更省心。</p></div></div>
-  </div>
-  <div class="plan-terms"><h3 style="margin:34px 0 14px;color:#0B2A5B">六条产品特点</h3>
+<div class="plan-editorial"><div class="plan-terms"><h3 style="margin:34px 0 14px;color:#0B2A5B">六项产品特点</h3>
   <div class="grid g3">
-    <div class="card"><div class="num" style="font-size:22px">3 年起</div><p><b>3 年</b>收房年限，合同期内稳定收益</p></div>
-    <div class="card"><div class="num" style="font-size:22px">≥35 天</div><p>首次招租期（另有 4 天整备期）；二次出房按市场周期增减招租期与价格</p></div>
-    <div class="card"><div class="num" style="font-size:22px">3 天/月</div><p>管理费（普通作业盘；楼霸盘 4 天/月），按月收取、按天计费</p></div>
-    <div class="card"><div class="num" style="font-size:22px">50% 月租</div><p>招租定金：每次招租支付 <b>50% 基准月租金</b>，招租期内未出房则<b>定金赔付给业主</b></p></div>
-    <div class="card"><div class="num" style="font-size:22px">0 ~ +5%</div><p>区间定价：基准价至<b>上浮 5%</b> 之间与您协商确定</p></div>
-    <div class="card"><div class="num" style="font-size:22px">收房价＝出房价</div><p>实际出房价在<b>基准价至上浮定价之间</b>均可，透明不吃差价</p></div>
+    <div class="card"><div class="plan-term-label">合作年限</div><div class="num" style="font-size:22px">3 年起</div><p><b>3 年</b>收房年限，合同期内稳定收益</p></div>
+    <div class="card"><div class="plan-term-label">首次招租期</div><div class="num" style="font-size:22px">≥35 天</div><p>首次招租期（另有 4 天整备期）；二次出房按市场周期增减招租期与价格</p></div>
+    <div class="card"><div class="plan-term-label">管理费用</div><div class="num" style="font-size:22px">3 天/月</div><p>管理费（普通作业盘；楼霸盘 4 天/月），按月收取、按天计费</p></div>
+    <div class="card"><div class="plan-term-label">招租保障</div><div class="num" style="font-size:22px">50% 月租</div><p>招租定金：每次招租支付 <b>50% 基准月租金</b>，招租期内未出房则<b>定金赔付给业主</b></p></div>
+    <div class="card"><div class="plan-term-label">定价区间</div><div class="num" style="font-size:22px">0 ~ +5%</div><p>区间定价：基准价至<b>上浮 5%</b> 之间与您协商确定</p></div>
+    <div class="card"><div class="plan-term-label">透明成交</div><div class="num" style="font-size:22px">收房价＝出房价</div><p>实际出房价在<b>基准价至上浮定价之间</b>均可，透明不吃差价</p></div>
   </div>
-  </div></div></section>
+  </div></div><div class="assurance-teaser"><b>五大保障</b><span>租金安全 · 费用透明 · 招租保底 · 租务无忧 · 财产保障</span><a href="#safe">查看保障详情 ↓</a></div></section>
 
 
 
@@ -1120,39 +1160,41 @@ section#haggle{display:none!important}
     </div>
 
     <div class="vs-band">
-      <div class="vs-stage"><span>租前</span><i>7 项全包</i></div>
+      <div class="vs-stage"><span>租前</span><i>6 项全包</i></div>
       <div class="vs-rows">
-        <div class="vs-row"><div class="vs-zx"><b>合理定价</b><em>依托贝壳平台大数据，多维度分析市场行情</em></div><div class="vs-pt">凭经验 + 业主意愿</div></div>
+        <div class="vs-row"><div class="vs-zx"><b>合理定价</b><em><span class="vs-provider">省心租</span><span class="vs-description">依托贝壳平台大数据，多维度分析市场行情</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">凭经验 + 业主意愿</span></div></div>
         <!-- 房源展示行（Bryan 2026-09-26 删除：两列文案串行，整行移除） -->
-        <div class="vs-row"><div class="vs-zx"><b>检修服务</b><em>房屋检修：保障租客入住后房屋安全、物品家电可正常使用；检修标准：涵盖马桶、洗衣机、空调等数十种物品家电的数百项故障类型的查验与维修</em></div><div class="vs-pt">无</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>安全管理</b><em>入住前租务管家对房屋进行安排排查，每年 1–2 次安全巡检</em></div><div class="vs-pt">无</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>招租承诺</b><em>承诺在约定期限内成功出租；若未达成，则赔付招租定金，并将已提供的服务免费赠送</em></div><div class="vs-pt">无</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>保洁服务</b><em>租前专业保洁服务；24 小时不满意重新做</em></div><div class="vs-pt">无</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>带看服务</b><em>专业客户经理 + 经纪人</em></div><div class="vs-pt">经纪人</div></div>
+        <div class="vs-row"><div class="vs-zx"><b>检修服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">房屋检修：保障租客入住后房屋安全、物品家电可正常使用；检修标准：涵盖马桶、洗衣机、空调等数十种物品家电的数百项故障类型的查验与维修</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>安全管理</b><em><span class="vs-provider">省心租</span><span class="vs-description">入住前租务管家对房屋进行安排排查，每年 1–2 次安全巡检</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>招租承诺</b><em><span class="vs-provider">省心租</span><span class="vs-description">承诺在约定期限内成功出租；若未达成，则赔付招租定金，并将已提供的服务免费赠送</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>保洁服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">租前专业保洁服务；24 小时不满意重新做</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>带看服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">专业客户经理 + 经纪人</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">经纪人</span></div></div>
       </div>
     </div>
 
     <div class="vs-band">
       <div class="vs-stage"><span>租中</span><i>6 项全包</i></div>
       <div class="vs-rows">
-        <div class="vs-row"><div class="vs-zx"><b>交房服务</b><em>面对面的交房服务，为租客当面交付门禁、钥匙、水电燃气卡，并讲解物品使用、入住权益和安全须知等，有问题当面解决</em></div><div class="vs-pt">无</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>租务对接</b><em>专属管家 7×24 小时在线服务，随时响应租务和咨询需求</em></div><div class="vs-pt">业主</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>灵活支付</b><em>支持 0 押、月付等灵活支付方案，可使用公积金直付租金</em></div><div class="vs-pt">方式单一</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>维修服务</b><em>近千项免费维修，不限次数</em></div><div class="vs-pt">自费</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>智能门锁</b><em>开门锁门更便捷，独享密码更安全</em></div><div class="vs-pt">无</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>专属保障</b><em>提供房屋财产安全保障和租客人身安全保障</em></div><div class="vs-pt">无</div></div>
+        <div class="vs-row"><div class="vs-zx"><b>交房服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">面对面的交房服务，为租客当面交付门禁、钥匙、水电燃气卡，并讲解物品使用、入住权益和安全须知等，有问题当面解决</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>租务对接</b><em><span class="vs-provider">省心租</span><span class="vs-description">专属管家 7×24 小时在线服务，随时响应租务和咨询需求</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">业主</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>灵活支付</b><em><span class="vs-provider">省心租</span><span class="vs-description">支持 0 押、月付等灵活支付方案，可使用公积金直付租金</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">方式单一</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>维修服务</b><em><span class="vs-provider">省心租</span><span class="vs-description">近千项免费维修，不限次数</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">自费</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>智能门锁</b><em><span class="vs-provider">省心租</span><span class="vs-description">开门锁门更便捷，独享密码更安全</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>专属保障</b><em><span class="vs-provider">省心租</span><span class="vs-description">提供房屋财产安全保障和租客人身安全保障</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
       </div>
     </div>
 
     <div class="vs-band">
       <div class="vs-stage"><span>租后</span><i>2 项全包</i></div>
       <div class="vs-rows">
-        <div class="vs-row"><div class="vs-zx"><b>租后维修</b><em>八大类维修服务，涵盖厨卫、水电、家具、管道等</em></div><div class="vs-pt">无</div></div>
-        <div class="vs-row"><div class="vs-zx"><b>物业交割</b><em>为租客及时记录结算水电燃等生活费用，记录物品家电数量状态等信息</em></div><div class="vs-pt">无</div></div>
+        <div class="vs-row"><div class="vs-zx"><b>租后维修</b><em><span class="vs-provider">省心租</span><span class="vs-description">八大类维修服务，涵盖厨卫、水电、家具、管道等</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
+        <div class="vs-row"><div class="vs-zx"><b>物业交割</b><em><span class="vs-provider">省心租</span><span class="vs-description">为租客及时记录结算水电燃等生活费用，记录物品家电数量状态等信息</span></em></div><div class="vs-pt"><span class="vs-provider">普通出租</span><span class="vs-description">无</span></div></div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <hr class="divider">
 
@@ -1255,13 +1297,13 @@ section#haggle{display:none!important}
 
   <!-- 三笔账导航（Bryan 2026-09-26：业主一眼看清共三笔，各自模块切分） -->
   <div class="acct-map">
-    <div class="m"><i class="which">第一笔</i><b>比普租贵不贵</b><i>看实际到手</i></div>
-    <div class="m"><i class="which">第二笔</i><b>这笔钱去哪了</b><i>36 天流向拆解</i></div>
-    <div class="m"><i class="which">第三笔</i><b>自己管是不是更省</b><i>隐性成本是什么</i></div>
+    <div class="m"><i class="which"><span class="acct-index">01</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第一笔</span></i><b>比普租贵不贵</b><i>看实际到手</i></div>
+    <div class="m"><i class="which"><span class="acct-index">02</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第二笔</span></i><b>这笔钱去哪了</b><i>36 天流向拆解</i></div>
+    <div class="m"><i class="which"><span class="acct-index">03</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第三笔</span></i><b>自己管是不是更省</b><i>隐性成本是什么</i></div>
   </div>
 
   <div class="acct-block">
-    <div class="acct-head"><span class="acct-which">第一笔</span><div><div class="acct-title">比普租贵不贵——看到手</div><div class="acct-q">参考月租 <b id="acRent">—</b></div></div></div>
+    <div class="acct-head"><span class="acct-which"><span class="acct-index">01</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第一笔</span></span><div><div class="acct-title">比普租贵不贵——看到手</div><div class="acct-q">参考月租 <b id="acRent">—</b></div></div></div>
     <div class="grid g2" style="margin-bottom:8px">
       <div class="card anchor-l"><h3>普租自己管 · 一年到手</h3><div class="num" id="acL">—</div><p>租客会还价，还要扣<b>中介费</b>、担<b>空置</b></p></div>
       <div class="card anchor-r"><h3>省心租托管 · 续约年到手</h3><div class="num" id="acR">—</div><p>按月固定到账，<b>招租定金兜底</b></p></div>
@@ -1271,7 +1313,7 @@ section#haggle{display:none!important}
   </div>
 
   <div class="acct-block">
-    <div class="acct-head"><span class="acct-which">第二笔</span><div><div class="acct-title">这笔管理费，换来哪些服务</div><div class="acct-q">每一天都在替您干活</div></div></div>
+    <div class="acct-head"><span class="acct-which"><span class="acct-index">02</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第二笔</span></span><div><div class="acct-title">这笔管理费，换来哪些服务</div><div class="acct-q">每一天都在替您干活</div></div></div>
     <div class="flow-head"><span class="flow-chip">年管理费 = 36 天租金</span></div>
     <div class="grid g3" id="management-value-grid">
       <div class="card flow-card"><h3>经纪人业绩激励</h3><div class="num">120% <small>业绩</small></div><p>经纪人按 <b>120% 计业绩</b>，鼓励积极推荐您的房源。</p></div>
@@ -1282,17 +1324,17 @@ section#haggle{display:none!important}
   </div>
 
   <div class="acct-block">
-    <div class="acct-head"><span class="acct-which">第三笔</span><div><div class="acct-title">自己管是不是更省——隐性成本是什么</div><div class="acct-q">以 4000 元/月租金为例</div></div></div>
+    <div class="acct-head"><span class="acct-which"><span class="acct-index">03</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第三笔</span></span><div><div class="acct-title">自己管是不是更省——隐性成本是什么</div><div class="acct-q">以 <span id="acSelfRent">—</span> 元/月租金为例</div></div></div>
     <table>
     <tr><th>自管项目</th><th>年费用估算</th></tr>
-    <tr><td>中介费（1 年 1 次）</td><td><b>约 2000 元</b></td></tr>
+    <tr><td>中介费（1 年 1 次）</td><td><b id="acBrokerCost">—</b></td></tr>
     <tr><td>维修类（墙面 200 / 疏通 100 / 换龙头 100 / 空调加氟 300 / 热水器 200 …）</td><td>数百至上千元</td></tr>
     <tr><td>入住保洁（300 元/次 × 换租次数）</td><td>300~600 元</td></tr>
     <tr><td>智能门锁</td><td><b>799 元</b></td></tr>
     <tr><td>空置期物业费（150~200 元/月）</td><td>150~400 元</td></tr>
-    <tr><td><b>合计</b></td><td><b class="win">约 3200~5000 元/年 ＞ 免租期租金</b></td></tr>
+    <tr><td><b>合计</b></td><td><b class="win" id="acSelfTotal">—</b></td></tr>
     </table>
-    <div class="acct-answer"><b>第三笔答案</b>：隐性成本 3200~5000 元/年，已经超过免租期租金——省在明面，赔在暗处。</div>
+    <div class="acct-answer"><b>第三笔答案</b>：<span id="acSelfAnswer">—</span></div>
     <p class="note">还没算进去的：您为催租、带看、纠纷耗费的<b>时间成本</b>，以及<b>空置 30 天的租金损失</b>。</p>
   </div>
 </section>
@@ -2087,6 +2129,17 @@ window.HJ_PLANBOOK = (function(){
       document.getElementById('acRent').textContent=fmt(r)+' 元';
       document.getElementById('acNote').innerHTML='省心租首年含 <b>35 天首次招租期</b>，到手 '+fmt(Math.round(s1))+' 元；第二年起每年 '+fmt(Math.round(s23))+' 元。三年合计：普租 <b>'+fmt(Math.round(pYear*3))+' 元</b> vs 省心租 <b>'+fmt(Math.round(s1+s23*2))+' 元</b>——且空置、催租、维修风险全由平台承担。';
     }
+    /* Preserve the original 4000-rent example: 2000 commission + 1200–3000 other costs.
+       Only commission varies with rent; never scale repair or cleaning fees with rent. */
+    var selfRent=document.getElementById('acSelfRent');
+    if(selfRent){
+      var broker=r*0.5, selfLow=Math.round(broker+1200), selfHigh=Math.round(broker+3000);
+      var selfRange=fmt(selfLow)+'～'+fmt(selfHigh);
+      selfRent.textContent=fmt(r);
+      document.getElementById('acBrokerCost').textContent='约 '+fmt(Math.round(broker))+' 元';
+      document.getElementById('acSelfTotal').textContent='约 '+selfRange+' 元/年';
+      document.getElementById('acSelfAnswer').textContent='按当前月租估算，自管还需承担约 '+selfRange+' 元/年的额外费用，这些也要计入出租成本。';
+    }
     s.dispatchEvent(new Event('rentchange'));   /* 通知议价区：当前租金变了（含自定义键入的 7777） */
   }
   /* 按月到账反推（议价卡键入 6,885 这类期望值）→ 反推参考月租并全联动 */
@@ -2208,7 +2261,22 @@ var KB=[
 (function(){
   var btn=document.getElementById('chatBtn'),box=document.getElementById('chatBox'),msgs=document.getElementById('msgs');
   var API_KEY="";/* 可选：填入 DeepSeek API Key（sk-开头）后，超纲问题走大模型；不填则仅知识库问答 */
-  btn.onclick=function(){box.classList.toggle('on')};
+  function setChatOpen(open){
+    box.classList.toggle('on',open);
+    btn.setAttribute('aria-expanded',String(open));
+    box.setAttribute('aria-hidden',String(!open));
+  }
+  btn.setAttribute('aria-controls','chatBox');
+  setChatOpen(false);
+  btn.onclick=function(){setChatOpen(!box.classList.contains('on'))};
+  function closeChatOutside(e){
+    if(box.classList.contains('on')&&!box.contains(e.target)&&!btn.contains(e.target))setChatOpen(false);
+  }
+  document.addEventListener('pointerdown',closeChatOutside,true);
+  document.addEventListener('click',closeChatOutside,true);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&box.classList.contains('on')){setChatOpen(false);btn.focus()}
+  });
   function add(t,c){var d=document.createElement('div');d.className='msg '+c;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d}
   function dots(){var d=add('···','a');return d}
   function answer(q){
