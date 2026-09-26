@@ -975,6 +975,46 @@ section#risk[data-moved-to="faq"]{display:none!important}
 #faq .faq-risk-question[open]>summary::before{content:"− "}
 #faq .faq-risk-question p{font-size:16px;line-height:1.85;margin:12px 0 0}
 @media(max-width:640px){.risk-detail-links{display:grid;gap:12px}.risk-detail-links a{padding:15px 17px;font-size:15px}.compact-details>summary{font-size:17px}#faq .faq-risk-group{padding:18px 16px!important;scroll-margin-top:135px}#faq .faq-risk-question>summary{font-size:16px}#faq .faq-risk-question p{font-size:15px}}
+
+/* Real service photographs: eight compact covers, one expanded album at a time. */
+#serviceGallery{margin:20px 0 28px}
+#serviceGallery .service-gallery-intro{margin:0 0 24px;font-size:17px}
+.service-category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+#serviceGallery button{font:inherit;text-align:left;cursor:pointer;color:#193656}
+#serviceGallery .service-category,#serviceGallery .service-photo{padding:0;min-width:0;overflow:hidden;border:1px solid #d4e0ee;background:#fff;border-radius:6px}
+#serviceGallery .service-category img,#serviceGallery .service-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+#serviceGallery .service-category-label{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 16px}
+#serviceGallery .service-category-label b{font-size:20px;color:#193656}
+#serviceGallery .service-category-label small{font-size:13px;color:#486687;white-space:nowrap}
+#serviceGallery .service-category:hover{border-color:#7293ba;background:#f4f8fc}
+#serviceGallery .service-category[aria-expanded="true"]{border-color:#305e94;box-shadow:0 0 0 1px #305e94;background:#eaf1fa}
+#serviceGallery button:focus-visible,#serviceAlbumTitle:focus-visible{outline:2px solid #305e94;outline-offset:4px}
+#serviceGallery .service-album-panel{margin-top:28px;padding:24px;background:#edf3fa;border-top:2px solid #305e94;scroll-margin-top:115px}
+#serviceGallery .service-album-panel[hidden]{display:none!important}
+#serviceGallery .service-album-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}
+#serviceGallery h4{margin:0;font-size:23px;color:#193656}
+#serviceGallery .service-album-close{background:#fff;border:1px solid #aebfd5;padding:9px 14px;font-size:14px;white-space:nowrap;border-radius:4px}
+#serviceGallery .service-photo-hint{font-size:14px;margin:8px 0 18px}
+.service-album-photos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+#serviceGallery .service-photo span{display:block;padding:12px;font-size:15px;line-height:1.6}
+#svc .service-extra{margin-top:24px!important}
+@media(max-width:900px){.service-category-grid,.service-album-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.service-category-grid{gap:12px}#serviceGallery .service-gallery-intro{font-size:14px}#serviceGallery .service-category-label{padding:11px 10px;display:block}#serviceGallery .service-category-label b{font-size:18px;display:block}#serviceGallery .service-category-label small{font-size:12px;display:block;margin-top:4px}#serviceGallery .service-album-panel{padding:14px;scroll-margin-top:140px}#serviceGallery h4{font-size:17px}#serviceGallery .service-album-close{font-size:12px;padding:8px}.service-album-photos{gap:12px}#serviceGallery .service-photo span{font-size:12px;padding:8px}}
+
+#meiz2 .rights-overview>summary{display:grid;grid-template-columns:minmax(260px,1fr) minmax(0,2fr);gap:32px;align-items:center;position:relative;padding-left:24px}
+#meiz2 .rights-overview>summary::before{position:absolute;left:0;top:50%;transform:translateY(-50%)}
+#meiz2 .rights-overview-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 18px}
+#meiz2 .rights-overview-items>span{font-size:16px;font-weight:500;line-height:1.5;padding:9px 12px;background:#e9f0f8;color:#315880}
+@media(max-width:640px){#meiz2 .rights-overview>summary{grid-template-columns:1fr;gap:18px}#meiz2 .rights-overview>summary::before{top:0;transform:none}#meiz2 .rights-overview-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#meiz2 .rights-overview-items>span{font-size:13px;padding:8px}}
+
+#meiz .compact-details>summary,#meiz .compact-details>summary::before{color:#52677d!important;font-weight:500}
+#meiz .card-gal{--product-photo-height:clamp(240px,27vw,460px)}
+#meiz .card-gal figure{height:var(--product-photo-height)}
+#meiz .card-gal img{height:100%;margin:0}
+#meiz .card-gal img.trim-shannian-edge{position:absolute;top:calc(-100% * 11 / 727);height:calc(100% * 764 / 727);left:0;object-position:50% 50%}
+#meiz .card-gal figcaption{left:0;bottom:0;margin:0;background:#52677d!important}
+@media(max-width:640px){#meiz .card-gal{--product-photo-height:260px}}
+@media print{#meiz .card-gal{--product-photo-height:240px}}
 </style>
 </head>
 <body>
@@ -1409,24 +1449,21 @@ section#risk[data-moved-to="faq"]{display:none!important}
 
   <h3>维修范围与巡检</h3>
   <!-- 8 大类维修可视化（Bryan 2026-09-26）：每类一枚统一线性图标，品牌蓝描边 -->
-  <div class="repair-grid">
-    <div class="rp" data-cat="厨卫"><svg viewBox="0 0 48 48"><path d="M14 6v14a6 6 0 0 0 3 5.2V42h6V25.2A6 6 0 0 0 26 20V14h-4v6h-4v-6h-4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg><b>厨卫</b></div>
-    <div class="rp" data-cat="家具"><svg viewBox="0 0 48 48"><rect x="10" y="22" width="28" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M14 22v-6a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v6M16 32v6M32 32v6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>家具</b></div>
-    <div class="rp" data-cat="管道"><svg viewBox="0 0 48 48"><path d="M10 8v14a8 8 0 0 0 8 8h16M38 40V26M30 26h16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="2.4"/></svg><b>管道</b></div>
-    <div class="rp" data-cat="灯具"><svg viewBox="0 0 48 48"><path d="M24 6v8M13 11l5 5M35 11l-5 5M24 20c-7 0-12 5-12 11h24c0-6-5-11-12-11zM6 37h36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>灯具</b></div>
-    <div class="rp" data-cat="门窗"><svg viewBox="0 0 48 48"><rect x="14" y="6" width="22" height="36" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="31" cy="25" r="2" fill="currentColor"/><path d="M8 42h34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>门窗</b></div>
-    <div class="rp" data-cat="电路"><svg viewBox="0 0 48 48"><path d="M28 4L14 26h9l-3 16 16-24h-9l5-14z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg><b>电路</b></div>
-    <div class="rp" data-cat="水路"><svg viewBox="0 0 48 48"><path d="M24 6s11 12 11 20a11 11 0 0 1-22 0C13 18 24 6 24 6z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M19 28a5 5 0 0 0 5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>水路</b></div>
-    <div class="rp" data-cat="家电"><svg viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 40h16M24 32v8M19 16l4 5 6-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><b>家电</b></div>
-  </div>
-  <!-- 真实服务现场（0729 物料原图：疏通管道 / 水电检修 / 免费量房） -->
-  <div class="svc-photos">
+  <div id="serviceGallery">
+      <p class="service-gallery-intro">看看服务人员怎样检查、维修您的房子。选择一类，在这里展开现场照片。</p>
+      <div class="service-category-grid" aria-label="八类维修与巡检现场"></div>
+      <div class="service-album-panel" id="serviceAlbumPanel" hidden>
+        <div class="service-album-heading"><h4 id="serviceAlbumTitle" tabindex="-1"></h4><button type="button" class="service-album-close">收起照片 ↑</button></div>
+        <p class="service-photo-hint">点击照片可放大查看</p><div class="service-album-photos"></div>
+      </div>
+    </div><!-- 真实服务现场（0729 物料原图：疏通管道 / 水电检修 / 免费量房） -->
+  <details class="compact-details service-extra"><summary>更多服务现场：疏通、检修、量房与保洁</summary><div class="svc-photos">
     <figure data-photo="管道疏通" style="cursor:pointer"><img src="assets/ab8c7ff9005791c1375d53ae.png" alt="管道疏通服务现场"><figcaption>管道疏通 · 真实服务</figcaption></figure>
     <figure data-photo="水电检修" style="cursor:pointer"><img src="assets/734fb2c6de0bbb59fbf74790.jpg" alt="水电检修现场：配电箱安装"><figcaption>水电检修 · 真实服务</figcaption></figure>
     <figure data-photo="上门量房" style="cursor:pointer"><img src="assets/36f95f5d18a30dacebfd7ae6.jpg" alt="验房记录现场"><figcaption>上门量房 · 真实服务</figcaption></figure>
     <figure data-photo="保洁服务" style="cursor:pointer"><img src="assets/62d96d0fe29e474f07c747ba.jpg" alt="整备保洁现场"><figcaption>整备保洁 · 真实服务</figcaption></figure>
   </div>
-  <div class="grid g4" style="margin-top:16px">
+  </details><div class="grid g4" style="margin-top:16px">
     <div class="card"><h3>不限次不限额</h3><p><b>1000+ 项维修范围内，次数与金额均不设限</b>，预估每月为您减少 2 次沟通</p></div>
     <div class="card"><h3>每年 1-2 次检修</h3><p><b>每年 1–2 次安全巡检</b>：春节后防风排查（窗户稳固/窗锁/悬挂物/阳台）＋ 租前隐患排查（门窗设施）</p></div>
     <div class="card"><h3>租前保洁</h3><p>专业保洁服务，<b>24 小时不满意重新做</b></p></div>
@@ -1507,7 +1544,7 @@ section#risk[data-moved-to="faq"]{display:none!important}
     </div>
     <div class="card prod-card">
       <div class="gal card-gal" data-gal>
-        <figure><img src="assets/8cde7518e6519ff927da6a63.jpg" alt="山念客厅"><figcaption>客厅 · 自然原木风</figcaption></figure>
+        <figure><img src="assets/8cde7518e6519ff927da6a63.jpg" alt="山念客厅" class="trim-shannian-edge"><figcaption>客厅 · 自然原木风</figcaption></figure>
         <figure><img src="assets/b697c50fa788635d0498d446.jpg" alt="山念卧室"><figcaption>卧室 · 山境原生美学</figcaption></figure>
         <figure><img src="assets/e5f01e624c5a27e6123c890c.jpg" alt="山念卫浴"><figcaption>卫浴 · 干湿分离</figcaption></figure>
         <figure><img src="assets/82ea7abefe728defc94ac4e5.jpg" alt="山念厨房"><figcaption>厨房 · 全套焕新</figcaption></figure>
@@ -1524,7 +1561,6 @@ section#risk[data-moved-to="faq"]{display:none!important}
   </details></div>
 
   <h3>改造实拍 · <em>真南路 183 弄 18 号 501，装前装后</em></h3>
-  <p class="cmp-lead">两室户整装：墙面打磨刷白、地板换新、厨卫焕新、灯具窗帘软装整体配齐——改造完即可挂牌带看。← 左右滑动看四组对比</p>
   <div class="cmp-wrap">
   <div class="gal cmp-gal" data-gal>
     <figure class="cmp-slide">
@@ -1568,7 +1604,7 @@ section#risk[data-moved-to="faq"]{display:none!important}
 <!-- 12b 美租 · 六大权益 + 六大承诺 + 安全环保 -->
 <section id="meiz2">
 <div class="chapter-label">12 / 美租权益与标准</div>
-  <h2 class="title">美租服务细则，<em>想了解再展开</em></h2><details class="compact-details"><summary>美租六大权益，焕新全程更省心</summary><div class="grid g3">
+  <h2 class="title">美租服务细则，<em>想了解再展开</em></h2><details class="compact-details rights-overview"><summary><span class="rights-overview-title">美租六大权益，焕新全程更省心</span><span class="rights-overview-items"><span>免费量房</span><span>免费设计方案</span><span>空气检测</span><span>专业工程验收</span><span>水电安全检测</span><span>加速出租</span></span></summary><div class="grid g3">
     <div class="card"><h3>免费量房</h3><p>美租提供免费上门量房</p></div>
     <div class="card"><h3>免费设计方案</h3><p>多样设计方案，现场出</p></div>
     <div class="card"><h3>空气检测</h3><p>送价值 438–876 元甲醛检测</p></div>
@@ -1603,10 +1639,7 @@ section#risk[data-moved-to="faq"]{display:none!important}
     </div>
     <p class="note">＊六大工艺：五步防水防潮 / 四重防异味 / 三大标准收口 / 黄强绿地 / 五步墙面刷新 / 7S 标准现场管理。</p>
   </details>
-  <details><summary>省心 100 · 美租专属托管参数</summary>
-    <p style="margin-top:12px">专为美租设计的省心租新模式：<b>随行就市、以出定收、空置共担</b>。现金价 72,800 元起（40㎡，不含个性化硬装及增配）；收房年限 ≥5 年；招租定金按天兜底（每天 50% 租金）；二招失败解约赔招租补偿金。</p>
-  </details>
-</section>
+  </section>
 
 <hr class="divider">
 
@@ -2557,6 +2590,43 @@ var ALBUM={
     document.getElementById('lbPrev').style.display=document.getElementById('lbNext').style.display=list.length>1?'':'none';
     render(0); }
   function close(){ ov.classList.remove('on'); ov.setAttribute('aria-hidden','true'); }
+  /* Main-page service albums share the existing PHOTOS pool and ALBUM mappings. */
+  var gallery=document.getElementById('serviceGallery');
+  if(gallery){
+    var categories=['厨卫','家具','管道','灯具','门窗','电路','水路','家电'];
+    var covers={'厨卫':0,'家具':58,'管道':52,'灯具':21,'门窗':31,'电路':22,'水路':39,'家电':42};
+    var selector=gallery.querySelector('.service-category-grid'), panel=gallery.querySelector('.service-album-panel');
+    var panelTitle=gallery.querySelector('#serviceAlbumTitle'), photos=gallery.querySelector('.service-album-photos');
+    var active=null, triggers={};
+    function picture(photo){var node=document.createElement('img');node.src=photo.s;node.alt=photo.c;node.loading='lazy';node.decoding='async';return node;}
+    function resetAlbum(){
+      if(active){triggers[active].setAttribute('aria-expanded','false');triggers[active].querySelector('small').textContent=ALBUM[active].length+' 张 · 展开';}
+      panel.hidden=true;photos.replaceChildren();active=null;
+    }
+    function selectCategory(cat){
+      if(active===cat){resetAlbum();return;}
+      resetAlbum();active=cat;var items=ALBUM[cat];
+      triggers[cat].setAttribute('aria-expanded','true');triggers[cat].querySelector('small').textContent=items.length+' 张 · 收起';
+      panelTitle.textContent=cat+' · '+items.length+' 张服务现场';
+      items.forEach(function(photoIndex,position){
+        var item=document.createElement('button');item.type='button';item.className='service-photo';
+        item.setAttribute('aria-label','放大查看：'+PHOTOS[photoIndex].c);item.dataset.photoIndex=photoIndex;
+        item.appendChild(picture(PHOTOS[photoIndex]));var caption=document.createElement('span');caption.textContent=PHOTOS[photoIndex].c;item.appendChild(caption);
+        item.addEventListener('click',function(){open(items,position)});photos.appendChild(item);
+      });
+      panel.hidden=false;panelTitle.focus({preventScroll:true});
+      panel.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+    }
+    categories.forEach(function(cat){
+      var btn=document.createElement('button');btn.type='button';btn.className='service-category';btn.dataset.cat=cat;
+      btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-controls','serviceAlbumPanel');
+      btn.appendChild(picture(PHOTOS[covers[cat]]));var text=document.createElement('span');text.className='service-category-label';
+      var title=document.createElement('b');title.textContent=cat;var count=document.createElement('small');count.textContent=ALBUM[cat].length+' 张 · 展开';
+      text.append(title,count);btn.appendChild(text);btn.addEventListener('click',function(){selectCategory(cat)});triggers[cat]=btn;selector.appendChild(btn);
+    });
+    gallery.querySelector('.service-album-close').addEventListener('click',function(){var previous=active;resetAlbum();if(previous)triggers[previous].focus()});
+  }
+
   document.querySelectorAll('.rp[data-cat]').forEach(function(el){
     el.style.cursor='pointer';
     el.addEventListener('click',function(){ open(ALBUM[el.dataset.cat]||[0],0); });
