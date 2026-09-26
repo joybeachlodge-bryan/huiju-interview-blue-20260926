@@ -954,6 +954,27 @@ section#haggle{display:none!important}
 
 #account .owner-highlight{color:#24558d!important;background:#e1ebf8;font-weight:600;padding:2px 6px;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 #account .owner-highlight span{color:inherit!important;font-weight:inherit}
+
+/* Compact secondary details; primary product images and one-line summaries stay visible. */
+section#risk[data-moved-to="faq"]{display:none!important}
+.risk-detail-links{display:flex;gap:16px;flex-wrap:wrap;margin:30px 0}
+.risk-detail-links a{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:16px 22px;background:#eaf1fa;color:#24558d;border:1px solid #c4d5e9;text-decoration:none;font-weight:600}
+.risk-detail-links a:hover{background:#dfeaf7}
+.compact-details{border:0!important;border-top:1px solid #cad7e3!important;border-radius:0!important;background:transparent!important;padding:18px 0!important;margin:0!important}
+.compact-details>summary{color:#24558d;font-size:19px;font-weight:600;cursor:pointer;line-height:1.6}
+.compact-details[open]>summary{margin-bottom:18px}
+.compact-details p{margin:10px 0 0}
+#meiz .bd>.compact-details{margin-top:18px!important}
+#meiz .compact-details>summary{font-size:16px}
+#meiz2>.compact-details{padding:23px 0!important}
+#meiz2>.compact-details .grid{margin-top:12px}
+#faq .faq-risk-group{margin-top:24px!important;background:#f4f8fc!important;padding:20px 24px!important;scroll-margin-top:110px}
+#faq .faq-risk-question{padding:17px 0;border:0;border-top:1px solid #d8e2ee;background:transparent;border-radius:0;margin:0}
+#faq .faq-risk-question>summary{font-size:17px;line-height:1.7;font-weight:500;color:#193656;cursor:pointer}
+#faq .faq-risk-question>summary::before{content:"+ "}
+#faq .faq-risk-question[open]>summary::before{content:"− "}
+#faq .faq-risk-question p{font-size:16px;line-height:1.85;margin:12px 0 0}
+@media(max-width:640px){.risk-detail-links{display:grid;gap:12px}.risk-detail-links a{padding:15px 17px;font-size:15px}.compact-details>summary{font-size:17px}#faq .faq-risk-group{padding:18px 16px!important;scroll-margin-top:135px}#faq .faq-risk-question>summary{font-size:16px}#faq .faq-risk-question p{font-size:15px}}
 </style>
 </head>
 <body>
@@ -1246,70 +1267,54 @@ section#haggle{display:none!important}
     </aside>
   </div>
   <!-- 业主端典型风险 TOP10 ↔ 省心租配置十大保障（Bryan 2026-09-26：从 #risk 挪到盾牌图上方） -->
-  <h3 style="margin:34px 0 14px;color:#0B2A5B">业主端典型风险 TOP10 ↔ 省心租配置十大保障</h3>
-  <div class="card" style="overflow-x:auto">
-  <table>
-    <tr><th>您担心的</th><th>省心租的保障</th></tr>
-    <tr><td>1 租客意外事故</td><td>人身安全保障，<b>最高 10 万</b></td></tr>
-    <tr><td>2 意外损失无赔付（火灾、燃气爆炸）</td><td>房屋财产安全保障，<b>最高 10 万</b></td></tr>
-    <tr><td>3 漏水损失难赔付</td><td>房屋财产安全保障，<b>单次不超 1 万</b></td></tr>
-    <tr><td>4 任意改造加隔断</td><td><b>整收整出</b>，合同禁止违规改造、分租、隔断</td></tr>
-    <tr><td>5 租金拖欠难追回</td><td><b>按合同周期付款</b>，租客催缴由省心租跟进</td></tr>
-    <tr><td>6 房屋空置损失大（租客无故解约）</td><td>招租期未出租<b>赔半个月</b>；提前招租减少空置</td></tr>
-    <tr><td>7 物品丢损难索赔</td><td>租前租后物业交割，<b>留存房屋及物品清单</b></td></tr>
-    <tr><td>8 房屋维护问题多</td><td><b>数百至上千项免费维修</b></td></tr>
-    <tr><td>9 违规转租藏隐患（整租变群租）</td><td>合同约束<b>禁止二房东</b> + <b>租中巡检</b></td></tr>
-    <tr><td>10 租客行为难预料</td><td><b>身份筛查</b>、合同约束、<b>租中跟进与风险处理机制</b></td></tr>
-  </table>
-  </div>
-  <!-- 五盾（Bryan 2026-09-26 二次定稿：比例回到原版圆润造型，矢量高清，五盾完整不裁剪，无外框） -->
+  <div class="risk-detail-links"><a href="#faqRiskTop10" data-open-detail="faqRiskTop10">查看 Top 10 保障细则 <span aria-hidden="true">↓</span></a><a href="#faqOwnerRisks" data-open-detail="faqOwnerRisks">业主最担心的十件事，怎么兜底？ <span aria-hidden="true">↓</span></a></div><!-- 五盾（Bryan 2026-09-26 二次定稿：比例回到原版圆润造型，矢量高清，五盾完整不裁剪，无外框） -->
   <div class="shields-wrap" style="margin-top:22px">
     <div class="shields-title"><span class="ln"></span>最高30万元服务保障<span class="ln"></span></div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 270" role="img" aria-label="五项服务保障盾牌"><style>.shield-text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:20px;font-weight:700;letter-spacing:.025em}</style><defs><filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="9" stdDeviation="8" flood-color="#173865" flood-opacity=".15"/></filter></defs><g filter="url(#softShadow)"><svg x="0" y="0" width="200" height="270" viewBox="0 0 200 270" role="img" aria-label="屋内人身保障"><defs>
-          <linearGradient id="metala0" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"/><stop offset=".22" stop-color="#a9bfdc"/><stop offset=".49" stop-color="#f7fbff"/><stop offset=".78" stop-color="#9eb7d8"/><stop offset="1" stop-color="#d9e5f4"/></linearGradient>
-          <linearGradient id="facea0" x2=".78" y2="1"><stop stop-color="#ffffff"/><stop offset=".58" stop-color="#f4f8fe"/><stop offset="1" stop-color="#e5eefb"/></linearGradient></defs>
-          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala0)"/>
-          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea0)" stroke="#fff" stroke-width="2"/>
-          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"/>
-          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"/>
-          <g fill="#26529a"><text x="100" y="128" text-anchor="middle" class="shield-text">屋内</text><text x="100" y="156" text-anchor="middle" class="shield-text">人身保障</text></g></svg></g><g filter="url(#softShadow)"><svg x="216" y="0" width="200" height="270" viewBox="0 0 200 270" role="img" aria-label="房屋财产保障"><defs>
-          <linearGradient id="metala1" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"/><stop offset=".22" stop-color="#a9bfdc"/><stop offset=".49" stop-color="#f7fbff"/><stop offset=".78" stop-color="#9eb7d8"/><stop offset="1" stop-color="#d9e5f4"/></linearGradient>
-          <linearGradient id="facea1" x2=".78" y2="1"><stop stop-color="#ffffff"/><stop offset=".58" stop-color="#f4f8fe"/><stop offset="1" stop-color="#e5eefb"/></linearGradient></defs>
-          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala1)"/>
-          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea1)" stroke="#fff" stroke-width="2"/>
-          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"/>
-          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"/>
-          <g fill="#26529a"><text x="100" y="128" text-anchor="middle" class="shield-text">房屋</text><text x="100" y="156" text-anchor="middle" class="shield-text">财产保障</text></g></svg></g><g filter="url(#softShadow)"><svg x="432" y="0" width="200" height="270" viewBox="0 0 200 270" role="img" aria-label="房屋事故保障"><defs>
-          <linearGradient id="metala2" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"/><stop offset=".22" stop-color="#a9bfdc"/><stop offset=".49" stop-color="#f7fbff"/><stop offset=".78" stop-color="#9eb7d8"/><stop offset="1" stop-color="#d9e5f4"/></linearGradient>
-          <linearGradient id="facea2" x2=".78" y2="1"><stop stop-color="#ffffff"/><stop offset=".58" stop-color="#f4f8fe"/><stop offset="1" stop-color="#e5eefb"/></linearGradient></defs>
-          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala2)"/>
-          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea2)" stroke="#fff" stroke-width="2"/>
-          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"/>
-          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"/>
-          <g fill="#26529a"><text x="100" y="128" text-anchor="middle" class="shield-text">房屋</text><text x="100" y="156" text-anchor="middle" class="shield-text">事故保障</text></g></svg></g><g filter="url(#softShadow)"><svg x="648" y="0" width="200" height="270" viewBox="0 0 200 270" role="img" aria-label="租客人身保障"><defs>
-          <linearGradient id="metala3" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"/><stop offset=".22" stop-color="#a9bfdc"/><stop offset=".49" stop-color="#f7fbff"/><stop offset=".78" stop-color="#9eb7d8"/><stop offset="1" stop-color="#d9e5f4"/></linearGradient>
-          <linearGradient id="facea3" x2=".78" y2="1"><stop stop-color="#ffffff"/><stop offset=".58" stop-color="#f4f8fe"/><stop offset="1" stop-color="#e5eefb"/></linearGradient></defs>
-          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala3)"/>
-          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea3)" stroke="#fff" stroke-width="2"/>
-          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"/>
-          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"/>
-          <g fill="#26529a"><text x="100" y="128" text-anchor="middle" class="shield-text">租客</text><text x="100" y="156" text-anchor="middle" class="shield-text">人身保障</text></g></svg></g><g filter="url(#softShadow)"><svg x="864" y="0" width="200" height="270" viewBox="0 0 200 270" role="img" aria-label="租客财产保障"><defs>
-          <linearGradient id="metala4" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"/><stop offset=".22" stop-color="#a9bfdc"/><stop offset=".49" stop-color="#f7fbff"/><stop offset=".78" stop-color="#9eb7d8"/><stop offset="1" stop-color="#d9e5f4"/></linearGradient>
-          <linearGradient id="facea4" x2=".78" y2="1"><stop stop-color="#ffffff"/><stop offset=".58" stop-color="#f4f8fe"/><stop offset="1" stop-color="#e5eefb"/></linearGradient></defs>
-          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala4)"/>
-          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea4)" stroke="#fff" stroke-width="2"/>
-          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"/>
-          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1080 270" role="img" aria-label="五项服务保障盾牌"><style>.shield-text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:20px;font-weight:700;letter-spacing:.025em}</style><defs><filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%"><fedropshadow dx="0" dy="9" stddeviation="8" flood-color="#173865" flood-opacity=".15"></fedropshadow></filter></defs><g filter="url(#softShadow)"><svg x="0" y="0" width="200" height="270" viewbox="0 0 200 270" role="img" aria-label="屋内人身保障"><defs>
+          <lineargradient id="metala0" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"></stop><stop offset=".22" stop-color="#a9bfdc"></stop><stop offset=".49" stop-color="#f7fbff"></stop><stop offset=".78" stop-color="#9eb7d8"></stop><stop offset="1" stop-color="#d9e5f4"></stop></lineargradient>
+          <lineargradient id="facea0" x2=".78" y2="1"><stop stop-color="#ffffff"></stop><stop offset=".58" stop-color="#f4f8fe"></stop><stop offset="1" stop-color="#e5eefb"></stop></lineargradient></defs>
+          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala0)"></path>
+          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea0)" stroke="#fff" stroke-width="2"></path>
+          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"></path>
+          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"></path>
+          <g fill="#26529a"><text x="100" y="128" text-anchor="middle" class="shield-text">屋内</text><text x="100" y="156" text-anchor="middle" class="shield-text">人身保障</text></g></svg></g><g filter="url(#softShadow)"><svg x="216" y="0" width="200" height="270" viewbox="0 0 200 270" role="img" aria-label="房屋财产保障"><defs>
+          <lineargradient id="metala1" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"></stop><stop offset=".22" stop-color="#a9bfdc"></stop><stop offset=".49" stop-color="#f7fbff"></stop><stop offset=".78" stop-color="#9eb7d8"></stop><stop offset="1" stop-color="#d9e5f4"></stop></lineargradient>
+          <lineargradient id="facea1" x2=".78" y2="1"><stop stop-color="#ffffff"></stop><stop offset=".58" stop-color="#f4f8fe"></stop><stop offset="1" stop-color="#e5eefb"></stop></lineargradient></defs>
+          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala1)"></path>
+          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea1)" stroke="#fff" stroke-width="2"></path>
+          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"></path>
+          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"></path>
+          <g fill="#26529a"><text x="100" y="128" text-anchor="middle" class="shield-text">房屋</text><text x="100" y="156" text-anchor="middle" class="shield-text">财产保障</text></g></svg></g><g filter="url(#softShadow)"><svg x="432" y="0" width="200" height="270" viewbox="0 0 200 270" role="img" aria-label="房屋事故保障"><defs>
+          <lineargradient id="metala2" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"></stop><stop offset=".22" stop-color="#a9bfdc"></stop><stop offset=".49" stop-color="#f7fbff"></stop><stop offset=".78" stop-color="#9eb7d8"></stop><stop offset="1" stop-color="#d9e5f4"></stop></lineargradient>
+          <lineargradient id="facea2" x2=".78" y2="1"><stop stop-color="#ffffff"></stop><stop offset=".58" stop-color="#f4f8fe"></stop><stop offset="1" stop-color="#e5eefb"></stop></lineargradient></defs>
+          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala2)"></path>
+          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea2)" stroke="#fff" stroke-width="2"></path>
+          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"></path>
+          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"></path>
+          <g fill="#26529a"><text x="100" y="128" text-anchor="middle" class="shield-text">房屋</text><text x="100" y="156" text-anchor="middle" class="shield-text">事故保障</text></g></svg></g><g filter="url(#softShadow)"><svg x="648" y="0" width="200" height="270" viewbox="0 0 200 270" role="img" aria-label="租客人身保障"><defs>
+          <lineargradient id="metala3" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"></stop><stop offset=".22" stop-color="#a9bfdc"></stop><stop offset=".49" stop-color="#f7fbff"></stop><stop offset=".78" stop-color="#9eb7d8"></stop><stop offset="1" stop-color="#d9e5f4"></stop></lineargradient>
+          <lineargradient id="facea3" x2=".78" y2="1"><stop stop-color="#ffffff"></stop><stop offset=".58" stop-color="#f4f8fe"></stop><stop offset="1" stop-color="#e5eefb"></stop></lineargradient></defs>
+          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala3)"></path>
+          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea3)" stroke="#fff" stroke-width="2"></path>
+          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"></path>
+          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"></path>
+          <g fill="#26529a"><text x="100" y="128" text-anchor="middle" class="shield-text">租客</text><text x="100" y="156" text-anchor="middle" class="shield-text">人身保障</text></g></svg></g><g filter="url(#softShadow)"><svg x="864" y="0" width="200" height="270" viewbox="0 0 200 270" role="img" aria-label="租客财产保障"><defs>
+          <lineargradient id="metala4" x1=".08" x2=".9" y1="0" y2="1"><stop stop-color="#fcfdff"></stop><stop offset=".22" stop-color="#a9bfdc"></stop><stop offset=".49" stop-color="#f7fbff"></stop><stop offset=".78" stop-color="#9eb7d8"></stop><stop offset="1" stop-color="#d9e5f4"></stop></lineargradient>
+          <lineargradient id="facea4" x2=".78" y2="1"><stop stop-color="#ffffff"></stop><stop offset=".58" stop-color="#f4f8fe"></stop><stop offset="1" stop-color="#e5eefb"></stop></lineargradient></defs>
+          <path d="M100 9 C77 29 49 41 18 45 L18 139 Q18 215 100 258 Q182 215 182 139 L182 45 C151 41 123 29 100 9Z" fill="url(#metala4)"></path>
+          <path d="M100 17 C77 35 51 47 26 51 L26 139 Q26 207 100 249 Q174 207 174 139 L174 51 C149 47 123 35 100 17Z" fill="url(#facea4)" stroke="#fff" stroke-width="2"></path>
+          <path d="M100 26 C77 43 54 53 34 57 L34 138 Q34 199 100 239 Q166 199 166 138 L166 57 C146 53 123 43 100 26Z" fill="none" stroke="#a8c1e4" stroke-width="1.3" opacity=".75"></path>
+          <path d="M100 18 C79 35 53 47 27 51 L27 68 C62 62 86 50 100 35 C114 50 138 62 173 68 L173 51 C147 47 121 35 100 18Z" fill="#fff" opacity=".56"></path>
           <g fill="#26529a"><text x="100" y="128" text-anchor="middle" class="shield-text">租客</text><text x="100" y="156" text-anchor="middle" class="shield-text">财产保障</text></g></svg></g></svg>
   </div>
-  </div>
+
 </section>
 
 <hr class="divider">
 
 <!-- 7 权益对比 -->
 <section id="cmp">
-<div class="chapter-label">11 / 两种出租方式</div>
+<div class="chapter-label">10 / 两种出租方式</div>
   <h2 class="title">省心租 <em>VS 普通出租</em></h2>
   <p class="sub">一张表看明白差在哪——按入住时间线：租前 → 租中 → 租后。</p>
 
@@ -1359,26 +1364,7 @@ section#haggle{display:none!important}
 <hr class="divider">
 
 <!-- 8 风险TOP10 -->
-<section id="risk">
-<div class="chapter-label">09 / 风险怎么管</div>
-  <h2 class="title">业主最担心的 <em>10 件事</em>，怎么兜？</h2>
-  <div class="card" style="overflow-x:auto">
-  <table class="risk-table">
-    <tr><th>业主的风险</th><th>我们的机制</th></tr>
-    <tr><td>1. 房子租不出去</td><td><b>招租定金兜底</b>，<b>5000 名经纪人 + 300 名专属出房团队</b>定向加速出房</td></tr>
-    <tr><td>2. 租客拖欠房租</td><td><b>公司系统自动提前支付租金</b>，与租客缴费解耦</td></tr>
-    <tr><td>3. 房屋被破坏</td><td>租客统一筛选 + 重要物品盘点单留证 + <b>家财险保障</b></td></tr>
-    <tr><td>4. 隔断分租毁房</td><td>合同约定<b>整租</b>，不隔断不分租，<b>单单备案</b></td></tr>
-    <tr><td>5. 出事故赔不起</td><td>19 项安全排查前置；意外损失<b>最高 12 万元保障兜底</b></td></tr>
-    <tr><td>6. 维修没人管</td><td><b>1000+ 维修项目免费</b>出工出力，大维修我们跑腿</td></tr>
-    <tr><td>7. 纠纷扯皮</td><td><b>双管家 7×24 应答</b>，分级处理机制，<b>业主不出面</b></td></tr>
-    <tr><td>8. 突然空置断收</td><td>租客到期前 <b>35 天启动议价窗口</b>，二招前置管理</td></tr>
-    <tr><td>9. 租客质量差</td><td><b>实名备案 + 统一筛选</b> + 专人租中维护</td></tr>
-    <tr><td>10. 人不在上海管不了</td><td><b>全流程代办</b>，线上同步进展，钥匙托管有交接记录</td></tr>
-  </table>
-  </div>
-
-</section>
+<section id="risk" hidden="hidden" aria-hidden="true" data-moved-to="faq"></section>
 
 <hr class="divider">
 
@@ -1408,7 +1394,7 @@ section#haggle{display:none!important}
 
 <!-- 10 租后服务 -->
 <section id="svc">
-<div class="chapter-label">10 / 租后服务</div>
+<div class="chapter-label">09 / 租后服务</div>
   <h2 class="title">租后服务，<em>细到这个程度</em></h2>
   <div class="grid g4">
     <div class="card"><div class="num">1000+</div><p>免费维修项目：小维修免费出工出力，大维修为您跑腿办事</p></div>
@@ -1503,7 +1489,7 @@ section#haggle{display:none!important}
 <!-- 12 美租 -->
 <!-- 12 美租 · 收益版（2026-09-26 重构：产品 → 实拍对比 → 权益承诺安全 → 选择与付款） -->
 <section id="meiz">
-<div class="chapter-label">12 / 美租焕新产品</div>
+<div class="chapter-label">11 / 美租焕新产品</div>
   <h2 class="title">房子太旧租不上价？<em>美租升级方案</em></h2>
   <p class="sub">美租是惠居面向老房、旧房、品质差房源的一站式可出租解决方案：做一次小额改造投资，靠专业运营把租金赚回来。上海房龄 15 年以上房源占 68%，这是老房子最现实的增值路径。</p>
 
@@ -1517,7 +1503,7 @@ section#haggle{display:none!important}
         <figure><img src="assets/d121d15142bf73bb0a067fae.jpg" alt="拾光厨房"><figcaption>厨房 · 全套焕新</figcaption></figure>
       </div>
       <div class="gal-nav"><button class="gbtn" data-dir="-1" aria-label="上一张">‹</button><div class="gal-dots"></div><button class="gbtn" data-dir="1" aria-label="下一张">›</button></div>
-      <div class="bd"><h3>拾光 1.0 <span class="tag">整装 · 复古奶油风</span></h3><p>面向 23–35 岁职场青年：黑白简约、易打理，租客基数最大、空置风险更低。</p><p>墙顶面、地板、厨卫、门、灯、柜整屋焕新；约 35 个工作日，平台监理验收、甲醛合格交付；租金溢价 10–20%，可租金代扣。</p></div>
+      <div class="bd"><h3>拾光 1.0 <span class="tag">整装 · 复古奶油风</span></h3><p>复古奶油风全屋焕新，让老房的观感和居住体验一起改善。</p><details class="compact-details"><summary>查看改造范围、工期与付款方式</summary><p>墙顶面、地板、厨卫、门、灯、柜整屋焕新；约 35 个工作日，平台监理验收、甲醛合格交付；租金溢价 10–20%，可租金代扣。</p></details></div>
     </div>
     <div class="card prod-card">
       <div class="gal card-gal" data-gal>
@@ -1527,15 +1513,15 @@ section#haggle{display:none!important}
         <figure><img src="assets/82ea7abefe728defc94ac4e5.jpg" alt="山念厨房"><figcaption>厨房 · 全套焕新</figcaption></figure>
       </div>
       <div class="gal-nav"><button class="gbtn" data-dir="-1" aria-label="上一张">‹</button><div class="gal-dots"></div><button class="gbtn" data-dir="1" aria-label="下一张">›</button></div>
-      <div class="bd"><h3>山念 2.0 <span class="tag">整装 · 自然原木风</span></h3><p>面向 25–40 岁白领：环保原木材质，品质敏感型租客愿意多付租金、租期更稳。</p><p>整屋焕新（墙顶面/地板/厨卫/门/灯/柜），约 35 个工作日，平台监理验收、甲醛合格交付；租金溢价 10–20%，可租金代扣。</p></div>
+      <div class="bd"><h3>山念 2.0 <span class="tag">整装 · 自然原木风</span></h3><p>自然原木风整装，适合希望整体提升房屋品质的业主。</p><details class="compact-details"><summary>查看改造范围、工期与付款方式</summary><p>整屋焕新（墙顶面/地板/厨卫/门/灯/柜），约 35 个工作日，平台监理验收、甲醛合格交付；租金溢价 10–20%，可租金代扣。</p></details></div>
     </div>
   </div>
   <div class="zone zone-jg"><span class="zi">局</span><b>局改 · 按需翻新，不动大格局</b><small>舒里 2.0 —— 基础尚可、只解决最影响出租部位的老房</small></div>
   <div class="card">
-    <h3>舒里 2.0 <span class="tag">局改 · 三层套餐</span><span class="tag">整屋一口价 18,880 元/套（≤40㎡）</span></h3>
-    <p>一套闭口报价，整屋六大模块焕新：免量房、免设计、无增项，甲醛检测合格交付，整体质保 1 年、延期赔付。不想动整屋，也有按空间组合的空间包（刷墙 31–95 元/㎡ · 厨卫焕新 4,800–5,200 元/间 · 地板 120 元/㎡ 起）和水电门窗橱柜单点的加载包。超 40㎡ 部分 +199 元/㎡，每加一个卫生间 +4,800 元。</p>
+    <h3>舒里 2.0 <span class="tag">局改 · 三层套餐</span></h3>
+    <p>哪里影响出租就改哪里，按房况选择整屋、空间或单项翻新。</p><details class="compact-details"><summary>查看套餐、价格与交付标准</summary><p><span class="tag">整屋一口价 18,880 元/套（≤40㎡）</span></p><p>一套闭口报价，整屋六大模块焕新：免量房、免设计、无增项，甲醛检测合格交付，整体质保 1 年、延期赔付。不想动整屋，也有按空间组合的空间包（刷墙 31–95 元/㎡ · 厨卫焕新 4,800–5,200 元/间 · 地板 120 元/㎡ 起）和水电门窗橱柜单点的加载包。超 40㎡ 部分 +199 元/㎡，每加一个卫生间 +4,800 元。</p>
     <p class="note">＊价格依据美租官方《局改产品手册》2026 年 9 月版；完整报价细则可面访时提供，本房适用套餐以实勘为准。</p>
-  </div>
+  </details></div>
 
   <h3>改造实拍 · <em>真南路 183 弄 18 号 501，装前装后</em></h3>
   <p class="cmp-lead">两室户整装：墙面打磨刷白、地板换新、厨卫焕新、灯具窗帘软装整体配齐——改造完即可挂牌带看。← 左右滑动看四组对比</p>
@@ -1581,9 +1567,8 @@ section#haggle{display:none!important}
 
 <!-- 12b 美租 · 六大权益 + 六大承诺 + 安全环保 -->
 <section id="meiz2">
-<div class="chapter-label">13 / 美租权益与标准</div>
-  <h2 class="title">美租六大权益，<em>焕新全程更省心</em></h2>
-  <div class="grid g3">
+<div class="chapter-label">12 / 美租权益与标准</div>
+  <h2 class="title">美租服务细则，<em>想了解再展开</em></h2><details class="compact-details"><summary>美租六大权益，焕新全程更省心</summary><div class="grid g3">
     <div class="card"><h3>免费量房</h3><p>美租提供免费上门量房</p></div>
     <div class="card"><h3>免费设计方案</h3><p>多样设计方案，现场出</p></div>
     <div class="card"><h3>空气检测</h3><p>送价值 438–876 元甲醛检测</p></div>
@@ -1592,8 +1577,7 @@ section#haggle{display:none!important}
     <div class="card"><h3>加速出租</h3><p>专业团队支持房源加速出租</p></div>
   </div>
 
-  <h3>六大承诺，<em>让每一步更安心</em></h3>
-  <div class="grid g3">
+  </details><details class="compact-details"><summary>六大承诺，让每一步更安心</summary><div class="grid g3">
     <div class="card"><h3>履约准时</h3><p>延期必赔</p></div>
     <div class="card"><h3>按期交付</h3><p>延期必赔</p></div>
     <div class="card"><h3>甲醛超标</h3><p>免费治理</p></div>
@@ -1603,16 +1587,14 @@ section#haggle{display:none!important}
   </div>
   <p class="note">＊细则详见《上海美租业主—供应商装饰装修工程施工合同》。</p>
 
-  <h3>安全与环保，<em>一句话看懂</em></h3>
-  <div class="grid g4">
+  </details><details class="compact-details"><summary>安全与环保，一句话看懂</summary><div class="grid g4">
     <div class="card"><h3>ENF 母婴级板材</h3><p>甲醛释放 ≤0.025mg/m³，比 E1 标准严 5 倍</p></div>
     <div class="card"><h3>24 小时可入住</h3><p>三棵树净味漆 VOC 为 0，即刷即住</p></div>
     <div class="card"><h3>平台监理验收</h3><p>交付有标准，不靠工长自觉</p></div>
     <div class="card"><h3>甲醛检测合格交付</h3><p>检测合格才交房，数据给您看</p></div>
   </div>
 
-  <h3>细节在这里，<em>想看再点开</em></h3>
-  <details><summary>材料与工艺明细（四大材料 · 六大工艺）</summary>
+  </details><details><summary>材料与工艺明细（四大材料 · 六大工艺）</summary>
     <div class="grid g4" style="margin-top:12px">
       <div class="card"><h3>SPC 石塑地板</h3><p>无醛、100% 防水、耐磨 ≥25000 转，寿命 15–20 年</p></div>
       <div class="card"><h3>三棵树环保涂料</h3><p>竹炭净味、耐擦洗 5000 次、十环认证</p></div>
@@ -1630,7 +1612,7 @@ section#haggle{display:none!important}
 
 <!-- 12c 美租 · 两种选择 + 付款方式 -->
 <section id="meiz3">
-<div class="chapter-label">14 / 方案与付款</div>
+<div class="chapter-label">13 / 方案与付款</div>
   <h2 class="title">您的两种选择，<em>账算给您看</em></h2>
   <div class="grid g2 duo">
     <div class="card anchor-l">
@@ -1653,9 +1635,9 @@ section#haggle{display:none!important}
     </div>
   </div>
   <div class="vac-bar">算成月账：每月多收约 <b>700–1,400 元</b>，一年 <b>8,400–16,800 元</b>；具体投入与回本周期，实勘后用《投资收益分析报告》算给您看。</div>
-  
 
-  <h3 id="paymentTitle">这笔钱怎么出？<em>三种方式，不用动存款</em></h3>
+
+  <h2 id="paymentTitle" class="title">这笔钱怎么出？<em>三种方式，不用动存款</em></h2>
   <div class="pay-row">
     <div class="pay hot">
       <div class="pay-badge">多数业主的选择</div>
@@ -1677,7 +1659,7 @@ section#haggle{display:none!important}
 
 <!-- 13 真实案例 -->
 <section id="cases">
-<div class="chapter-label">15 / 业主案例</div>
+<div class="chapter-label">14 / 业主案例</div>
   <h2 class="title">业主们<em>怎么说</em></h2>
   <p class="sub">以下为示例案例模板，正式使用前请替换为您所在大区的真实案例（含前后对比照与真实数据）。</p>
     <div class="grid g2">
@@ -1721,7 +1703,7 @@ section#haggle{display:none!important}
 
 <!-- 14 服务流程 -->
 <section id="flow">
-<div class="chapter-label">16 / 合作流程</div>
+<div class="chapter-label">15 / 合作流程</div>
   <h2 class="title">签约后，<em>每一步都有人管</em></h2>
   <p class="sub">托管全流程 23 个节点、五个阶段，专属资管经理全程对接。</p>
   <div class="card steps">
@@ -1737,7 +1719,7 @@ section#haggle{display:none!important}
 
 <!-- 15 签约流程+FAQ -->
 <section id="faq">
-<div class="chapter-label">17 / 常见问题</div>
+<div class="chapter-label">16 / 常见问题</div>
   <h2 class="title">三步签约，<em>常见问题</em></h2>
   <div class="grid g3" style="margin-bottom:30px">
     <div class="card"><h3>STEP 1 · 免费实勘</h3><p>资管经理上门实勘，出具报价与方案，不收费、不勉强。</p></div>
@@ -1753,11 +1735,11 @@ section#haggle{display:none!important}
   <details><summary>解约怎么算？</summary><p>招租失败解约：招租定金自动转化为违约金；出租期间违约解约：违约方支付 1 个月租金违约金，另支付租客 1 个月租金赔偿金；议价窗口期内未达成一致，托管招租期开始 7 天内双方可无责解约。</p></details>
   <details><summary>为什么不收取租客押金？</summary><p>押金无法完全兜底欠费与损坏风险。托管给我们，租金由系统自动提前支付；我们筛选租客并安排专人维护来降低风险。</p></details>
   <details><summary>房子是整租还是分租？</summary><p>整房出租，不隔断、不分租，维持房屋原样，单单备案。</p></details>
-</section>
+<details class="compact-details faq-risk-group" id="faqRiskTop10"><summary>TOP 10 · 典型风险与保障细则</summary><div class="faq-risk-list"><details class="faq-risk-question"><summary>1 租客意外事故</summary><p>人身安全保障，<b>最高 10 万</b></p></details><details class="faq-risk-question"><summary>2 意外损失无赔付（火灾、燃气爆炸）</summary><p>房屋财产安全保障，<b>最高 10 万</b></p></details><details class="faq-risk-question"><summary>3 漏水损失难赔付</summary><p>房屋财产安全保障，<b>单次不超 1 万</b></p></details><details class="faq-risk-question"><summary>4 任意改造加隔断</summary><p><b>整收整出</b>，合同禁止违规改造、分租、隔断</p></details><details class="faq-risk-question"><summary>5 租金拖欠难追回</summary><p><b>按合同周期付款</b>，租客催缴由省心租跟进</p></details><details class="faq-risk-question"><summary>6 房屋空置损失大（租客无故解约）</summary><p>招租期未出租<b>赔半个月</b>；提前招租减少空置</p></details><details class="faq-risk-question"><summary>7 物品丢损难索赔</summary><p>租前租后物业交割，<b>留存房屋及物品清单</b></p></details><details class="faq-risk-question"><summary>8 房屋维护问题多</summary><p><b>数百至上千项免费维修</b></p></details><details class="faq-risk-question"><summary>9 违规转租藏隐患（整租变群租）</summary><p>合同约束<b>禁止二房东</b> + <b>租中巡检</b></p></details><details class="faq-risk-question"><summary>10 租客行为难预料</summary><p><b>身份筛查</b>、合同约束、<b>租中跟进与风险处理机制</b></p></details></div></details><details class="compact-details faq-risk-group" id="faqOwnerRisks"><summary>业主最担心的十件事，怎么兜底？</summary><div class="faq-risk-list"><details class="faq-risk-question"><summary>1. 房子租不出去</summary><p><b>招租定金兜底</b>，<b>5000 名经纪人 + 300 名专属出房团队</b>定向加速出房</p></details><details class="faq-risk-question"><summary>2. 租客拖欠房租</summary><p><b>公司系统自动提前支付租金</b>，与租客缴费解耦</p></details><details class="faq-risk-question"><summary>3. 房屋被破坏</summary><p>租客统一筛选 + 重要物品盘点单留证 + <b>家财险保障</b></p></details><details class="faq-risk-question"><summary>4. 隔断分租毁房</summary><p>合同约定<b>整租</b>，不隔断不分租，<b>单单备案</b></p></details><details class="faq-risk-question"><summary>5. 出事故赔不起</summary><p>19 项安全排查前置；意外损失<b>最高 12 万元保障兜底</b></p></details><details class="faq-risk-question"><summary>6. 维修没人管</summary><p><b>1000+ 维修项目免费</b>出工出力，大维修我们跑腿</p></details><details class="faq-risk-question"><summary>7. 纠纷扯皮</summary><p><b>双管家 7×24 应答</b>，分级处理机制，<b>业主不出面</b></p></details><details class="faq-risk-question"><summary>8. 突然空置断收</summary><p>租客到期前 <b>35 天启动议价窗口</b>，二招前置管理</p></details><details class="faq-risk-question"><summary>9. 租客质量差</summary><p><b>实名备案 + 统一筛选</b> + 专人租中维护</p></details><details class="faq-risk-question"><summary>10. 人不在上海管不了</summary><p><b>全流程代办</b>，线上同步进展，钥匙托管有交接记录</p></details></div></details></section>
 
 <!-- 16 行动呼吁 -->
 <section id="cta">
-<div class="chapter-label">18 / 开始合作</div>
+<div class="chapter-label">17 / 开始合作</div>
   <h2 class="title">现在，<em>三步开始</em></h2>
   <p class="sub" style="margin:0 auto 30px">预约免费实勘 → 确认托管方案 → 交房按月收租</p>
   <div class="agent" style="margin-bottom:26px">
@@ -2623,6 +2605,14 @@ document.querySelectorAll('[data-gal]').forEach(function(g){
     d.addEventListener('click',function(e){e.stopPropagation();go(j);});
   });
 });
+
+/* Detail links open the destination group before scrolling; direct hashes work too. */
+(function(){
+ function openDetail(id,focus){var target=document.getElementById(id);if(!target||target.tagName!=='DETAILS')return;target.open=true;if(focus){var summary=target.querySelector('summary');summary.focus({preventScroll:true});requestAnimationFrame(function(){target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})})}}
+ document.querySelectorAll('[data-open-detail]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var id=a.dataset.openDetail;history.replaceState(null,'','#'+id);openDetail(id,true)})});
+ function fromHash(){var id=location.hash.slice(1);if(id==='faqRiskTop10'||id==='faqOwnerRisks')openDetail(id,true)}
+ window.addEventListener('hashchange',fromHash);fromHash();
+})();
 </script>
 </body>
 </html>
