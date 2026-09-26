@@ -771,6 +771,9 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 #nav .brand-logo img{display:block;width:42px;height:32px;object-fit:contain;border:0!important;border-radius:0}
 #nav .brand-logo:hover{color:var(--navy);text-decoration:none}
 @media(max-width:640px){#nav .in .brand-logo{font-size:19px}#nav .brand-logo img{width:34px;height:27px}}
+
+/* Temporarily hidden at Bryan request; retained for later revision, including print. */
+section#haggle{display:none!important}
 </style>
 </head>
 <body>
@@ -1289,8 +1292,7 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 <hr class="divider">
 
 <!-- 11b 异议②：高挂诱惑账（双变量滑块推演，重收益型物料） -->
-<section id="haggle">
-<div class="chapter-label">11 / 报价与到手收益</div>
+<section id="haggle" hidden aria-hidden="true" data-preview-hidden="pending-review">
   <h2 class="title">"别家给价更高？"<em>把账拉出来看</em></h2>
   <p class="sub">挂得高不等于到手多——高出来的部分要用空置天数找补。拖动两个滑块，看您那套房的临界点在哪。</p>
   <div class="grid g2">
@@ -1326,7 +1328,7 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 <!-- 12 美租 -->
 <!-- 12 美租 · 收益版（2026-09-26 重构：产品 → 实拍对比 → 权益承诺安全 → 选择与付款） -->
 <section id="meiz">
-<div class="chapter-label">12 / 美租焕新产品</div>
+<div class="chapter-label">11 / 美租焕新产品</div>
   <h2 class="title">房子太旧租不上价？<em>美租升级方案</em></h2>
   <p class="sub">美租是惠居面向老房、旧房、品质差房源的一站式可出租解决方案：做一次小额改造投资，靠专业运营把租金赚回来。上海房龄 15 年以上房源占 68%，这是老房子最现实的增值路径。</p>
 
@@ -1404,7 +1406,7 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 
 <!-- 12b 美租 · 六大权益 + 六大承诺 + 安全环保 -->
 <section id="meiz2">
-<div class="chapter-label">13 / 美租权益与标准</div>
+<div class="chapter-label">12 / 美租权益与标准</div>
   <h2 class="title">美租六大权益，<em>焕新全程更省心</em></h2>
   <div class="grid g3">
     <div class="card"><h3>免费量房</h3><p>美租提供免费上门量房</p></div>
@@ -1453,7 +1455,7 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 
 <!-- 12c 美租 · 两种选择 + 付款方式 -->
 <section id="meiz3">
-<div class="chapter-label">14 / 方案与付款</div>
+<div class="chapter-label">13 / 方案与付款</div>
   <h2 class="title">您的两种选择，<em>账算给您看</em></h2>
   <div class="grid g2 duo">
     <div class="card anchor-l">
@@ -1500,7 +1502,7 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 
 <!-- 13 真实案例 -->
 <section id="cases">
-<div class="chapter-label">15 / 业主案例</div>
+<div class="chapter-label">14 / 业主案例</div>
   <h2 class="title">业主们<em>怎么说</em></h2>
   <p class="sub">以下为示例案例模板，正式使用前请替换为您所在大区的真实案例（含前后对比照与真实数据）。</p>
     <div class="grid g2">
@@ -1544,7 +1546,7 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 
 <!-- 14 服务流程 -->
 <section id="flow">
-<div class="chapter-label">16 / 合作流程</div>
+<div class="chapter-label">15 / 合作流程</div>
   <h2 class="title">签约后，<em>每一步都有人管</em></h2>
   <p class="sub">托管全流程 23 个节点、五个阶段，专属资管经理全程对接。</p>
   <div class="card steps">
@@ -1560,7 +1562,7 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 
 <!-- 15 签约流程+FAQ -->
 <section id="faq">
-<div class="chapter-label">17 / 常见问题</div>
+<div class="chapter-label">16 / 常见问题</div>
   <h2 class="title">三步签约，<em>常见问题</em></h2>
   <div class="grid g3" style="margin-bottom:30px">
     <div class="card"><h3>STEP 1 · 免费实勘</h3><p>资管经理上门实勘，出具报价与方案，不收费、不勉强。</p></div>
@@ -1580,7 +1582,7 @@ h1,h2.title,.prod-card .bd h3,#cases .case-card h3{font-family:"Plain Numbers","
 
 <!-- 16 行动呼吁 -->
 <section id="cta">
-<div class="chapter-label">18 / 开始合作</div>
+<div class="chapter-label">17 / 开始合作</div>
   <h2 class="title">现在，<em>三步开始</em></h2>
   <p class="sub" style="margin:0 auto 30px">预约免费实勘 → 确认托管方案 → 交房按月收租</p>
   <div class="agent" style="margin-bottom:26px">
