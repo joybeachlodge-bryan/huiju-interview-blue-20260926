@@ -951,6 +951,9 @@ section#haggle{display:none!important}
 @media(max-width:640px){#plan .owner-rights{padding:24px 20px;margin-top:26px;border-radius:12px}#plan .owner-rights>h4{font-size:20px;margin-bottom:22px}#plan .owner-rights-grid{grid-template-columns:1fr;gap:22px}#plan .owner-rights h5{font-size:18px;margin-bottom:7px}#plan .owner-rights p{font-size:15px}}
 
 #plan .plan-fee-basis{font-size:14px!important;line-height:1.8;margin-top:12px;color:#52677d}
+
+#account .owner-highlight{color:#24558d!important;background:#e1ebf8;font-weight:600;padding:2px 6px;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+#account .owner-highlight span{color:inherit!important;font-weight:inherit}
 </style>
 </head>
 <body>
@@ -1453,9 +1456,9 @@ section#haggle{display:none!important}
 <h2 class="title">每月 3 天管理费，<em>到底换来什么？</em></h2>
 <div class="management-fee"><div class="management-rate"><strong>3</strong><span>天 / 月</span></div><div><b>少空置、少支出，租后有人管</b><p>按参考月租 <span id="managementRent">—</span> 元及当前成交周期估算，年管理费约 <b id="managementAnnualFee">—</b> 元，按实际出租收入计费。</p></div></div>
 <div id="management-value-grid" class="management-services">
-<article><span class="management-index">01</span><div><h3>房子早点租出去，少损失一段租金</h3><p>按上方测算：省心租 <span id="valueManagedDays">25</span> 天、普租 <span id="valueOrdinaryDays">60</span> 天；<span id="valueVacancyExplain">—</span></p><p class="management-detail">平台推广、经纪人推荐和带看由团队推进，您不用自己反复发房源、约时间。</p></div><b class="management-outcome" id="valueDaysOutcome">—</b></article>
-<article><span class="management-index">02</span><div><h3>中介费、维修保洁，少一笔笔往外掏</h3><p>按上方测算，每年中介费约 <span id="valueBroker">—</span> 元，维修保洁约 1,200 元；交给省心租，中介费无需另付，服务范围内的维修保洁由我们负责。</p></div><b class="management-outcome">少支出 <span id="valueSavings">—</span> 元 / 年</b></article>
-<article><span class="management-index">03</span><div><h3>租客报修、房租催缴，不用您追着处理</h3><p>报修安排、收租催缴、续约换租和纠纷协调，由专属管家跟进；您有一个对接人，也知道事情处理到哪一步。</p></div><b class="management-outcome">7×24 小时应答</b></article>
+<article><span class="management-index">01</span><div><h3>房子早点租出去，少损失一段租金</h3><p>按上方测算：省心租 <span id="valueManagedDays">25</span> 天、普租 <span id="valueOrdinaryDays">60</span> 天；<span id="valueVacancyIntro"></span><span id="valueVacancyExplain" class="owner-highlight">—</span>。</p><p class="management-detail">平台推广、经纪人推荐和带看由团队推进，您不用自己反复发房源、约时间。</p></div><b class="management-outcome" id="valueDaysOutcome">—</b></article>
+<article><span class="management-index">02</span><div><h3>中介费、维修保洁，少一笔笔往外掏</h3><p>按上方测算，<span class="owner-highlight">每年中介费约 <span id="valueBroker">—</span> 元，维修保洁约 1,200 元</span>；交给省心租，中介费无需另付，服务范围内的维修保洁由我们负责。</p></div><b class="management-outcome">少支出 <span id="valueSavings">—</span> 元 / 年</b></article>
+<article><span class="management-index">03</span><div><h3>租客报修、房租催缴，不用您追着处理</h3><p>报修安排、收租催缴、续约换租和纠纷协调，由<span class="owner-highlight">专属管家跟进</span>；您有一个对接人，也知道事情处理到哪一步。</p></div><b class="management-outcome">7×24 小时应答</b></article>
 </div>
 <div class="management-support"><div><b>还有一条保障：约定招租期没租出去，按约赔付</b><p>符合招租赔付条件，按半个月基准租金赔付；以当前参考月租估算约 <strong id="valueGuarantee">—</strong> 元，具体期限和条件见保障约定。</p></div><a href="#safe">查看保障详情 ↓</a></div>
 </section>
@@ -2247,7 +2250,8 @@ window.HJ_PLANBOOK = (function(){
     set('valueManagedDays',fmt(managedDays));set('valueOrdinaryDays',fmt(ordinaryDays));
     set('valueDaysOutcome',daysDifference>0?'少空置 '+fmt(daysDifference)+' 天':daysDifference<0?'多空置 '+fmt(-daysDifference)+' 天':'空置时间相同');
     var vacancyBenefit=Math.round(Math.abs(ordinaryVacancy-managedVacancy));
-    set('valueVacancyExplain',daysDifference>0?'少空置的这段时间，对应约 '+fmt(vacancyBenefit)+' 元租金。':daysDifference<0?'按当前输入，省心租空置更久，对应多损失约 '+fmt(vacancyBenefit)+' 元租金。':'按当前输入，两种方式的空置损失相同。');
+    set('valueVacancyIntro',daysDifference>0?'少空置的这段时间，':daysDifference<0?'按当前输入，省心租空置更久，':'按当前输入，');
+    set('valueVacancyExplain',daysDifference>0?'对应约 '+fmt(vacancyBenefit)+' 元租金':daysDifference<0?'对应多损失约 '+fmt(vacancyBenefit)+' 元租金':'两种方式的空置损失相同');
     set('valueBroker',fmt(Math.round(broker)));set('valueSavings',fmt(Math.round(broker+maintenance)));
     set('valueGuarantee',fmt(Math.round(r*.5)));
 
