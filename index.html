@@ -1056,8 +1056,11 @@ section#risk[data-moved-to="faq"]{display:none!important}
 #safe .cycle-comparison{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;margin-top:18px}
 #safe .cycle-comparison>div>span{display:block;font-size:15px;color:#52677d;margin-bottom:8px}
 #safe .cycle-comparison strong{display:block;font-size:clamp(30px,3vw,46px)!important;font-weight:400;line-height:1.2;white-space:nowrap;color:#315a8d!important}
-#safe .cycle-comparison .cycle-vs{font-size:17px;color:#52677d;margin-top:28px}
-@media(max-width:640px){#plan .plan-terms .card:nth-child(n) .num{font-size:30px!important}#calc .calc-owner-table thead th{font-size:15px!important;padding:18px 8px}#safe .cycle-comparison{gap:12px}#safe .cycle-comparison strong{font-size:36px!important}}
+#safe .cycle-comparison{align-items:end}
+#safe .cycle-comparison>div:last-child strong{font-size:clamp(22px,2vw,30px)!important;color:#808080!important}
+#safe .cycle-comparison>div:last-child>span{font-size:14px;color:#737373!important}
+#safe .cycle-comparison .cycle-vs{font-size:13px;color:#737373!important;margin:0 0 7px}
+@media(max-width:640px){#plan .plan-terms .card:nth-child(n) .num{font-size:30px!important}#calc .calc-owner-table thead th{font-size:15px!important;padding:18px 8px}#safe .cycle-comparison{gap:12px}#safe .cycle-comparison strong{font-size:36px!important}#safe .cycle-comparison>div:last-child strong{font-size:24px!important}}
 
 /* Keep service promises in text; the existing compensation shields belong to #pay. */
 #safe .risk-detail-links{display:flex;gap:18px 38px;border-top:1px solid #cbd8e8;margin:32px 0 0;padding-top:22px}
@@ -1090,6 +1093,8 @@ section#risk[data-moved-to="faq"]{display:none!important}
 @media(max-width:640px){#safe .risk-detail-links{display:grid;gap:16px}#safe .risk-detail-links button{font-size:15px}#pay .safe-item h3{font-size:18px}#pay .shields-title .ln{width:18px}#safeguardDrawer .safeguard-drawer-head{padding:22px 20px;gap:16px}#safeguardDrawer h2{font-size:20px}#safeguardDrawer .safeguard-drawer-body{padding:8px 20px 25px}#safeguardDrawer summary{font-size:16px}#safeguardDrawer p{font-size:15px}}
 @media print{#safeguardDrawer{display:none!important}}
 #serviceGallery .service-cover-zoom{background:none;border:0;border-bottom:1px solid #9fb4cd;border-radius:0;padding:3px 0;color:#52677d;font:inherit;cursor:pointer}
+#pay .safe-item .case-key-result{color:#315a8d!important;font-weight:700;background:none}
+#pay .safe-item .case-owner-relief{color:inherit!important;font-weight:700;background:none}
 </style>
 </head>
 <body>
@@ -1499,7 +1504,7 @@ section#risk[data-moved-to="faq"]{display:none!important}
       <div class="safe-item"><div class="safe-no">01</div><div><h3>漏水殃及楼下，团队协商赔付 4,500 元</h3><p class="case-context">漏水：因房屋漏水总计赔付 2 万笔，2564 万元</p><p><b>省心租保障案例</b>（2026 年 6 月）：省心租托管房租客正常使用洗衣机时水管脱落漏水，殃及楼下。事件第一时间总监对接面谈统筹，同步整改洗衣机排水口消除隐患，楼下诉求 6500 元，工作人员全程对接协商，敲定 <b>4500 元一次性由公司赔付</b>，邻里交涉、议价全由团队代办，<b>业主无需出面</b>，仅线上确认即可。本次属意外漏水，按服务保障全额出款，全程兜底处置，业主省心无负担。</p>
         <p class="owner-feedback"><b>业主反馈</b>：要是自己打理这套房，还得跑楼下协商赔偿，多亏你们全程搞定，赔偿也有公司兜底，我完全不用出面，省心租真的是省心。</p></div></div>
       <div class="safe-item"><div class="safe-no">02</div><div><h3>房屋意外火灾，保障承担损失 140,444 元</h3><p class="case-context">火灾：因房屋火灾总计赔付 240+ 笔，160 万元</p><p><b>省心租保障案例</b>（2024 年 12 月）：意外火灾，减少业主损失 140,444 元。房屋火灾导致主卧、客厅、次卧、卫生间受损，省心租资管经理第一时间赶往现场，协调消防大队、物业成功控制火势。经消防调查，火灾原因为线路老化引发故障，原则上属于业主责任，经定损房屋预估损失 12 万，租客个人物品受损 2 万+。服务保障全额承担，<b>业主 0 承担</b>，当前房屋已正常出租。</p></div></div>
-  <div class="safe-item"><div class="safe-no">03</div><div><h3>凌晨水管爆裂，管家清理到早上 6:46，地板我们换</h3><p>上海某在管房源凌晨突发水管爆裂，租务管家 30 分钟内到场，清理积水至凌晨 6 点 46 分，后续地板更换由平台承担，业主全程未出面。</p></div></div><div class="safe-item"><div class="safe-no">04</div><div><h3>租客退租，屋内餐具缺失，赔付 2,200 元到业主账上</h3><p>交房验收时发现配置的餐桌椅及餐具缺失，按服务保障规则核损后赔付业主 2,200 元，未让业主自行追讨。</p></div></div></div>
+  <div class="safe-item"><div class="safe-no">03</div><div><h3>凌晨水管爆裂，管家清理到早上 6:46，地板我们换</h3><p>上海某在管房源凌晨突发水管爆裂，租务管家 <b class="case-key-result">30 分钟内到场</b>，清理积水至凌晨 6 点 46 分，后续<b class="case-key-result">地板更换由平台承担</b>，<strong class="case-owner-relief">业主全程未出面</strong>。</p></div></div><div class="safe-item"><div class="safe-no">04</div><div><h3>租客退租，屋内餐具缺失，赔付 2,200 元到业主账上</h3><p>交房验收时发现配置的餐桌椅及餐具缺失，按服务保障规则核损后<b class="case-key-result">赔付业主 2,200 元</b>，<strong class="case-owner-relief">未让业主自行追讨</strong>。</p></div></div></div>
   <p class="note pay-case-note">以上为服务案例，具体赔付以实际核损结果及签署的服务保障规则为准。</p><p class="pay-close">为省心租房源<b>免费</b>提供<b>房屋财产安全保障</b>和<b>租客人身安全保障</b>，让业主<b>省心、租客放心</b>。</p>
 </section>
 
