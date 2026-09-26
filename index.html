@@ -725,7 +725,7 @@ section figure{border:0!important;border-radius:0!important;background:transpare
 /* 品牌与市场：素材铺开，图文分层，表述不塞进小方框。 */
 #brand .brand-pair{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;align-items:center;margin:20px 0 36px}.brand-pair>div{margin:0!important}.brand-pair img{display:block;width:100%;height:auto}.brand-pair .note{font-size:12px!important}
 /* Desktop: give the organization chart a full row so its labels remain readable. */
-@media(min-width:641px){#brand .brand-pair{grid-template-columns:minmax(0,1fr);gap:40px}#brand .brand-pair>div:first-child{width:100%;max-width:1320px;justify-self:center}#brand .brand-pair>div:last-child{width:100%;max-width:800px;justify-self:center}#brand .brand-pair+.note{max-width:800px;margin-left:auto;margin-right:auto}}
+@media(min-width:641px){#brand .brand-pair{grid-template-columns:minmax(0,1fr);gap:40px}#brand .brand-pair>div:first-child{width:100%;max-width:1320px;justify-self:center}#brand .brand-pair>div:last-child{width:100%;max-width:none;justify-self:stretch}#brand .brand-pair+.note{max-width:none;margin-left:0;margin-right:0}}
 .p3-bleed{max-width:none!important;margin:35px 0!important}.p3-bleed img{border-radius:0!important}.press-row{gap:32px;grid-template-columns:repeat(3,minmax(0,1fr))}
 .press-card{border:0!important;border-top:1px solid var(--line)!important;background:transparent!important;padding:24px 0;cursor:pointer}.pc-title{font-size:18px!important;margin-top:17px}.pc-sum,.pc-body p{font-size:14px!important;line-height:1.85!important;color:#405b76!important}.press-card::after{content:none!important;display:none!important}.pc-logo{height:30px;width:auto;max-width:58%}.press-card:hover::after{background:transparent;color:#142f50}
 #cityTrendWrap{margin-top:38px!important}#cityTrendChart{width:100%;height:auto;overflow:visible}#marketLocal{border:0!important;margin-top:42px!important;padding:32px 0;background:transparent!important}#marketLocal .card{border-top:0!important;padding:12px 0!important}#marketLocal .card .num{font-size:clamp(30px,4vw,60px)!important}.ml-supply{border:0;border-radius:0;background:#edf3fa;padding:18px 20px;font-size:14px;line-height:1.85}
@@ -1076,6 +1076,11 @@ section#risk[data-moved-to="faq"]{display:none!important}
 #pay .shields-wrap{margin:20px 0 40px!important}
 #pay .shields-title{font-size:clamp(22px,2.2vw,34px);font-weight:500;letter-spacing:0}
 #pay .sd-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+#pay .sd-cards .sd .v{font-size:clamp(46px,5.8vw,132px)!important;line-height:1.1;letter-spacing:-.035em;margin-top:12px;font-variant-numeric:tabular-nums}
+#pay .sd-cards .sd .v small{font-size:max(14px,.26em)!important;letter-spacing:0;margin-left:.18em;font-weight:500}
+#pay .sd-cards .sd .k{font-size:clamp(14px,1.25vw,26px)!important;line-height:1.6}
+#pay .sd-cards .sd{padding:clamp(24px,2.8vw,60px) 0!important}
+@media(max-width:640px){#cityTrendChart{overflow-x:auto;overscroll-behavior-x:contain}#cityTrendChart>svg{min-width:760px}}
 #pay .safe-list{max-width:none;margin-top:28px}
 #pay .safe-item h3{font-size:22px;line-height:1.6}
 #pay .safe-item .case-context{font-size:13px!important;color:#657990;margin:0 0 10px}
@@ -1106,7 +1111,8 @@ section#risk[data-moved-to="faq"]{display:none!important}
 /* Regional team: clear roles and sourced scale, without another comparison table. */
 #cmp .team-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin:36px 0 42px}
 #cmp .team-metrics>div{border-top:1px solid #bccddd;padding-top:22px}
-#cmp .team-metrics strong{display:block;font-size:clamp(36px,3.5vw,54px);font-weight:500;line-height:1.15;color:#315a8d;font-variant-numeric:tabular-nums}
+#cmp .team-metrics strong{display:flex;align-items:baseline;gap:.14em;white-space:nowrap;font-size:clamp(36px,3.5vw,54px);font-weight:500;line-height:1.15;color:#315a8d;font-variant-numeric:tabular-nums}
+#cmp .team-metrics strong small{font-size:max(13px,.34em);line-height:1;font-weight:500;color:inherit}
 #cmp .team-metrics h3{font-size:18px;margin:16px 0 8px}
 #cmp .team-metrics p{font-size:14px;line-height:1.7;margin:0;color:#63768a}
 #cmp .team-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
@@ -1457,7 +1463,7 @@ section#risk[data-moved-to="faq"]{display:none!important}
 <!-- 7 权益对比 -->
 <section id="cmp">
 <div class="chapter-label">10 / 服务团队</div>
-  <h2 class="title">您的房子，<em>交给谁在管？</em></h2><p class="sub">薛汉青是您的专属对接人，背后还有招租、交房和租后服务团队，各自负责、共同跟进。</p><div class="team-metrics"><div><strong>11,517</strong><h3>沪中大部在管房源</h3><p>套</p></div><div><strong>93</strong><h3>资产管理团队</h3><p>人 · 沪中大部</p></div><div><strong>27</strong><h3>客户经理</h3><p>人 · 沪中客户一、二、三区</p></div><div><strong>24</strong><h3>租务管家</h3><p>人 · 租务中一区、二区</p></div></div><div class="team-roles"><div><span>资产管理经理</span><h3>房子怎么租、账怎么算，找我</h3><p>评估房源、沟通定价、办理签约，跟进出租进度与租金收益。您有问题，由我协调相关人员。</p></div><div><span>客户经理</span><h3>替您找租客，安排带看</h3><p>联系有租房需求的客户，介绍房屋情况、安排看房，跟进租客意向和成交。</p></div><div><span>租务管家</span><h3>交房有人验，房子有人查</h3><p>盘点物品、面对面交房，落实房屋巡检和安全管理，跟进租住期间的问题。</p></div></div><div class="team-support"><b>租后服务也有人接手</b><p>服务管家与云管家提供 7×24 小时线上响应；保洁、维修、甲醛治理等，由对应服务人员上门处理。</p></div><p class="team-source note">统计查询日期：2026-09-26。在管房源按沪中大部资管日报汇总；资产管理团队含 7 位资管总监、8 位资管战队长、78 位资管经理。客户经理与租务管家按上方所列区域统计，为区域团队规模。</p></section>
+  <h2 class="title">您的房子，<em>交给谁在管？</em></h2><p class="sub">薛汉青是您的专属对接人，背后还有招租、交房和租后服务团队，各自负责、共同跟进。</p><div class="team-metrics"><div><strong><span class="team-metric-value">11,517</span><small>套</small></strong><h3>在管房源</h3></div><div><strong><span class="team-metric-value">93</span><small>人</small></strong><h3>资产管理团队</h3></div><div><strong><span class="team-metric-value">27</span><small>人</small></strong><h3>客户经理</h3></div><div><strong><span class="team-metric-value">24</span><small>人</small></strong><h3>租务管家</h3></div></div><div class="team-roles"><div><span>资产管理经理</span><h3>房子怎么租、账怎么算，找我</h3><p>评估房源、沟通定价、办理签约，跟进出租进度与租金收益。您有问题，由我协调相关人员。</p></div><div><span>客户经理</span><h3>替您找租客，安排带看</h3><p>联系有租房需求的客户，介绍房屋情况、安排看房，跟进租客意向和成交。</p></div><div><span>租务管家</span><h3>交房有人验，房子有人查</h3><p>盘点物品、面对面交房，落实房屋巡检和安全管理，跟进租住期间的问题。</p></div></div><div class="team-support"><b>租后服务也有人接手</b><p>服务管家与云管家提供 7×24 小时线上响应；保洁、维修、甲醛治理等，由对应服务人员上门处理。</p></div><p class="team-source note">区域团队数据，查询日期：2026-09-26；资产管理团队含资管总监、战队长与经理。</p></section>
 
 
 
@@ -2053,7 +2059,7 @@ window.HJ_PLANBOOK = (function(){
     var vol=t.volume||[], pr=t.price||[], i, j, pts=[];
     for(i=0;i<pr.length;i++){ if(pr[i]!=null&&pr[i]!==undefined) pts.push(pr[i]); }
     if(!pts.length) return;
-    var W=1000,H=300,PL=64,PR=84,PT=54,PB=40,iw=W-PL-PR,ih=H-PT-PB,n=t.months.length;
+    var W=1000,H=410,PL=64,PR=90,PT=42,PB=44,iw=W-PL-PR,ih=H-PT-PB,n=t.months.length;
     /* 左轴（成交量）从 0 起步、柱顶刚好落在最高一档：柱占满画幅，起伏一眼看得出；
        右轴（均价）只包住真实区间、刻度取整 */
     var vmax=Math.max.apply(null,vol.concat([1])), vt=trendAxisTop(vmax), vtop=vt[0];
@@ -2100,10 +2106,10 @@ window.HJ_PLANBOOK = (function(){
     for(i=0;i<=4;i++){
       var gy=PT+ih*i/4;
       s+='<line x1="'+PL+'" y1="'+gy.toFixed(1)+'" x2="'+(PL+iw)+'" y2="'+gy.toFixed(1)+'" stroke="'+cGrid+'" stroke-width="1"/>';
-      s+='<text x="'+(PL-8)+'" y="'+(gy+4).toFixed(1)+'" text-anchor="end" font-size="11" fill="'+cMut+'">'+trendNum(vtop*(1-i/4))+'</text>';
+      s+='<text x="'+(PL-8)+'" y="'+(gy+4).toFixed(1)+'" text-anchor="end" font-size="13" fill="'+cMut+'">'+trendNum(vtop*(1-i/4))+'</text>';
       /* 最新值药丸占了这一行时不再画该档刻度，避免「5,835」被误读成刻度 */
-      if(lastY===null||Math.abs(gy-lastY)>15)
-        s+='<text x="'+(PL+iw+8)+'" y="'+(gy+4).toFixed(1)+'" text-anchor="start" font-size="11" fill="'+cMut+'">'+trendNum(plo+pstep*(4-i))+'</text>';
+      if(lastY===null||Math.abs(gy-lastY)>19)
+        s+='<text x="'+(PL+iw+8)+'" y="'+(gy+4).toFixed(1)+'" text-anchor="start" font-size="13" fill="'+cMut+'">'+trendNum(plo+pstep*(4-i))+'</text>';
     }
     for(i=0;i<nSlot;i++){
       var bx=PL+step*i+(step-bw)/2;
@@ -2130,7 +2136,7 @@ window.HJ_PLANBOOK = (function(){
       if(!want||i-keptTick<4) continue;
       keptTick=i;
       if(i) s+='<line x1="'+(PL+step*i).toFixed(1)+'" y1="'+PT+'" x2="'+(PL+step*i).toFixed(1)+'" y2="'+(PT+ih)+'" stroke="'+cGrid+'" stroke-width="1" opacity="0.6"/>';
-      s+='<text x="'+(PL+step*i+step/2).toFixed(1)+'" y="'+(PT+ih+20)+'" text-anchor="middle" font-size="11" fill="'+cMut+'">'+labYm+'</text>';
+      s+='<text x="'+(PL+step*i+step/2).toFixed(1)+'" y="'+(PT+ih+20)+'" text-anchor="middle" font-size="13" fill="'+cMut+'">'+labYm+'</text>';
     }
     var lp=[];
     for(j=0;j<n;j++){ if(pr[j]==null||pr[j]===undefined) continue; lp.push((PL+step*j+step/2).toFixed(1)+','+yp(pr[j]).toFixed(1)); }
@@ -2167,8 +2173,13 @@ window.HJ_PLANBOOK = (function(){
       if(!(isCur||isPeakY||isOrange)) continue;
       if(vol[i]==null) continue;
       var voff=isOrange?(wMon.indexOf(+ym2.slice(5,7))===1?42:10):7;
-      vlab.push([PL+step*i+step/2, yv(vol[i])-voff]);
-      s+='<text data-trend-value="volume" data-highlight="'+isOrange+'" data-month="'+ym2+'" x="'+(PL+step*i+step/2).toFixed(1)+'" y="'+(yv(vol[i])-voff).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="700" fill="'+cLine+'" style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">'+trendNum(vol[i])+'</text>';
+      var vx=PL+step*i+step/2, vyLabel=yv(vol[i])-voff;
+      for(var attempt=0;attempt<6;attempt++){
+        if(!vlab.some(function(label){return Math.abs(label[0]-vx)<43&&Math.abs(label[1]-vyLabel)<19})) break;
+        vyLabel-=20;
+      }
+      vlab.push([vx,vyLabel]);
+      s+='<text data-trend-value="volume" data-highlight="'+isOrange+'" data-month="'+ym2+'" x="'+vx.toFixed(1)+'" y="'+vyLabel.toFixed(1)+'" text-anchor="middle" font-size="13" font-weight="700" fill="'+cLine+'" style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">'+trendNum(vol[i])+'</text>';
     }
     var hiI=-1, loI=-1;
     for(j=0;j<n;j++){ if(pr[j]==null||pr[j]===undefined) continue;
@@ -2179,7 +2190,7 @@ window.HJ_PLANBOOK = (function(){
        全部与柱顶标签相碰时取净距最大的一档，保证 6,304 不和任何成交量数字重叠 */
     if(hiI>=0&&hiI!==n-1){
       var hx=PL+step*hiI+step/2, hy=yp(pr[hiI]);
-      var cands=[-11,16,-24], pick=cands[0], bestD=-1;
+      var cands=[-17,23,-38], pick=cands[0], bestD=-1;
       for(var c3=0;c3<cands.length;c3++){
         var off2=cands[c3], dmin=999;
         for(var v3=0;v3<vlab.length;v3++){
@@ -2194,7 +2205,7 @@ window.HJ_PLANBOOK = (function(){
     for(i=0;i<lab.length;i++){
       var idx=lab[i][0], mx=PL+step*idx+step/2, my=yp(pr[idx]);
       s+='<circle cx="'+mx.toFixed(1)+'" cy="'+my.toFixed(1)+'" r="3" fill="#fff" stroke="'+cLine+'" stroke-width="2"/>';
-      s+='<text x="'+mx.toFixed(1)+'" y="'+(my+lab[i][1]).toFixed(1)+'" text-anchor="middle" font-size="10" fill="'+cMut+'">'+trendNum(pr[idx])+'</text>';
+      s+='<text x="'+mx.toFixed(1)+'" y="'+(my+lab[i][1]).toFixed(1)+'" text-anchor="middle" font-size="12" fill="'+cMut+'">'+trendNum(pr[idx])+'</text>';
     }
     /* Highlighted historical price labels sit below the line, staggered for adjacent months. */
     for(j=0;j<n-1;j++){
@@ -2202,15 +2213,15 @@ window.HJ_PLANBOOK = (function(){
       if(wi<0||pr[j]==null) continue;
       var cx=PL+step*j+step/2, cy=yp(pr[j]), ly=cy+(wi===1?38:21);
       s+='<line x1="'+cx.toFixed(1)+'" y1="'+(cy+5).toFixed(1)+'" x2="'+cx.toFixed(1)+'" y2="'+(ly-10).toFixed(1)+'" stroke="'+cHl+'" stroke-width="0.8"/>';
-      s+='<text data-trend-value="price" data-highlight="true" data-month="'+t.months[j]+'" x="'+cx.toFixed(1)+'" y="'+ly.toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="700" fill="'+cHl+'" style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">'+trendNum(pr[j])+'</text>';
+      s+='<text data-trend-value="price" data-highlight="true" data-month="'+t.months[j]+'" x="'+cx.toFixed(1)+'" y="'+ly.toFixed(1)+'" text-anchor="middle" font-size="13" font-weight="700" fill="'+cHl+'" style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">'+trendNum(pr[j])+'</text>';
     }
     /* 最新值做成深色药丸放在右轴刻度列：底色与刻度数字分开，一眼看到「现在多少」 */
     if(hasLast){
-      var lastX=PL+step*(n-1)+step/2, lbl=trendNum(pr[n-1]), pw=lbl.length*7.2+16, px=PL+iw+6;
+      var lastX=PL+step*(n-1)+step/2, lbl=trendNum(pr[n-1]), pw=lbl.length*8.4+18, px=PL+iw+6;
       var lastPriceColor=wMon.indexOf(+t.months[n-1].slice(5,7))>=0?cHl:cLine;
       s+='<circle cx="'+lastX.toFixed(1)+'" cy="'+lastY.toFixed(1)+'" r="4.5" fill="'+lastPriceColor+'" stroke="#fff" stroke-width="2"/>';
-      s+='<rect x="'+px+'" y="'+(lastY-11).toFixed(1)+'" width="'+pw.toFixed(1)+'" height="22" rx="11" fill="'+lastPriceColor+'"/>';
-      s+='<text x="'+(px+pw/2).toFixed(1)+'" y="'+(lastY+4).toFixed(1)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">'+lbl+'</text>';
+      s+='<rect x="'+px+'" y="'+(lastY-13).toFixed(1)+'" width="'+pw.toFixed(1)+'" height="26" rx="13" fill="'+lastPriceColor+'"/>';
+      s+='<text x="'+(px+pw/2).toFixed(1)+'" y="'+(lastY+4).toFixed(1)+'" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">'+lbl+'</text>';
     }
     s+='</svg>';
     host.innerHTML=s;
