@@ -958,15 +958,15 @@ section#haggle{display:none!important}
           <p id="cityTrendReadout" style="display:none;margin:0 0 12px;padding:10px 14px;border-left:3px solid var(--blue);
              background:rgba(12,77,162,.05);border-radius:0 8px 8px 0;color:var(--navy);font-size:14px;line-height:1.8"></p>
     <div style="display:flex;flex-wrap:wrap;gap:18px;font-size:12px;color:var(--mut);margin:0 0 8px">
-      <span><span style="display:inline-block;width:10px;height:10px;background:var(--blue);opacity:.55;border-radius:2px;margin-right:5px"></span>成交量</span>
-      <span><span style="display:inline-block;width:16px;height:3px;background:var(--navy);margin-right:5px;vertical-align:middle;border-radius:2px"></span>成交均价</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:var(--blue);opacity:.55;border-radius:2px;margin-right:5px"></span>成交量（套）</span>
+      <span><span style="display:inline-block;width:16px;height:3px;background:var(--navy);margin-right:5px;vertical-align:middle;border-radius:2px"></span>成交均价（元/月）</span>
       <!-- 空心柱图例已删（Bryan 2026-09-26「这个帮我删除」）：末月未完整仍画空心柱（数据诚实），只是不再文字解释 -->
       <!-- 当期窗口高亮（Bryan 2026-09-25 定、09-26 三次定稿）：窗口两个月（当期+历年所有年份）
            全部同一种橙色，不深浅分层——「哪根是现在」由橙色括号「当期 · 9 月 → 10 月」+标签区分；
            这里只说明「什么颜色＝什么」，当期水位并进顶部总结，不写建议话术。
            视图层动态（Bryan 2026-09-26）：文件晚于数据快照打开时，当期窗口跟浏览器日历平移，
            并在此行追加「数据截至 <末月>」，让资管一眼看出这份是旧快照（不写「重跑」等内部字眼） -->
-      <span id="cityTrendWindowLegend" style="display:none"><span style="display:inline-block;width:10px;height:10px;background:var(--hl,#E0730F);border-radius:2px;margin-right:5px;vertical-align:middle"></span>橙色＝每年的 <span id="cityTrendWindowMonths"></span> 月<span id="cityTrendStale" style="display:none"></span></span>
+      <span id="cityTrendWindowLegend" style="display:none"><span style="display:inline-block;width:10px;height:10px;background:var(--hl,#E0730F);border-radius:2px;margin-right:5px;vertical-align:middle"></span>橙色＝每年的 <span id="cityTrendWindowMonths"></span> 月成交均价<span id="cityTrendStale" style="display:none"></span></span>
     </div>
     <div id="cityTrendChart"></div>
   </div>
@@ -1888,7 +1888,7 @@ window.HJ_PLANBOOK = (function(){
       if(i>=n){                       /* 无数据月份占位：基线上一枚实心橙点——明示「这一列是日历月、数据还没出」
                                          （次月，或旧文件平移后的当期与中间月），不用矩形，否则会被误读成「成交量很低」
                                          （Bryan 2026-09-26：虚线改实心橙） */
-        s+='<circle cx="'+(PL+step*i+step/2).toFixed(1)+'" cy="'+(PT+ih-5).toFixed(1)+'" r="4" fill="'+cHl+'" opacity="0.9"/>';
+        s+='<circle cx="'+(PL+step*i+step/2).toFixed(1)+'" cy="'+(PT+ih-5).toFixed(1)+'" r="4" fill="'+cMut+'" opacity="0.65"/>';
         continue;
       }
       /* 窗口月份（当期+历年所有年份）一律橙色（Bryan 2026-09-26 三次定稿，不深浅分层）；
@@ -1896,7 +1896,7 @@ window.HJ_PLANBOOK = (function(){
       var isWin=wMon.length&&wMon.indexOf(+t.months[i].slice(5,7))>=0;
       var isPart=t.partialLast&&i===n-1;
       var vy=yv(vol[i]||0), bh=Math.max(0,PT+ih-vy);
-      s+='<rect x="'+bx.toFixed(1)+'" y="'+vy.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+bh.toFixed(1)+'" fill="'+((isWin||isPart)?cHl:cBar)+'" opacity="'+((isWin||isPart)?'0.9':(i>=recent?'0.55':'0.16'))+'"/>';
+      s+='<rect data-trend-series="volume" x="'+bx.toFixed(1)+'" y="'+vy.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+bh.toFixed(1)+'" fill="'+cBar+'" opacity="'+((isWin||isPart)?'0.9':(i>=recent?'0.55':'0.16'))+'"/>';
     }
     var keptTick=-99, wmStr=wMon.length?String(wMon[0]).padStart(2,'0'):'';
     for(i=0;i<nSlot;i++){
@@ -1946,7 +1946,7 @@ window.HJ_PLANBOOK = (function(){
       if(vol[i]==null) continue;
       var voff=isOrange?(wMon.indexOf(+ym2.slice(5,7))===1?42:10):7;
       vlab.push([PL+step*i+step/2, yv(vol[i])-voff]);
-      s+='<text data-trend-value="volume" data-highlight="'+isOrange+'" data-month="'+ym2+'" x="'+(PL+step*i+step/2).toFixed(1)+'" y="'+(yv(vol[i])-voff).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="'+(isOrange?'700':'400')+'" fill="'+(isOrange?cHl:'#3D5878')+'" style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">'+trendNum(vol[i])+'</text>';
+      s+='<text data-trend-value="volume" data-highlight="'+isOrange+'" data-month="'+ym2+'" x="'+(PL+step*i+step/2).toFixed(1)+'" y="'+(yv(vol[i])-voff).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="700" fill="'+cLine+'" style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">'+trendNum(vol[i])+'</text>';
     }
     var hiI=-1, loI=-1;
     for(j=0;j<n;j++){ if(pr[j]==null||pr[j]===undefined) continue;
@@ -1985,8 +1985,9 @@ window.HJ_PLANBOOK = (function(){
     /* 最新值做成深色药丸放在右轴刻度列：底色与刻度数字分开，一眼看到「现在多少」 */
     if(hasLast){
       var lastX=PL+step*(n-1)+step/2, lbl=trendNum(pr[n-1]), pw=lbl.length*7.2+16, px=PL+iw+6;
-      s+='<circle cx="'+lastX.toFixed(1)+'" cy="'+lastY.toFixed(1)+'" r="4.5" fill="'+cLine+'" stroke="#fff" stroke-width="2"/>';
-      s+='<rect x="'+px+'" y="'+(lastY-11).toFixed(1)+'" width="'+pw.toFixed(1)+'" height="22" rx="11" fill="'+cLine+'"/>';
+      var lastPriceColor=wMon.indexOf(+t.months[n-1].slice(5,7))>=0?cHl:cLine;
+      s+='<circle cx="'+lastX.toFixed(1)+'" cy="'+lastY.toFixed(1)+'" r="4.5" fill="'+lastPriceColor+'" stroke="#fff" stroke-width="2"/>';
+      s+='<rect x="'+px+'" y="'+(lastY-11).toFixed(1)+'" width="'+pw.toFixed(1)+'" height="22" rx="11" fill="'+lastPriceColor+'"/>';
       s+='<text x="'+(px+pw/2).toFixed(1)+'" y="'+(lastY+4).toFixed(1)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">'+lbl+'</text>';
     }
     s+='</svg>';
