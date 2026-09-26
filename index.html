@@ -880,6 +880,44 @@ section#haggle{display:none!important}
 @media print{#plan .owner-control-grid article{break-inside:avoid}#plan .owner-control{break-after:page}}
 
 #managerIntro .manager-rate-note{display:block;font-size:14px;line-height:1.7;color:#405b76;margin-top:7px}
+
+/* One calculator for net income; management fees explained through owner benefits. */
+.calc-compatibility[hidden]{display:none!important}
+#calc .slider-row{margin:30px 0!important;padding:20px 24px;background:#edf3fa;gap:24px}
+#calc .calc-owner-table{margin:0;border-top:1px solid #cad7e3}
+#calc .calc-owner-table th:first-child{width:32%}
+#calc .calc-owner-table td:not(:first-child){text-align:right;font-size:18px}
+#calc .calc-owner-table td,#calc .calc-owner-table th{padding:15px 20px}
+#calc table small{display:block;font-size:13px;color:#52677d;line-height:1.6;margin-top:3px}
+#calc .calc-total td{background:#eaf2fc!important;border-top:2px solid #315a8d;font-size:20px!important;font-weight:600}
+#calc .calc-total td:last-child{color:#205791!important}
+#calc .calc-difference{display:flex;align-items:center;gap:32px;background:linear-gradient(110deg,#203f66,#315d8a);padding:26px 30px;margin-top:24px;color:#fff}
+#calc .calc-difference>strong{font:500 clamp(30px,3.2vw,48px) Arial,sans-serif;white-space:nowrap}
+#calc .calc-difference b{font-size:20px;color:#fff}#calc .calc-difference p{color:#e1ecf9;margin:6px 0 0;font-size:15px}
+#calc .calc-cost-details{margin-top:20px;border:0;border-top:1px solid #cad7e3;background:transparent;padding:18px 0}
+#calc .calc-cost-details summary{font-size:16px;color:#315a8d}
+#calc .calc-cost-details table{margin-top:20px}
+#calc .calc-extras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px}
+#calc .calc-extras b,#calc .calc-extras span{display:block;font-size:15px;line-height:1.8}#calc .calc-extras span{color:#52677d;margin-top:5px}
+#account .management-fee{display:flex;gap:44px;align-items:center;margin:42px 0;padding-bottom:30px;border-bottom:1px solid #cad7e3}
+#account .management-rate{display:flex;align-items:baseline;gap:12px;color:#315a8d;flex-shrink:0}
+#account .management-rate strong{font:400 82px/1 Arial,sans-serif}
+#account .management-rate span{font-size:25px}
+#account .management-fee>div>b{font-size:22px;color:#193656}
+#account .management-fee p{font-size:18px;margin:10px 0 0}
+#account .management-services{display:block}
+#account .management-services article{display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:26px;padding:26px 0;border-bottom:1px solid #cad7e3;align-items:start}
+#account .management-index{font:400 25px/1.5 Arial,sans-serif;color:#466991}
+#account .management-services h3{font-size:25px;margin:0 0 10px!important;line-height:1.5;color:#193656}
+#account .management-services p{font-size:17px;line-height:1.8;margin:0}
+#account .management-services .management-detail{font-size:14px;color:#52677d;margin-top:8px}
+#account .management-outcome{font-size:20px;color:#315a8d;margin-top:4px;font-weight:500}
+#account .management-support{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:30px;padding:22px 26px;background:#e8f0fa;border-left:2px solid #315a8d}
+#account .management-support b{font-size:19px;color:#193656}#account .management-support p{font-size:15px;margin:6px 0 0}#account .management-support a{color:#315a8d;white-space:nowrap;font-size:16px}
+@media(max-width:900px){#account .management-services article{grid-template-columns:36px minmax(0,1fr)}#account .management-outcome{grid-column:2;font-size:17px;margin-top:0}}
+@media(max-width:640px){#calc .slider-row{padding:20px 16px;margin:22px 0!important;gap:16px}#calc .calc-owner-table th{font-size:12px!important}#calc .calc-owner-table td,#calc .calc-owner-table th{padding:13px 8px}#calc .calc-owner-table td:not(:first-child){font-size:14px}#calc table small{font-size:11px}#calc .calc-total td{font-size:14px!important}#calc .calc-difference{display:block;padding:23px 20px}#calc .calc-difference>strong{display:block;font-size:36px;margin-bottom:10px}#calc .calc-difference b{font-size:17px}#calc .calc-difference p{font-size:13px}#calc .calc-extras{grid-template-columns:1fr;gap:18px}#account .management-fee{gap:22px;align-items:flex-start;margin:28px 0 8px;flex-wrap:wrap}#account .management-rate strong{font-size:64px}#account .management-rate span{font-size:21px}#account .management-fee>div>b{font-size:18px}#account .management-fee p{font-size:15px}#account .management-services article{gap:12px;grid-template-columns:28px minmax(0,1fr);padding:24px 0}#account .management-index{font-size:21px}#account .management-services h3{font-size:20px}#account .management-services p{font-size:15px}#account .management-services .management-detail{font-size:13px}#account .management-outcome{font-size:16px}#account .management-support{display:block;padding:20px}#account .management-support b{font-size:17px}#account .management-support a{display:inline-block;margin-top:12px}}
+
+#calc .calc-difference>strong,#calc .calc-difference b{color:#fff!important}
 </style>
 </head>
 <body>
@@ -1086,33 +1124,38 @@ section#haggle{display:none!important}
 <!-- 5 收益测算 -->
 <section id="calc">
 <div class="chapter-label">05 / 收益测算</div>
-  <h2 class="title">三年收益<em>算给您看</em></h2>
-  <p class="sub">拖动滑块设定您房屋的参考月租金——到手多少、差多少，数字自己会说话。</p>
-  <div class="grid g2" style="margin:0 0 16px">
-    <div class="card anchor-l"><h3>普租自己管 · 一年到手</h3><div class="num" id="anchorL">—</div><p>挂牌 − 中介费 − 空置损失，一年一断档</p></div>
-    <div class="card anchor-r"><h3>省心租托管 · 一年到手</h3><div class="num" id="anchorR">—</div><p>按月固定到账，招租定金兜底</p></div>
-  </div>
-  <!-- 官方运营数据（94%/75%/2.4倍/5086万）统一收在 market 与 rentSafe 牌，本页只算账，不重复堆数 -->
-  <div class="card">
-    <div class="slider-row">
+  
+<h2 class="title">这套房，<em>三年能到手多少？</em></h2>
+<div class="slider-row">
       <span style="color:var(--mut);font-size:13px">参考月租金</span>
 
       <input type="range" id="rentSlider" min="3000" max="15000" step="50" value="7000" aria-label="参考月租金滑块，按 50 元步进，范围按本房挂牌租金自动设定（上浮30%下限60%）">
       <span class="rent-big"><input type="text" inputmode="numeric" id="rentVal" class="rent-edit" value="7,000" title="点击输入自定义月租金，回车确认" aria-label="参考月租金，点击可输入自定义租金，回车确认"> 元</span>
     </div>
-    <!-- 测算模型结构化分行（Bryan 2026-09-26）：先总起，再普租/省心租各一行，末尾免责一行——不再一坨字 -->
     
-    <table class="cmp" style="margin-top:18px">
-      <tr><th>对比项</th><th>普租自己管</th><th>省心租托管</th></tr>
-      <tr><td>第一年净收益</td><td id="p1">—</td><td class="win" id="s1">—</td></tr>
-      <tr><td>第二年净收益</td><td id="p2">—</td><td class="win" id="s2">—</td></tr>
-      <tr><td>第三年净收益</td><td id="p3">—</td><td class="win" id="s3">—</td></tr>
-      <tr><td>三年合计</td><td id="pT">—</td><td class="win" id="sT">—</td></tr>
-      <tr><td>您要操心的事</td><td class="no">挂牌、带看、催租、维修、纠纷全自己来</td><td class="yes">只管按月收租</td></tr>
-    </table>
-    <div class="vac-bar">普租空置 30 天 = 少收 <b id="vacLoss">—</b> 元——还没算中介费和维修保洁。</div>
-  </div>
+<table class="cmp calc-owner-table">
+<thead><tr><th>收支项目 · 三年合计</th><th>普租自己管</th><th>省心租托管</th></tr></thead>
+<tbody>
+<tr><td>租金总收入</td><td data-calc="gross">—</td><td data-calc="gross">—</td></tr>
+<tr><td>空置 / 招租期扣减</td><td><b data-calc="vacancy">—</b><small>每年空置 30 天</small></td><td><b data-calc="recruitment">—</b><small>首年首次招租期 35 天</small></td></tr>
+<tr><td>中介费</td><td><b data-calc="broker">—</b><small>每年半个月租金</small></td><td>0 元</td></tr>
+<tr><td>维修保洁</td><td>2,400 元<small>按 800 元 / 年估算</small></td><td>服务范围内由我们负责</td></tr>
+<tr><td>管理费</td><td>0 元</td><td><b data-calc="management">—</b><small>每月 3 天租金</small></td></tr>
+<tr class="calc-total"><td>三年到手收益</td><td><b id="pT">—</b> 元</td><td><b id="sT">—</b> 元</td></tr>
+</tbody></table>
+<div class="calc-difference"><strong id="calcDifference">—</strong><div><b id="calcDifferenceLabel">三年到手差额</b><p>同一套房、同一参考月租，扣除上表费用后再比较。</p></div></div>
+<details class="calc-cost-details"><summary>查看逐年收益与其他自管支出</summary>
+<table class="cmp"><thead><tr><th>到手收益</th><th>普租自己管</th><th>省心租托管</th></tr></thead><tbody>
+<tr><td>第一年</td><td id="p1">—</td><td id="s1">—</td></tr>
+<tr><td>第二年</td><td id="p2">—</td><td id="s2">—</td></tr>
+<tr><td>第三年</td><td id="p3">—</td><td id="s3">—</td></tr>
+</tbody></table>
+<div class="calc-extras"><div><b>智能门锁</b><span>799 元 / 次，按实际安装计</span></div><div><b>空置期物业费</b><span>约 150～400 元，按实际空置计</span></div><div><b>时间与风险</b><span>带看、催租、维修协调及纠纷处理</span></div></div>
+<p class="note">以上其他支出未计入上表；中介费、维修保洁已扣除，不重复计算。</p>
+</details>
+<div hidden="hidden" aria-hidden="true" class="calc-compatibility"><span id="anchorL"></span><span id="anchorR"></span><span id="vacLoss"></span><span id="acRent"></span><span id="acL"></span><span id="acR"></span><span id="acNote"></span><span id="acSelfRent"></span><span id="acBrokerCost"></span><span id="acSelfTotal"></span><span id="acSelfAnswer"></span></div>
 </section>
+
 
 <hr class="divider">
 
@@ -1366,52 +1409,17 @@ section#haggle{display:none!important}
 <!-- 11 异议三段式：贵不贵 → 钱去哪了 → 自己管更贵（重收益型物料，通用版同页可用） -->
 <section id="account">
 <div class="chapter-label">10 / 管理费与价值</div>
-  <h2 class="title">"管理费贵不贵？"<em>三笔账算明白</em></h2>
-  <p class="sub">您心里大概有三个问题——一笔一笔算给您看。</p>
-
-  <!-- 三笔账导航（Bryan 2026-09-26：业主一眼看清共三笔，各自模块切分） -->
-  <div class="acct-map">
-    <div class="m"><i class="which"><span class="acct-index">01</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第一笔</span></i><b>比普租贵不贵</b><i>看实际到手</i></div>
-    <div class="m"><i class="which"><span class="acct-index">02</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第二笔</span></i><b>这笔钱去哪了</b><i>36 天流向拆解</i></div>
-    <div class="m"><i class="which"><span class="acct-index">03</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第三笔</span></i><b>自己管是不是更省</b><i>隐性成本是什么</i></div>
-  </div>
-
-  <div class="acct-block">
-    <div class="acct-head"><span class="acct-which"><span class="acct-index">01</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第一笔</span></span><div><div class="acct-title">比普租贵不贵——看到手</div><div class="acct-q">参考月租 <b id="acRent">—</b></div></div></div>
-    <div class="grid g2" style="margin-bottom:8px">
-      <div class="card anchor-l"><h3>普租自己管 · 一年到手</h3><div class="num" id="acL">—</div><p>租客会还价，还要扣<b>中介费</b>、担<b>空置</b></p></div>
-      <div class="card anchor-r"><h3>省心租托管 · 续约年到手</h3><div class="num" id="acR">—</div><p>按月固定到账，<b>招租定金兜底</b></p></div>
-    </div>
-    <div class="acct-answer"><b>第一笔答案</b>：不比普租贵——比的是到手金额，空置、维修、催缴的风险还由平台担。</div>
-    <p class="note" id="acNote">—</p>
-  </div>
-
-  <div class="acct-block">
-    <div class="acct-head"><span class="acct-which"><span class="acct-index">02</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第二笔</span></span><div><div class="acct-title">这笔管理费，换来哪些服务</div><div class="acct-q">每一天都在替您干活</div></div></div>
-    <div class="flow-head"><span class="flow-chip">年管理费 = 36 天租金</span></div>
-    <div class="grid g3" id="management-value-grid">
-      <div class="card flow-card"><h3>经纪人业绩激励</h3><div class="num">120% <small>业绩</small></div><p>经纪人按 <b>120% 计业绩</b>，鼓励积极推荐您的房源。</p></div>
-      <div class="card flow-card"><h3>租前 · 租中 · 租后管理</h3><div class="num">全包</div><p>门锁、保洁、网络、美化、维修、催缴、纠纷，<b>全年有人</b></p></div>
-      <div class="card flow-card"><h3>流量高曝光</h3><div class="num">置顶</div><p>您的房在平台流量位——这项投入业主平时看不见</p></div>
-    </div>
-    <div class="vac-bar"><b>第二笔答案</b>：招租推广与全周期管理，让出租有人推进、租后有人负责。</div>
-  </div>
-
-  <div class="acct-block">
-    <div class="acct-head"><span class="acct-which"><span class="acct-index">03</span><span class="acct-divider" aria-hidden="true">/</span><span class="acct-label">第三笔</span></span><div><div class="acct-title">自己管是不是更省——隐性成本是什么</div><div class="acct-q">以 <span id="acSelfRent">—</span> 元/月租金为例</div></div></div>
-    <table>
-    <tr><th>自管项目</th><th>年费用估算</th></tr>
-    <tr><td>中介费（1 年 1 次）</td><td><b id="acBrokerCost">—</b></td></tr>
-    <tr><td>维修类（墙面 200 / 疏通 100 / 换龙头 100 / 空调加氟 300 / 热水器 200 …）</td><td>数百至上千元</td></tr>
-    <tr><td>入住保洁（300 元/次 × 换租次数）</td><td>300~600 元</td></tr>
-    <tr><td>智能门锁</td><td><b>799 元</b></td></tr>
-    <tr><td>空置期物业费（150~200 元/月）</td><td>150~400 元</td></tr>
-    <tr><td><b>合计</b></td><td><b class="win" id="acSelfTotal">—</b></td></tr>
-    </table>
-    <div class="acct-answer"><b>第三笔答案</b>：<span id="acSelfAnswer">—</span></div>
-    <p class="note">还没算进去的：您为催租、带看、纠纷耗费的<b>时间成本</b>，以及<b>空置 30 天的租金损失</b>。</p>
-  </div>
+  
+<h2 class="title">每月 3 天管理费，<em>为您省下哪些事？</em></h2>
+<div class="management-fee"><div class="management-rate"><strong>3</strong><span>天 / 月</span></div><div><b>全年 36 天租金</b><p>按参考月租 <span id="managementRent">—</span> 元计，年管理费约 <b id="managementAnnualFee">—</b> 元。</p></div></div>
+<div id="management-value-grid" class="management-services">
+<article><span class="management-index">01</span><div><h3>招租有人推进，您少跑带看</h3><p>房源展示、平台曝光、经纪人推荐与带看匹配，由团队持续推进。</p><p class="management-detail">平台流量推广 + 经纪人按 120% 计业绩，鼓励积极推荐您的房源。</p></div><b class="management-outcome">从挂牌到成交</b></article>
+<article><span class="management-index">02</span><div><h3>保洁维修有人安排，您少操心</h3><p>租前整备保洁、房屋检修，租中日常维修按服务标准衔接，由专人安排、跟进处理。</p></div><b class="management-outcome">专业团队衔接</b></article>
+<article><span class="management-index">03</span><div><h3>租后琐事有人跟，您少费时间</h3><p>收租催缴、续约换租、纠纷协调，有专属对接人跟进，处理进度及时向您反馈。</p></div><b class="management-outcome">租期内持续跟进</b></article>
+</div>
+<div class="management-support"><div><b>遇到问题，有人对接、有章可循</b><p>招租保障、维修服务和赔付规则，在五大保障中逐项说明。</p></div><a href="#safe">查看保障详情 ↓</a></div>
 </section>
+
 
 <hr class="divider">
 
@@ -2214,6 +2222,14 @@ window.HJ_PLANBOOK = (function(){
       document.getElementById('acSelfTotal').textContent='约 '+selfRange+' 元/年';
       document.getElementById('acSelfAnswer').textContent='按当前月租估算，自管还需承担约 '+selfRange+' 元/年的额外费用，这些也要计入出租成本。';
     }
+    function money(v){return fmt(Math.round(v))+' 元'}
+    var calcItems={gross:r*36,vacancy:r*3,recruitment:r*35/30,broker:r*0.5*3,management:r*36/30*3};
+    Object.keys(calcItems).forEach(function(key){document.querySelectorAll('[data-calc="'+key+'"]').forEach(function(el){el.textContent=money(calcItems[key])})});
+    var difference=Math.round(s1+s23*2)-Math.round(pYear*3);
+    document.getElementById('calcDifference').textContent=(difference>0?'+':difference<0?'−':'')+money(Math.abs(difference));
+    document.getElementById('calcDifferenceLabel').textContent=difference>0?'省心租比普租，三年多收':difference<0?'省心租比普租，三年少收':'两种方式，三年到手相同';
+    document.getElementById('managementRent').textContent=fmt(r);
+    document.getElementById('managementAnnualFee').textContent=fmt(Math.round(r*36/30));
     s.dispatchEvent(new Event('rentchange'));   /* 通知议价区：当前租金变了（含自定义键入的 7777） */
   }
   /* 按月到账反推（议价卡键入 6,885 这类期望值）→ 反推参考月租并全联动 */
